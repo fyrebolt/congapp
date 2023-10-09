@@ -1,0 +1,12 @@
+{
+  "name": "voting app",
+  "start_url": "/congapp/",
+  "display": "standalone", 
+  "icons": [
+      {
+        "src": "/congapp/images/logo.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}
