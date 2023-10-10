@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="login.js" defer></script>
+    <title>Login</title>
+</head>
+<body onload="checkIndex()">
+    <header>
+        <p>login</p>
+        <div>
+            <div>
+                <p>Log In</p>
+                <p>Email</p>
+                <input id="emailField" type="email" placeholder="Enter email">
+                <p >Password</p>
+                <input id="passwordField" type="password" placeholder="Enter password">
+                <div>
+                    <p>Need an account?</p>
+                    <a href="login.html">Register here</a>
+                </div>
+                <button id="loginSubmit">Log in</button>
+                <div>
+                    <p>Sign in with Google</p>
+                    <img id="googleLogin" src="https://codehs.com/uploads/5c566dfffd7b82d08e0b2a733318be18">
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+
+
+
