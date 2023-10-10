@@ -10,14 +10,29 @@
     <script defer src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
     <script src="firebase.js" defer></script>
+    <script src="register.js" defer></script>
     <title>Register</title>
 </head>
 <body>
     <header>
         <p>register</p>
         <div>
-            <a href="register.html" id="signUp">Sign Up</a>
-            <a href="login.html" id="logIn">Log In</a>
+            <div>
+                <p>Register</p>
+                <p>Email</p>
+                <input id="emailField" type="email" placeholder="Enter email">
+                <p >Password</p>
+                <input id="passwordField" type="password" placeholder="Enter password">
+                <div>
+                    <p>Already have an account?</p>
+                    <a href="login.html">Log in here</a>
+                </div>
+                <button id="registerSubmit">Sign Up</button>
+                <div>
+                    <p>Sign in with Google</p>
+                    <img id="googleLogin" src="https://codehs.com/uploads/5c566dfffd7b82d08e0b2a733318be18">
+                </div>
+            </div>
         </div>
     </header>
 </body>
