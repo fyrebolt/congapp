@@ -17,7 +17,7 @@ function check(){
     }
 }
 function checkIndex(){
-    if(localStorage.getItem("loggedIn")=="yes"){
+    if(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes"){
         window.location.href = "home.html";
     }
 }
