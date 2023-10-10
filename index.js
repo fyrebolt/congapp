@@ -8,6 +8,6 @@ logInButton.onclick = () =>{
     window.location.href=login.html;
 }
 guestButton.onclick = () =>{
-    localStorage.setItem("sessionStorage","guest")
+    sessionStorage.setItem("guest","yes")
     window.location.href=home.html;
 }
