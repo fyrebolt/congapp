@@ -17,7 +17,7 @@ signupButton.onclick = (event) =>{
     })
     .catch((error) => {
         errorMessage = error.message
-        errorLabel.innerHTML = "Error: " + errorMessage;    
+        errorLabel.innerHTML = errorMessage;    
     })
 }
 
@@ -35,6 +35,6 @@ googleLogin.onclick = (event) => {
         window.location.href = "home.html"  
     }).catch(function(error) {
         errorMessage = error.message
-        errorLabel.innerHTML = "Error: " + errorMessage;  
+        errorLabel.innerHTML = errorMessage;  
     });
 }
