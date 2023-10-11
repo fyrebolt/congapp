@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database()
 
 function check(){
-    if((localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")==null) || (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")==null)){
+    if((localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")==null) || (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")==null)|| (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")=="null"|| (localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")=="null"))){
         window.location.href = "index.html";
     }
 }
