@@ -2,7 +2,7 @@ const signupButton = document.getElementById('registerSubmit');
 const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLogin')
-
+const errorLabel = document.getElementById('errorLabel')
 signupButton.onclick = (event) =>{
     event.preventDefault()
     const email = emailField.value
@@ -17,7 +17,7 @@ signupButton.onclick = (event) =>{
     })
     .catch((error) => {
         errorMessage = error.message
-        window.alert("Error: " + errorMessage);      
+        errorLabel.innerHTML = "Error: " + errorMessage;    
     })
 }
 
