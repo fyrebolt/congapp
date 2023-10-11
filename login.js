@@ -16,8 +16,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     localStorage.setItem("username",user)
   })
   .catch((error) => {
-    errorMessage = error.message
-    errorLabel.innerHTML = "Error: " + errorMessage;     
+    errorLabel.innerHTML = "Error: invalid login credentials";    
   });
 }
 
@@ -33,7 +32,6 @@ googleLogin.onclick = (event) => {
         user = user.substring(0,user.indexOf("@"))
         localStorage.setItem("username",user)
     }).catch(function(error) {
-      errorMessage = error.message
-      errorLabel.innerHTML = "Error: " + errorMessage;  
+      errorLabel.innerHTML = "Error: invalid login credentials";
     })
 }
