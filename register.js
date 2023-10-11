@@ -34,7 +34,7 @@ googleLogin.onclick = (event) => {
         localStorage.setItem("username",user)
         window.location.href = "home.html"  
     }).catch(function(error) {
-        errorMessage = error.message;
-        window.alert("Error: " + errorMessage);   
+        errorMessage = error.message
+        errorLabel.innerHTML = "Error: " + errorMessage;  
     });
 }

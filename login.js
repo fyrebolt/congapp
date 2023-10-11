@@ -17,7 +17,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
   })
   .catch((error) => {
     errorMessage = error.message
-    window.alert("Error: " + errorMessage);      
+    errorLabel.innerHTML = "Error: " + errorMessage;     
   });
 }
 
@@ -33,7 +33,7 @@ googleLogin.onclick = (event) => {
         user = user.substring(0,user.indexOf("@"))
         localStorage.setItem("username",user)
     }).catch(function(error) {
-        errorMessage = error.message
-        window.alert("Error: " + errorMessage);  
+      errorMessage = error.message
+      errorLabel.innerHTML = "Error: " + errorMessage;  
     })
 }
