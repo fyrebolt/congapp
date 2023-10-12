@@ -16,6 +16,11 @@ function check(){
         window.location.href = "index.html";
     }
 }
+function checkLogin(){
+    if((localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")==null) || (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")==null)|| (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")=="null"|| (localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")=="null"))){
+        return false;
+    }
+}
 function checkIndex(){
     if(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes"){
         window.location.href = "home.html";
