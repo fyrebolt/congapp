@@ -1,4 +1,4 @@
-const searchButton = document.getElementById('searchBar');
+const searchButton = document.getElementById('searchButton');
 loginButton.onclick = (event) =>{
     event.preventDefault()
     window.alert("button works");
