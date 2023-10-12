@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="profile.js" defer></script>
+    <title>Wiki</title>
+</head>
+<body onload="check()">
+    <header>
+        <p>Wiki</p>
+        <div>
+            <p id="messageInput">Search here</p>
+            <input placeholder="Search ZIP code" id="zipCode">
+            <input type="password" placeholder="Enter Password" id="makePswd">
+            <br><br>
+            <input type="button" value="Login">
+            //onclick="something()"
+        </div>
+    </header>
+</body>
+</html>
+
+
+
