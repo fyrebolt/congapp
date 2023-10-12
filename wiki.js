@@ -1,6 +1,7 @@
 const searchButton = document.getElementById('searchBar');
 loginButton.onclick = (event) =>{
     event.preventDefault()
+    window.alert("button works");
     searchButton.style.display = "none";
 }
 
