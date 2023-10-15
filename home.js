@@ -4,5 +4,5 @@ profileButton.onclick =()=>{
 }
 repsButton = document.getElementById('representativesButton')
 repsButton.onclick =()=>{
-    window.location.href="representatives.html"
+    window.location.href="representative.html"
 }
