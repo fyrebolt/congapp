@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="representative.js" defer></script>
+    <title>Representatives</title>
+</head>
+<body onload="check()">
+    <header>
+        <p>Who Are My Representatives?</p>
+        <div>
+            <input id="locationSearch" type = "text" placeholder = "input zip/address"></input>
+            <button id = "searchInput">Search</button>
+        </div>
+    </header>
+</body>
+</html>
