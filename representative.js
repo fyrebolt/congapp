@@ -1,7 +1,5 @@
-let apiKey = "AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc"
 function loadClient() {
-    check()
-    gapi.client.setApiKey(apiKey);
+    gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
@@ -9,7 +7,6 @@ function loadClient() {
   // Make sure the client is loaded before calling this method.
   function execute() {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-        // change to input later
       "address": "Livermore, CA, 94550",
       "levels": [
         "country"
