@@ -25,3 +25,8 @@ function loadClient() {
               function(err) { console.error("Execute error", err); });
   }
   gapi.load("client");
+searchInput = document.getElementById("searchInput")
+searchInput.onclick = () => {
+    let houseRep = execute()
+    searchInput.textContent = houseRep
+}
