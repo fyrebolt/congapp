@@ -1,5 +1,6 @@
 let apiKey = "AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc"
 function loadClient() {
+    check()
     gapi.client.setApiKey(apiKey);
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
