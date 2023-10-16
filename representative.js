@@ -24,6 +24,6 @@ function loadClient() {
   gapi.load("client");
 searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
-    let houseRep = execute().officials.name
+    let houseRep = execute().officials[0]
     document.getElementById("houseRep").textContent = houseRep
 }
