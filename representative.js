@@ -1,24 +1,26 @@
-const customParams = {
-    //"key": os.environ['API_KEY'],
-    "address": "2725 INTERNATIONAL BLVD OAKLAND",
-    // "returnAllAvailableData": True
-    // "electionId": "ELECTION_ID"
-}
-// Replace with your actual API key
-const apiKey = 'AIzaSyCrxsmm5-hWzIkW2mNmu-cQjWliSW3ZXZk';
-
-
-// Construct the query string with custom parameters
-const queryParams = new URLSearchParams(customParams);
-const apiUrl = `https://www.googleapis.com/civicinfo/v2/representatives?key=${apiKey}&${queryParams.toString()}`;
-
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Process the data returned by the API
-    document.getElementById("dave").innerHTML = data;
-    // You can access specific information about representatives from the 'data' object
-  })
-  .catch(error => {
-    document.getElementById("dave").innerHTML = 'Error fetching data:' +error;
-  });
+let apiKey = "AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc"
+function loadClient() {
+    gapi.client.setApiKey(apiKey);
+    return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded before calling this method.
+  function execute() {
+    return gapi.client.civicinfo.representatives.representativeInfoByAddress({
+        // change to input later
+      "address": "Livermore, CA, 94550",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "legislatorLowerBody"
+      ]
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client");
