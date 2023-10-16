@@ -1,25 +1,24 @@
-//going to need input conversion possibly. like if api works with zip, then do address - > zip, etc
-const xhr = new XMLHttpRequest();
-let params = {
-      "key": "AIzaSyCrxsmm5-hWzIkW2mNmu-cQjWliSW3ZXZk",
-      "address": "2725 INTERNATIONAL BLVD OAKLAND",
-      // "returnAllAvailableData": True
-      // "electionId": "ELECTION_ID"
-  }
-xhr.open("GET", "https://www.googleapis.com/civicinfo/v2/elections?key=AIzaSyCrxsmm5-hWzIkW2mNmu-cQjWliSW3ZXZk", params=params);
-xhr.send();
-xhr.responseType = "json";
-xhr.onload = () => {
-  if (xhr.readyState == 4 && xhr.status == 200) {
-    const data = xhr.response;
-    document.getElementById("dave").innerHTML = "d";
-  } else {
-    console.log(`Error: ${xhr.status}`);
-    document.getElementById("dave").innerHTML = `Error: ${xhr.status}`;
-  }
-};
-
-searchButton = document.getElementById("searchButton")
-repsButton.onclick =()=>{
-    console.log("clicked")
+const customParams = {
+    //"key": os.environ['API_KEY'],
+    "address": "2725 INTERNATIONAL BLVD OAKLAND",
+    // "returnAllAvailableData": True
+    // "electionId": "ELECTION_ID"
 }
+// Replace with your actual API key
+const apiKey = 'AIzaSyCrxsmm5-hWzIkW2mNmu-cQjWliSW3ZXZk';
+
+
+// Construct the query string with custom parameters
+const queryParams = new URLSearchParams(customParams);
+const apiUrl = `https://www.googleapis.com/civicinfo/v2/representatives?key=${apiKey}&${queryParams.toString()}`;
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Process the data returned by the API
+    document.getElementById("dave").innerHTML = data;
+    // You can access specific information about representatives from the 'data' object
+  })
+  .catch(error => {
+    document.getElementById("dave").innerHTML = 'Error fetching data:' +error;
+  });
