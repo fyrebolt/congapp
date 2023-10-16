@@ -28,5 +28,5 @@ function loadClient() {
 searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
     let houseRep = execute()
-    searchInput.textContent = houseRep
+    document.getElementById("houseRep").textContent = houseRep
 }
