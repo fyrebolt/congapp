@@ -4,12 +4,45 @@ html{
 body{
     height:100%;
     margin:0px;
-    
+    display:flex;
+    flex-direction:column;
+
+}
+#main{
+    height:90%;
+    background-color:grey;
+    overflow: scroll;
+    display:flex;
+    flex-direction:column;
+}
+#main::-webkit-scrollbar {
+    display: none;
+}
+#wikiTitle{
+    margin:0px;
+    padding:25px 15px 25px 15px;
+    background-color:lightblue;
+    font-size:48px;
+}
+#searchBar{
+    margin:10px 10px 0px 10px;
+}
+.repContainer{
+    margin:10px 0px;
+    background-color:lightcoral;
+    padding:10px;
+}
+.repSplitter{
+   
 }
 nav{
     height:10%;
     background-color:blue;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    padding:10px;
 }
-#errorLabel{
-    color:red;
+.navItem{
+    background-color:green;
 }
