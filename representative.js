@@ -17,7 +17,8 @@ function loadClient() {
         if (page && page.images && page.images.length > 0) {
         const firstImage = page.images[0];
         // You can use the 'firstImage' variable to construct the image URL.
-        return firstImage;
+        var repImage = document.getElementsByClassName("houseRepImage");
+        repImage.src = firstImage;
         } else {
         console.log('No images found on the Wikipedia page.');
         }
@@ -26,6 +27,7 @@ function loadClient() {
         console.error('Error fetching data:', error);
     });
   }
+
   // Make sure the client is loaded before calling this method.
   function execute() {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
@@ -40,6 +42,7 @@ function loadClient() {
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log(response.result.officials[0].name);
+                fetchImage(response.result.officials[0].urls[1])
                 document.getElementById("houseRep").textContent = response.result.officials[0].name
               },
               function(err) { console.error("Execute error", err); });
@@ -51,5 +54,6 @@ searchInput = document.getElementById("searchInput")
 bar = document.getElementByClass("houseRepImage")
 searchInput.onclick = () => {
     execute()
-    bar.src = fetchImage(response.result.officials[0].urls[1])
+    window.alert(response.result.officials[0].urls[1])
+    document.getElementById("test").textContent = ""
 }
