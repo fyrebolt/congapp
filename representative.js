@@ -18,12 +18,13 @@ function loadClient() {
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log(response.result.officials[0].name);
+                document.getElementById("houseRep").textContent = response.result.officials[0].name
               },
               function(err) { console.error("Execute error", err); });
   }
   gapi.load("client");
 searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
-    let houseRep = execute().officials[0]
-    document.getElementById("houseRep").textContent = houseRep
+    execute()
+    
 }
