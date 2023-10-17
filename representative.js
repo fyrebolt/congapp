@@ -5,28 +5,7 @@ function loadClient() {
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   function fetchImage(wikiLink){
-    const wikipediaLink = wikiLink; 
-
-    // Define the API endpoint
-    const apiUrl = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(wikipediaLink)}&format=json`;
-
-    fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        const page = data.parse;
-        if (page && page.images && page.images.length > 0) {
-        const firstImage = page.images[0];
-        // You can use the 'firstImage' variable to construct the image URL.
-        var repImage = document.getElementsById("houseRepImage");
-        repImage.src = firstImage;
-        } else {
-        console.log('No images found on the Wikipedia page.');
-        }
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-    });
-  }
+    }
 
   // Make sure the client is loaded before calling this method.
   function execute() {
@@ -54,6 +33,6 @@ searchInput = document.getElementById("searchInput")
 //bar = document.getElementById("houseRepImage")
 searchInput.onclick = () => {
     execute()
-    window.alert(response.result.officials[0].urls[1])
+    //window.alert(response.result.officials[0].urls[1])
     document.getElementById("test").textContent = ""
 }
