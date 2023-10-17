@@ -17,7 +17,7 @@ function loadClient() {
         if (page && page.images && page.images.length > 0) {
         const firstImage = page.images[0];
         // You can use the 'firstImage' variable to construct the image URL.
-        var repImage = document.getElementsByClassName("houseRepImage");
+        var repImage = document.getElementsById("houseRepImage");
         repImage.src = firstImage;
         } else {
         console.log('No images found on the Wikipedia page.');
@@ -51,7 +51,7 @@ function loadClient() {
 
 gapi.load("client");
 searchInput = document.getElementById("searchInput")
-bar = document.getElementByClass("houseRepImage")
+//bar = document.getElementById("houseRepImage")
 searchInput.onclick = () => {
     execute()
     window.alert(response.result.officials[0].urls[1])
