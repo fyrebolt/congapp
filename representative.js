@@ -50,7 +50,7 @@ searchInput.onclick = () => {
         const tags = ["address", "city", "state", "zipCode"]
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
-                inputLine += document.getElementById(tags[i]).textContent
+                inputLine += document.getElementById(tags[i]).value
                 if(i != (tags.length-1)){
                     // if not last input
                     inputLine += ","
