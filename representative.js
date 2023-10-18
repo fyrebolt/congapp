@@ -41,8 +41,10 @@ function loadClient() {
                 // Handle the results here (response.result has the parsed body).
             if(searchType == "legislatorLowerBody"){
                 console.log(response.result.officials[0].name);
-                console.log(response.result.officials[0].urls[1])
-                document.getElementById("fedHouseRep").textContent = response.result.officials[0].name + "      " + getDesc(response.result.officials[0].urls[1]) 
+                description = response.result.officials[0].urls[1];
+                console.log(description);
+                text = response.result.officials[0].name + "      " + description;
+                document.getElementById("fedHouseRep").textContent = text;
             }
                 
                 //fetchImage(response.result.officials[0].urls[1])
