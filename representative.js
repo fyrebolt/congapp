@@ -7,8 +7,8 @@ function loadClient() {
   function fetchImage(wikiLink){
     }
   function getDesc(wikiLink){
-    repName="Joe_Biden"
-    //repName=wikiLink.substring(30)
+    //repName="Joe_Biden"
+    repName=wikiLink.substring(30)
     fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + repName + "&format=json")
     .then(function(response){return response.json();})
     .then(function(response) {
@@ -20,6 +20,7 @@ function loadClient() {
         for (i = 0; i < 3; i++) {
           newDesc += descArray[i] + "."
         }
+        console.log(newDesc);
         return newDesc;
     })
     .catch(function(error){console.log(error);});
@@ -40,7 +41,8 @@ function loadClient() {
                 // Handle the results here (response.result has the parsed body).
             if(searchType == "legislatorLowerBody"){
                 console.log(response.result.officials[0].name);
-                document.getElementById("fedHouseRep").textContent = response.result.officials[0].name + getDesc() 
+                console.log(response.result.officials[0].urls[1])
+                document.getElementById("fedHouseRep").textContent = response.result.officials[0].name + "      " + getDesc(response.result.officials[0].urls[1]) 
             }
                 
                 //fetchImage(response.result.officials[0].urls[1])
