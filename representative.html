@@ -17,7 +17,7 @@
 <body onload="loadClient()">
     <header>
         <p>Who Are My Representatives?</p>
-        <form>
+        <div id="dataInput">
             <ol>
                 <li id="Address">
                     <p>Address</p>
@@ -37,10 +37,22 @@
                 </li>
             </ol>
             <button id = "searchInput">Search</button>
-        </form>
-        <p id="houseRep"></p>
+        </div>
+        <!--Can use adminArea1 for state officials, adminArea2 for county, use country for pres/reps
+        can implement others later-->
+        <div id = "outputData">
+            <ol id="FedHouseRep">
+                <p id="fedHouseRep"></p>>
+                <p id="fedHouseRepImage"></p>
+            </ol>
+            <ol id="FedSenators">
+                <p id="fedSenateOne"></p>>
+                <p id="fedSenateOneImage"></p>
+                <p id="fedSenateTwo"></p>>
+                <p id="fedSenateTwoImage"></p>
+            </ol>
+        </div>
         <p id="test"></p>
-        <p id="houseRepImage"></p>
     </header>
 </body>
 </html>
