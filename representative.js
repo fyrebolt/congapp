@@ -8,31 +8,65 @@ function loadClient() {
     }
 
   // Make sure the client is loaded before calling this method.
-  function execute() {
+  function executeCountry(inputLine, searchType) {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
-      "address": "Livermore, CA, 94550",
+      "address": inputLine,
       "levels": [
         "country"
       ],
       "roles": [
-        "legislatorLowerBody"
+        searchType
       ]
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
+            if(searchType == "legislatorLowerBody"){
                 console.log(response.result.officials[0].name);
-                fetchImage(response.result.officials[0].urls[1])
-                document.getElementById("houseRep").textContent = response.result.officials[0].name
+                document.getElementById("houseRep").textContent = response.result.officials[0].name 
+            }
+                
+                //fetchImage(response.result.officials[0].urls[1])
+                
               },
               function(err) { console.error("Execute error", err); });
   }
-
+function checkEmpty(){
+    //does not run search if no input
+    const tags = ["address", "city", "city", "zipCode"]
+    for(let i = 0; i < tags.length; i++){
+        if(document.getElementById(tag[i]).textContent != ""){
+            return true
+        }
+    }
+    return false
+}
 
 gapi.load("client");
 searchInput = document.getElementById("searchInput")
 //bar = document.getElementById("houseRepImage")
 searchInput.onclick = () => {
-    execute()
-    //window.alert(response.result.officials[0].urls[1])
-    document.getElementById("test").textContent = ""
+    if(checkEmpty()){
+        let inputLine = ""
+        const tags = ["address", "city", "city", "zipCode"]
+        for(let i = 0; i < tags.length; i++){
+            if(document.getElementById(tag[i]).textContent != ""){
+                inputLine += document.getElementById(tag[i]).textContent
+                if(i != (tags.length-1)){
+                    // if not last input
+                    inputLine += ","
+                }
+            }
+        }
+        // example house rep
+        executeCountry(inputLine,"legislatorLowerBody")
+        //window.alert(response.result.officials[0].urls[1])
+        document.getElementById("test").textContent = ""
+    }
+    let notifyEmpty = new Notification("Location Boxes Empty\nOne Location Input Required")
+    //resets input boxes
+    const tags = ["address", "city", "city", "zipCode"]
+    for(let i = 0; i < tags.length; i++){
+        document.getElementById(tag[i]).textContent = ""
+    }
+    
 }
