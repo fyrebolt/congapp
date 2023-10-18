@@ -17,10 +17,27 @@
 <body onload="loadClient()">
     <header>
         <p>Who Are My Representatives?</p>
-        <div>
-            <input id="locationSearch" type = "text" placeholder = "input zip/address"></input>
+        <form>
+            <ol>
+                <li id="Address">
+                    <p>Address</p>
+                    <input id="address" type = "text" placeholder = "123 Main Street"></input>
+                </li>
+                <li id="City">
+                    <p>City Name</p>
+                    <input id="city" type = "text" placeholder = "Los Angeles"></input>
+                </li>
+                <li id="State">
+                    <p>State Name</p>
+                    <input id="state" type = "text" placeholder = "California"></input>
+                </li>
+                <li id="Zip">
+                    <p>Zip Code</p>
+                    <input id="zipCode" type = "text" placeholder = "90001"></input>
+                </li>
+            </ol>
             <button id = "searchInput">Search</button>
-        </div>
+        </form>
         <p id="houseRep"></p>
         <p id="test"></p>
         <p id="houseRepImage"></p>
