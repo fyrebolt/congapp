@@ -57,16 +57,13 @@ searchInput.onclick = () => {
                 }
             }
         }
+        console.log(inputLine)
         // example house rep
         executeCountry(inputLine,"legislatorLowerBody")
         //window.alert(response.result.officials[0].urls[1])
         document.getElementById("test").textContent = ""
     }
     window.alert("Location Boxes Empty\nOne Location Input Required")
-    //resets input boxes
-    const tags = ["address", "city", "state", "zipCode"]
-    for(let i = 0; i < tags.length; i++){
-        document.getElementById(tags[i]).textContent = ""
-    }
+    
     
 }
