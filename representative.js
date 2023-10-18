@@ -34,7 +34,7 @@ function checkEmpty(){
     //does not run search if no input
     const tags = ["address", "city", "state", "zipCode"]
     for(let i = 0; i < tags.length; i++){
-        if(document.getElementById(tags[i]).textContent != "" || document.getElementById(tags[i]).textContent != null){
+        if(document.getElementById(tags[i]).value){
             return true
         }
     }
