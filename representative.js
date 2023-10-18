@@ -27,11 +27,11 @@ function loadClient() {
   }
 
   // Make sure the client is loaded before calling this method.
-  function executeCountry(inputLine, searchType) {
+  function execute(level,inputLine, searchType) {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
       "address": inputLine,
       "levels": [
-        "country"
+        level
       ],
       "roles": [
         searchType
@@ -73,15 +73,13 @@ searchInput.onclick = () => {
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
                 inputLine += document.getElementById(tags[i]).value
-                if(i != (tags.length-1)){
-                    // if not last input
-                    inputLine += ","
-                }
             }
         }
+        inputLine = inputLine..slice(0, -1)
+        //removes last ,
         console.log(inputLine)
         // example house rep
-        executeCountry(inputLine,"legislatorLowerBody")
+        execute("country",inputLine,"legislatorLowerBody")
         //window.alert(response.result.officials[0].urls[1])
         document.getElementById("test").textContent = ""
     }
