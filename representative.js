@@ -27,7 +27,7 @@ function loadClient() {
   }
 
   // Make sure the client is loaded before calling this method.
-  function execute(level,inputLine, searchType) {
+  function execute(level,inputLine, searchType, tagList) {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
       "address": inputLine,
       "levels": [
@@ -39,14 +39,17 @@ function loadClient() {
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-            if(searchType == "legislatorLowerBody"){
-                console.log(response.result.officials[0].name);
-                description = response.result.officials[0].urls[1];
+            for(let tag = 0; tag < tagList.length;tag++){
+                console.log(response.result.officials[tag].name);
+                description = response.result.officials[tag].urls[1];
+                if(description == undefined){
+                  description = response.result.officials[tag].urls[0];
+                }
                 console.log(description);
-                text = response.result.officials[0].name + "      " + description;
-                document.getElementById("fedHouseRep").textContent = text;
+                text = response.result.officials[tag].name + "      " + description;
+                document.getElementById(tagList[tag]).textContent = text;
             }
-                
+                //logan: might work, change 0 to tag
                 //fetchImage(response.result.officials[0].urls[1])
                 
               },
@@ -79,9 +82,8 @@ searchInput.onclick = () => {
         inputLine = inputLine.slice(0, -1)
         //removes last ,
         console.log(inputLine)
-        // example house rep
-        execute("country",inputLine,"legislatorLowerBody")
-        //window.alert(response.result.officials[0].urls[1])
+        execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+        execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
         document.getElementById("test").textContent = ""
     }
     else{
