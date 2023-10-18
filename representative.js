@@ -34,7 +34,7 @@ function checkEmpty(){
     //does not run search if no input
     const tags = ["address", "city", "city", "zipCode"]
     for(let i = 0; i < tags.length; i++){
-        if(document.getElementById(tag[i]).textContent != ""){
+        if(document.getElementById(tags[i]).textContent != ""){
             return true
         }
     }
@@ -49,8 +49,8 @@ searchInput.onclick = () => {
         let inputLine = ""
         const tags = ["address", "city", "city", "zipCode"]
         for(let i = 0; i < tags.length; i++){
-            if(document.getElementById(tag[i]).textContent != ""){
-                inputLine += document.getElementById(tag[i]).textContent
+            if(document.getElementById(tags[i]).textContent != ""){
+                inputLine += document.getElementById(tags[i]).textContent
                 if(i != (tags.length-1)){
                     // if not last input
                     inputLine += ","
@@ -66,7 +66,7 @@ searchInput.onclick = () => {
     //resets input boxes
     const tags = ["address", "city", "city", "zipCode"]
     for(let i = 0; i < tags.length; i++){
-        document.getElementById(tag[i]).textContent = ""
+        document.getElementById(tags[i]).textContent = ""
     }
     
 }
