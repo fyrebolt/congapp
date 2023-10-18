@@ -62,7 +62,7 @@ searchInput.onclick = () => {
         //window.alert(response.result.officials[0].urls[1])
         document.getElementById("test").textContent = ""
     }
-    let notifyEmpty = new Notification("Location Boxes Empty\nOne Location Input Required")
+    window.alert("Location Boxes Empty\nOne Location Input Required")
     //resets input boxes
     const tags = ["address", "city", "state", "zipCode"]
     for(let i = 0; i < tags.length; i++){
