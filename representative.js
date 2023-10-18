@@ -32,9 +32,9 @@ function loadClient() {
   }
 function checkEmpty(){
     //does not run search if no input
-    const tags = ["address", "city", "city", "zipCode"]
+    const tags = ["address", "city", "state", "zipCode"]
     for(let i = 0; i < tags.length; i++){
-        if(document.getElementById(tags[i]).textContent != ""){
+        if(document.getElementById(tags[i]).textContent != "" || document.getElementById(tags[i]).textContent != null){
             return true
         }
     }
@@ -47,7 +47,7 @@ searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
     if(checkEmpty()){
         let inputLine = ""
-        const tags = ["address", "city", "city", "zipCode"]
+        const tags = ["address", "city", "state", "zipCode"]
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).textContent != ""){
                 inputLine += document.getElementById(tags[i]).textContent
@@ -64,7 +64,7 @@ searchInput.onclick = () => {
     }
     let notifyEmpty = new Notification("Location Boxes Empty\nOne Location Input Required")
     //resets input boxes
-    const tags = ["address", "city", "city", "zipCode"]
+    const tags = ["address", "city", "state", "zipCode"]
     for(let i = 0; i < tags.length; i++){
         document.getElementById(tags[i]).textContent = ""
     }
