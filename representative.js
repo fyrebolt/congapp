@@ -73,6 +73,7 @@ searchInput.onclick = () => {
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
                 inputLine += document.getElementById(tags[i]).value
+                inputLine+=","
             }
         }
         inputLine = inputLine.slice(0, -1)
