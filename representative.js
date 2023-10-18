@@ -63,7 +63,7 @@ searchInput.onclick = () => {
         //window.alert(response.result.officials[0].urls[1])
         document.getElementById("test").textContent = ""
     }
-    window.alert("Location Boxes Empty\nOne Location Input Required")
-    
-    
+    else{
+        window.alert("Location Boxes Empty\nOne Location Input Required")
+    }
 }
