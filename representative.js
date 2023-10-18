@@ -75,7 +75,7 @@ searchInput.onclick = () => {
                 inputLine += document.getElementById(tags[i]).value
             }
         }
-        inputLine = inputLine..slice(0, -1)
+        inputLine = inputLine.slice(0, -1)
         //removes last ,
         console.log(inputLine)
         // example house rep
