@@ -2,6 +2,11 @@ const loginButton = document.getElementById('loginFooter');
 const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
+const switchPage = document.getElementById('switchPage')
+switchPage.onclick = (event) =>{
+    event.preventDefault()
+    window.location.href="register.html"
+}
 
 loginButton.onclick = (event) =>{
     event.preventDefault()
