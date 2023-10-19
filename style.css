@@ -97,7 +97,7 @@ body{
     text-decoration:underline;
 }
 #errorLabel{
-    margin:0px;
+    margin:5px 0px;
     font-size:18px;
     font-weight:normal;
     color:red;
