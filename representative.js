@@ -55,9 +55,8 @@ function loadClient() {
               },
               function(err) { console.error("Execute error", err); });
   }
-function checkEmpty(){
+function checkEmpty(tags){
     //does not run search if no input
-    const tags = ["address", "city", "state", "zipCode"]
     for(let i = 0; i < tags.length; i++){
         if(document.getElementById(tags[i]).value){
             return true
@@ -70,9 +69,9 @@ gapi.load("client");
 searchInput = document.getElementById("searchInput")
 //bar = document.getElementById("houseRepImage")
 searchInput.onclick = () => {
-    if(checkEmpty()){
+    const tags = ["address", "city", "state", "zipCode"]
+    if(checkEmpty(tags)){
         let inputLine = ""
-        const tags = ["address", "city", "state", "zipCode"]
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
                 inputLine += document.getElementById(tags[i]).value
