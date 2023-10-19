@@ -51,6 +51,13 @@ body{
     font-weight:normal;
     color:white;
 }
+#loginHeader a{
+    margin:0px;
+    font-size:24px;
+    font-weight:normal;
+    color:white;
+    text-decoration:none;
+}
 #loginMiddle{
     display:flex;
     flex-direction:column;
@@ -79,6 +86,22 @@ body{
     color:#6968be;
     font-size:24px;
 }
+#loginFields p:hover{
+    text-decoration:underline;
+}
+#loginFields a{
+    text-decoration:none;
+    color:black;
+}
+#loginFields a:hover{
+    text-decoration:underline;
+}
+#errorLabel{
+    margin:0px;
+    font-size:18px;
+    color:red;
+}
+
 #googleLoginBox{
     display:flex;
     flex-direction:row;
