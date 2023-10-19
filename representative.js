@@ -32,11 +32,11 @@ function loadClient() {
                       page = response.query.pages;
                       page[Object.keys(page)[0]]
                       desc = page[Object.keys(page)[0]].extract;
-                      descArray = desc.split(".");
+                      descArray = desc.split(". ");
                       newDesc = "";
                       //console.log(newDesc)
                       for (i = 0; i < 3; i++) {
-                        newDesc += descArray[i] + "."
+                        newDesc += descArray[i] + ". "
                       }
                       //console.log(newDesc);
                       document.getElementById(tagList[tag]).innerHTML = newDesc;
