@@ -21,6 +21,7 @@ signupButton.onclick = (event) =>{
         window.location.href = "home.html"    
     })
     .catch((error) => {
+        errorLabel.className="";
         errorMessage = error.message
         errorLabel.innerHTML = errorMessage;    
     })
@@ -39,6 +40,7 @@ googleLogin.onclick = (event) => {
         localStorage.setItem("username",user)
         window.location.href = "home.html"  
     }).catch(function(error) {
+        errorLabel.className="";
         errorMessage = error.message
         errorLabel.innerHTML = errorMessage;  
     });
