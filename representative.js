@@ -35,7 +35,7 @@ function loadClient() {
                       descArray = desc.split(". ");
                       newDesc = "";
                       //console.log(newDesc)
-                      for (i = 0; i < 3; i++) {
+                      for (i = 0; i < 2; i++) {
                         newDesc += descArray[i] + ". "
                       }
                       //console.log(newDesc);
