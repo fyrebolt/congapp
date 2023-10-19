@@ -42,6 +42,8 @@ function loadClient() {
             for(let tag = 0; tag < tagList.length;tag++){
                 console.log(response.result.officials[tag].name);
                 description = response.result.officials[tag].urls[1];
+                console.log(description);
+                console.log(description.type);
                 if(description == undefined){
                   description = response.result.officials[tag].urls[0];
                 }
