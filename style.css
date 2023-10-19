@@ -99,6 +99,7 @@ body{
 #errorLabel{
     margin:0px;
     font-size:18px;
+    font-weight:normal;
     color:red;
 }
 
