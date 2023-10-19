@@ -1,7 +1,7 @@
 const loginButton = document.getElementById('loginSubmit');
 const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
-const googleLoginBox = document.getElementById('googleLogin')
+const googleLogin = document.getElementById('googleLoginBox')
 
 loginButton.onclick = (event) =>{
     event.preventDefault()
