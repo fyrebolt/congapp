@@ -23,7 +23,6 @@ function loadClient() {
                 // Handle the results here (response.result has the parsed body).
             for(let tag = 0; tag < tagList.length;tag++){
                 repName = response.result.officials[tag].name;
-                console.log(repName)
                 
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
@@ -44,7 +43,7 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description:"+newDesc;
+                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: "+newDesc;
                   })
                   .catch(function(error){
                     console.log(error);
@@ -52,7 +51,8 @@ function loadClient() {
                   });
                 }
                 //place .gov info here
-                document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description:stuff";;
+                repUrlLink = response.result.officials[tag].urls[0]
+                document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description: <a href=" + repUrlLink + ">" + repUrlLink + "</a>"
             }
                 //logan: might work, change 0 to tag
                 //fetchImage(response.result.officials[0].urls[1])
