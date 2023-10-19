@@ -35,8 +35,10 @@ function loadClient() {
                       descArray = desc.split(". ");
                       newDesc = "";
                       //console.log(newDesc)
-                      for (i = 0; i < 2; i++) {
+                      for (i = 0; i < 3; i++) {
+                        if (i < descArray.length){
                         newDesc += descArray[i] + ". "
+                        }
                       }
                       //console.log(newDesc);
                       document.getElementById(tagList[tag]).innerHTML = newDesc;
