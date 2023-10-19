@@ -16,15 +16,17 @@
 <body onload="checkIndex()">
     <div id="loginWrapper">
         <div id="loginHeader">
-            <h3 href="index.html"><</h3>
-            <h3>Log in</h3>
+            <a target="_blank" href="index.html"><</a>
+            <h3>Log In</h3>
             <span class="hidden">></span>
         </div>
         <div id="loginMiddle">
             <div id="loginFields">
                 <input id="emailField" type="email" placeholder="Email">
                 <input id="passwordField" type="password" placeholder="Password">
+                <p id="errorLabel" class="hidden">.</p>
                 <p>Forgot password?</p>
+                <a href="register.html">Need an account?</a>
             </div>
             <div id="googleLoginBox">
                 <img src="images/googlelogo.png"></img>
@@ -32,7 +34,7 @@
             </div>
         </div>
         <div id="loginFooter">
-            <h3>Log in</h3>
+            <h3>Log In</h3>
         </div>        
     </div>
 </body>
