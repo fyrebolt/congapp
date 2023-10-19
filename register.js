@@ -1,8 +1,9 @@
-const signupButton = document.getElementById('registerSubmit');
+const signupButton = document.getElementById('loginFooter');
 const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
-const googleLogin = document.getElementById('googleLogin')
+const googleLogin = document.getElementById('googleLoginBox')
 const errorLabel = document.getElementById('errorLabel')
+
 signupButton.onclick = (event) =>{
     event.preventDefault()
     const email = emailField.value

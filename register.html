@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -14,30 +14,25 @@
     <title>Register</title>
 </head>
 <body onload="checkIndex()">
-    <header>
-        <p>register</p>
-        <div>
-            <div>
-                <p>Register</p>
-                <p>Email</p>
-                <input id="emailField" type="email" placeholder="Enter email">
-                <p >Password</p>
-                <input id="passwordField" type="password" placeholder="Enter password">
-                <div>
-                    <p>Already have an account?</p>
-                    <a href="login.html">Log in here</a>
-                </div>
-                <p id="errorLabel"></p>
-                <button id="registerSubmit">Sign Up</button>
-                <div>
-                    <p>Sign in with Google</p>
-                    <img id="googleLogin" src="https://codehs.com/uploads/5c566dfffd7b82d08e0b2a733318be18">
-                </div>
+    <div id="loginWrapper">
+        <div id="loginHeader">
+            <h3 href="index.html"><</h3>
+            <h3>Register</h3>
+            <span class="hidden">></span>
+        </div>
+        <div id="loginMiddle">
+            <div id="loginFields">
+                <input id="emailField" type="email" placeholder="Email">
+                <input id="passwordField" type="password" placeholder="Password">
+            </div>
+            <div id="googleLoginBox">
+                <img src="images/googlelogo.png"></img>
+                <h2>Log in with Google</h2>
             </div>
         </div>
-    </header>
+        <div id="loginFooter">
+            <h3>Register</h3>
+        </div>        
+    </div>
 </body>
 </html>
-
-
-

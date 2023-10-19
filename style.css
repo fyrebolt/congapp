@@ -60,10 +60,10 @@ body{
 #loginFields{
     display:flex;
     flex-direction:column;
-    margin:20px 10px;
+    margin:20px 20px;
 }
 #loginFields input{
-    font-size:20px;
+    font-size:18px;
     background-color:rgba(0,0,0,0);
     border:none;
     margin:20px 0px;
@@ -73,7 +73,6 @@ body{
 #loginFields input:focus{
     outline:none;
     border-bottom: 2px solid #6968be;
-    font-weight:bold;
 }
 #loginFields p{
     font-weight:bold;
@@ -86,7 +85,7 @@ body{
     align-items:stretch;
     border:solid black 1px;
     border-radius:3px;
-    margin:20px 10px;
+    margin:20px 20px;
     justify-content:center;
     padding:10px;
 }
