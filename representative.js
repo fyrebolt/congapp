@@ -22,14 +22,18 @@ function loadClient() {
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
             for(let tag = 0; tag < tagList.length;tag++){
+                repName = response.result.officials[tag].name;
+                console.log(repName)
                 
-                description = response.result.officials[tag].urls[1];
-                description = description.substring(30)
-                //console.log(description);
+                descriptionLink = response.result.officials[tag].urls[1];
+                if(descriptionLink != undefined){
+                  description = descriptionLink.substring(30)
                   fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + description + "&format=json")
-                  .then(function(response){return response.json();})
-                  .then(function(response) {
-                      page = response.query.pages;
+                  .then(function(response2){return response2.json();})
+                  .then(function(response2) {
+                      repName = response.result.officials[tag].name;
+                      console.log(repName)
+                      page = response2.query.pages;
                       page[Object.keys(page)[0]]
                       desc = page[Object.keys(page)[0]].extract;
                       descArray = desc.split(". ");
@@ -40,14 +44,15 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      //console.log(newDesc);
-                      document.getElementById(tagList[tag]).innerHTML = newDesc;
+                      document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description:"+newDesc;
                   })
-                  .catch(function(error){console.log(error);});
-
-                text = response.result.officials[tag].name;
-                //console.log(text);
-                document.getElementById(tagList[tag]).innerHTML = "a";
+                  .catch(function(error){
+                    console.log(error);
+                    
+                  });
+                }
+                //place .gov info here
+                document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description:stuff";;
             }
                 //logan: might work, change 0 to tag
                 //fetchImage(response.result.officials[0].urls[1])
