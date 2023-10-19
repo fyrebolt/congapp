@@ -52,7 +52,7 @@ function loadClient() {
                 }
                 //place .gov info here
                 repUrlLink = response.result.officials[tag].urls[0]
-                document.getElementById(tagList[tag]).innerHTML = "Name:" + repName +"<br>Description: <a href=" + repUrlLink + ">" + repUrlLink + "</a>"
+                document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: <a href=" + repUrlLink + ">" + repUrlLink + "</a>"
             }
                 //logan: might work, change 0 to tag
                 //fetchImage(response.result.officials[0].urls[1])
