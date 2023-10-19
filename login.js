@@ -3,6 +3,7 @@ const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
 const switchPage = document.getElementById('switchPage')
+const errorLabel = document.getElementById('errorLabel')
 switchPage.onclick = (event) =>{
     event.preventDefault()
     window.location.href="register.html"
@@ -21,7 +22,8 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     localStorage.setItem("username",user)
   })
   .catch((error) => {
-    errorLabel.innerHTML = "invalid login credentials";    
+    errorLabel.className="";
+    errorLabel.innerHTML = "Invalid login credentials";    
   });
 }
 
@@ -37,6 +39,7 @@ googleLogin.onclick = (event) => {
         user = user.substring(0,user.indexOf("@"))
         localStorage.setItem("username",user)
     }).catch(function(error) {
-      errorLabel.innerHTML = "invalid login credentials";
+      errorLabel.className="";
+      errorLabel.innerHTML = "Invalid login credentials"; 
     })
 }
