@@ -12,9 +12,6 @@ firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     localStorage.setItem("loggedIn","yes")
     window.location.href = "home.html" 
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
-    localStorage.setItem("username",user)
   })
   .catch((error) => {
     errorLabel.className="";
@@ -28,11 +25,8 @@ googleLogin.onclick = (event) => {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         localStorage.setItem("loggedIn","yes")
         window.location.href = "home.html"
-        profile = result.user.providerData[0];
-        email = profile.email
-        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-        user = user.substring(0,user.indexOf("@"))
-        localStorage.setItem("username",user)
+        //profile = result.user.providerData[0];
+        //email = profile.email
     }).catch(function(error) {
       errorLabel.className="";
       errorLabel.innerHTML = "Invalid login credentials"; 
