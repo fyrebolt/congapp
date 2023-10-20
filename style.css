@@ -47,7 +47,7 @@ body{
 }
 #loginHeader h3{
     margin:0px;
-    font-size:24px;
+    font-size:20px;
     font-weight:normal;
     color:white;
 }
@@ -70,7 +70,7 @@ body{
     margin:20px 20px;
 }
 #loginFields input{
-    font-size:18px;
+    font-size:16px;
     background-color:rgba(0,0,0,0);
     border:none;
     margin:20px 0px;
@@ -84,7 +84,7 @@ body{
 #loginFields p{
     font-weight:bold;
     color:#6968be;
-    font-size:24px;
+    font-size:18px;
 }
 #loginFields p:hover{
     text-decoration:underline;
@@ -116,6 +116,7 @@ body{
 #googleLoginBox h2{
     margin:0px;
     font-weight:normal;
+    font-size:18px;
 }
 #googleLoginBox img{
     width:30px;
@@ -132,7 +133,7 @@ body{
 }
 #loginFooter h3{
     margin:0px;
-    font-size:24px;
+    font-size:20px;
     font-weight:normal;
     color:white;
 }
