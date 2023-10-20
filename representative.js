@@ -27,6 +27,17 @@ function loadClient() {
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
                   description = descriptionLink.substring(30)
+                  fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
+                    .then(function(response){return response.json();})
+                    .then(function(response) {
+                    console.log(response);
+                        var pages = response.query.pages;
+                        img = pages[Object.keys(pages)[0]].original.source;
+                        document.getElementById(tagList[tag]).svg = img;
+                    })
+                    .catch(function(error){console.log(error);});
+
+
                   fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + description + "&format=json")
                   .then(function(response2){return response2.json();})
                   .then(function(response2) {
