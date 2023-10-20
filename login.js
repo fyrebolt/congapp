@@ -3,7 +3,11 @@ const emailField = document.getElementById("emailField")
 const passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
 const errorLabel = document.getElementById('errorLabel')
-
+const resetPassword = document.querySelector('#loginFields p')
+resetPassword.onclick = (event) =>{
+    event.preventDefault()
+    firebase.auth().sendPasswordResetEmail("ziad.moh49@gmail.com")
+}
 loginButton.onclick = (event) =>{
     event.preventDefault()
     const email = emailField.value
