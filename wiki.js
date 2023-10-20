@@ -35,3 +35,33 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+const submitButton = document.getElementById("submit-button");
+const quiz = document.getElementById("quiz");
+const results = document.getElementById("results");
+const scoreSpan = document.getElementById("score");
+
+submitButton.addEventListener("click", calculateScore);
+
+function calculateScore() {
+    const questions = document.querySelectorAll(".question");
+    let score = 0;
+
+    questions.forEach((question, index) => {
+        const selectedAnswer = question.querySelector("input:checked");
+
+        if (selectedAnswer) {
+            if (selectedAnswer.value === "c") {
+                score++;
+            }
+        }
+    });
+
+    showResults(score);
+}
+
+function showResults(score) {
+    quiz.style.display = "none";
+    results.style.display = "block";
+    scoreSpan.textContent = score;
+}
+

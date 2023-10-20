@@ -203,3 +203,32 @@ body{
     overflow: hidden;
     background-color: #f1f1f1;
 }
+
+/* Style the quiz container */
+#quiz {
+    margin: 20px;
+}
+
+/* Style quiz questions and choices */
+.question {
+    margin: 20px 0;
+}
+
+.question p {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Hide the results initially */
+#results {
+    display: none;
+}
+
+/* Style the results container */
+#results p {
+    font-weight: bold;
+}
