@@ -139,7 +139,13 @@ body{
 .hidden{
     opacity:0;
 }
-/* Style the dropdown button and hide the content */
+
+/* all the stuff below is for dropdown */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -163,9 +169,10 @@ body{
     z-index: 1;
     top: 100%; 
     margin-top: 10px;
+    transition: max-height 0.3s;
 }
 
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
