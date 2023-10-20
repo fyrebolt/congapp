@@ -23,17 +23,17 @@ function loadClient() {
                 // Handle the results here (response.result has the parsed body).
             for(let tag = 0; tag < tagList.length;tag++){
                 repName = response.result.officials[tag].name;
-                
+                imgLink = "";
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
                   description = descriptionLink.substring(30)
                   fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
-                    .then(function(response){return response.json();})
-                    .then(function(response) {
+                    .then(function(response3){return response3.json();})
+                    .then(function(response3) {
                     console.log(response);
                         var pages = response.query.pages;
                         img = pages[Object.keys(pages)[0]].original.source;
-                        dave.innerHTML = "<img src=\"" + img + "\">";
+                        imgLink = "<img src=\"" + img + "\">";
                     })
                     .catch(function(error){console.log(error);});
 
@@ -55,7 +55,7 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: "+newDesc;
+                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName + imgLink + "<br>Description: "+newDesc;
                   })
                   .catch(function(error){
                     console.log(error);
