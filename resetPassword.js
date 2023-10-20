@@ -5,6 +5,8 @@ const errorLabel = document.getElementById('errorLabel')
 
 resetPassword.onclick = (event) =>{
     event.preventDefault()
+    errorLabel.innerHTML = "."; 
+    success.className = "hidden"
     email = emailField.value 
     firebase.auth().sendPasswordResetEmail(email)
     .then(function() {

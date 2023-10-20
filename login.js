@@ -6,6 +6,7 @@ const errorLabel = document.getElementById('errorLabel')
 
 loginButton.onclick = (event) =>{
     event.preventDefault()
+    errorLabel.innerHTML = "."; 
     const email = emailField.value
     const password = passwordField.value
 firebase.auth().signInWithEmailAndPassword(email, password)
@@ -21,6 +22,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
 
 googleLogin.onclick = (event) => {
     event.preventDefault()
+    errorLabel.innerHTML = "."; 
     provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         localStorage.setItem("loggedIn","yes")
