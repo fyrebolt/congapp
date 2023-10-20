@@ -1,6 +1,7 @@
 {
   "name": "voting app",
-  "start_url": "/congapp/",
+  "start_url": "/congapp/index.html",
+  "scope": "/congapp/",
   "display": "standalone", 
   "icons": [
       {
