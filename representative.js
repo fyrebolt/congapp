@@ -26,6 +26,8 @@ function loadClient() {
                 
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
+                  //have wiki link
+                  //gets image from wiki
                   description = descriptionLink.substring(30)
                   fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
                     .then(function(response){return response.json();})
@@ -33,7 +35,6 @@ function loadClient() {
                     console.log(response);
                         var pages = response.query.pages;
                         img = pages[Object.keys(pages)[0]].original.source;
-                        document.getElementById(tagList[tag]).innerHTML = "<img src=\"" + img + "\">";
                     })
                     .catch(function(error){console.log(error);});
 
@@ -42,6 +43,7 @@ function loadClient() {
                   fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + description + "&format=json")
                   .then(function(response2){return response2.json();})
                   .then(function(response2) {
+                    //gets description
                       repName = response.result.officials[tag].name;
                       console.log(repName)
                       page = response2.query.pages;
@@ -55,7 +57,8 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: "+newDesc;
+                      //img exists here
+                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: "+newDesc + "<br><img height = 50px width =50px src=\"" + img + "\">";
                   })
                   .catch(function(error){
                     console.log(error);
