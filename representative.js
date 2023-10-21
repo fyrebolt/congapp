@@ -4,8 +4,43 @@ function loadClient() {
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
-  function fetchImage(wikiLink){
+  async function fetchImage(description, TAG){
+      fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
+                    .then(function(response){return response.json();})
+                    .then(function(response) {
+                    console.log(response);
+                        var pages = response.query.pages;
+                        img = pages[Object.keys(pages)[0]].original.source;
+                        document.getElementById(TAG).innerHTML = "<img height = 50px width =50px src=\"" + img + "\">" 
+                    })
+                    .catch(function(error){console.log(error);});
     }
+  async function fetchDescription(description,TAG,repName){
+    fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + description + "&format=json")
+                  .then(function(response2){return response2.json();})
+                  .then(function(response2) {
+                    //gets description
+                      
+                      console.log(repName)
+                      page = response2.query.pages;
+                      page[Object.keys(page)[0]]
+                      desc = page[Object.keys(page)[0]].extract;
+                      descArray = desc.split(". ");
+                      newDesc = "";
+                      //console.log(newDesc)
+                      for (i = 0; i < 3; i++) {
+                        if (i < descArray.length){
+                        newDesc += descArray[i] + ". "
+                        }
+                      }
+                      //img exists here
+                      document.getElementById(TAG).innerHTML = "Name: " + repName +"<br>Description: "+newDesc;
+                  })
+                  .catch(function(error){
+                    console.log(error);
+                    
+                  });
+  }
   
 
   // Make sure the client is loaded before calling this method.
@@ -23,54 +58,23 @@ function loadClient() {
                 // Handle the results here (response.result has the parsed body).
             for(let tag = 0; tag < tagList.length;tag++){
                 repName = response.result.officials[tag].name;
-                
+                repGovLink = response.result.officials[tag].urls[0]
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
                   //have wiki link
                   //gets image from wiki
                   description = descriptionLink.substring(30)
-                  fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
-                    .then(function(response){return response.json();})
-                    .then(function(response) {
-                    console.log(response);
-                        var pages = response.query.pages;
-                        img = pages[Object.keys(pages)[0]].original.source;
-                    })
-                    .catch(function(error){console.log(error);});
-
-                  
-
-                  fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=extracts&exchars=600&explaintext&titles=" + description + "&format=json")
-                  .then(function(response2){return response2.json();})
-                  .then(function(response2) {
-                    //gets description
-                      repName = response.result.officials[tag].name;
-                      console.log(repName)
-                      page = response2.query.pages;
-                      page[Object.keys(page)[0]]
-                      desc = page[Object.keys(page)[0]].extract;
-                      descArray = desc.split(". ");
-                      newDesc = "";
-                      //console.log(newDesc)
-                      for (i = 0; i < 3; i++) {
-                        if (i < descArray.length){
-                        newDesc += descArray[i] + ". "
-                        }
-                      }
-                      //img exists here
-                      document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: "+newDesc + "<br><img height = 50px width =50px src=\"" + img + "\">";
-                  })
-                  .catch(function(error){
-                    console.log(error);
-                    
-                  });
+                  fetchImage(description, tagList[tag] + "Image")
+                  fetchDescription(description,tagList[tag],repName)
+                  document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
                 }
-                //place .gov info here
-                repUrlLink = response.result.officials[tag].urls[0]
-                document.getElementById(tagList[tag]).innerHTML = "Name: " + repName +"<br>Description: <a href=" + repUrlLink + " target=_blank>" + repUrlLink + "</a>"
+                else{
+                  //place .gov info here
+                  document.getElementById(tagList[tag]).innerHTML = "Name: " + repName;
+                  document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
+                }
+                
             }
-                //logan: might work, change 0 to tag
-                //fetchImage(response.result.officials[0].urls[1])
                 
               },
               function(err) { console.error("Execute error", err); });
