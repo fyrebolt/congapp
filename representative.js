@@ -9,7 +9,7 @@ function loadClient() {
   
 
   // Make sure the client is loaded before calling this method.
-  function execute(level,inputLine, searchType, tagList) {
+  async function execute(level,inputLine, searchType, tagList) {
     return gapi.client.civicinfo.representatives.representativeInfoByAddress({
       "address": inputLine,
       "levels": [
