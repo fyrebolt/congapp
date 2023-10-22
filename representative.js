@@ -88,10 +88,32 @@ function checkEmpty(tags){
     }
     return false
 }
+function checkIfAll(tags){
+    for(let i = 0; i < tags.length; i++){
+        if(document.getElementById(tags[i]).value == false){
+            return false
+        }
+    }
+    return true
+}
+function checkIfAddressCityZip(){
+    const tags = ["address", "city", "zipCode"]
+    for(let i = 0; i < tags.length; i++){
+        if(document.getElementById(tags[i]).value == false){
+            return true
+        }
+    }
+    return false
+}
+function checkIfAddressCity(){
+    if(document.getElementById("address").value || document.getElementById("city).value){
+        return true                                                                      
+    }
+    return false
+}
 
 gapi.load("client");
 searchInput = document.getElementById("searchInput")
-//bar = document.getElementById("houseRepImage")
 searchInput.onclick = () => {
     const tags = ["address", "city", "state", "zipCode"]
     if(checkEmpty(tags)){
@@ -103,11 +125,23 @@ searchInput.onclick = () => {
             }
         }
         inputLine = inputLine.slice(0, -1)
-        //removes last ,
-        console.log(inputLine)
-        execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
-        execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
-        document.getElementById("test").textContent = ""
+        // calling all calls
+        execute("country",inputLine,"headOfGovernment",["president"])
+        execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
+        execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
+        execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
+        if(checkIfAll(tags)){
+            //all input boxes full
+            execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
+            execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
+        }
+        if(checkIfAddressCityZip()){
+            execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
+        }
+        if(checkIfAddressCity()){
+            execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+        }
+        
     }
     else{
         window.alert("Location Boxes Empty\nOne Location Input Required")
