@@ -106,7 +106,7 @@ function checkIfAddressCityZip(){
     return false
 }
 function checkIfAddressCity(){
-    if(document.getElementById("address").value || document.getElementById("city).value){
+    if(document.getElementById("address").value || document.getElementById("city").value){
         return true                                                                      
     }
     return false
