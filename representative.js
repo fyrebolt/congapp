@@ -111,10 +111,19 @@ function checkIfAddressCity(){
     }
     return false
 }
+function resetAll(){
+    const tags = ["president","vicePresident","fedHouseRep","fedSenateOne","fedSenateTwo","governor","lieutenantGovernor","stateHouseRep","stateSenator"]
+    for(let i = 0; i < tags.length; i++){
+        document.getElementById(tags[i]).value = ""
+        document.getElementById(tags[i] + "Contact").value = ""
+        document.getElementById(tags[i] + "Image").value = ""
+    }
+}
 
 gapi.load("client");
 searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
+    resetAll()
     const tags = ["address", "city", "state", "zipCode"]
     if(checkEmpty(tags)){
         let inputLine = ""
