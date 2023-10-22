@@ -99,7 +99,7 @@ function checkIfAll(tags){
 function checkIfAddressCityZip(){
     const tags = ["address", "city", "zipCode"]
     for(let i = 0; i < tags.length; i++){
-        if(document.getElementById(tags[i]).value == false){
+        if(document.getElementById(tags[i]).value){
             return true
         }
     }
