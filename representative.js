@@ -114,9 +114,9 @@ function checkIfAddressCity(){
 function resetAll(){
     const tags = ["president","vicePresident","fedHouseRep","fedSenateOne","fedSenateTwo","governor","lieutenantGovernor","stateHouseRep","stateSenator"]
     for(let i = 0; i < tags.length; i++){
-        document.getElementById(tags[i]).value = ""
-        document.getElementById(tags[i] + "Contact").value = ""
-        document.getElementById(tags[i] + "Image").value = ""
+        document.getElementById(tags[i]).textContent = ""
+        document.getElementById(tags[i] + "Contact").textContent = ""
+        document.getElementById(tags[i] + "Image").textContent = ""
     }
 }
 
