@@ -13,7 +13,8 @@ signupButton.onclick = (event) =>{
     .then((userCredential) => {
         localStorage.setItem("loggedIn","yes")
         localStorage.setItem("user", email)
-        window.location.href = "home.html"    
+        database.ref(email+'/status').set({surveyed: false}).then(()=>{
+        window.location.href = "setup.html"})    
     })
     .catch((error) => {
         errorLabel.className="";
@@ -32,7 +33,8 @@ googleLogin.onclick = (event) => {
         profile = result.user.providerData[0];
         email = profile.email
         localStorage.setItem("user", email)
-        window.location.href = "home.html"  
+        database.ref(email+'/status').set({surveyed: false}).then(()=>{
+        window.location.href = "setup.html"})   
     }).catch(function(error) {
         errorLabel.className="";
         errorMessage = error.message
