@@ -12,6 +12,7 @@ signupButton.onclick = (event) =>{
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         localStorage.setItem("loggedIn","yes")
+        localStorage.setItem("user", email)
         window.location.href = "home.html"    
     })
     .catch((error) => {
@@ -28,8 +29,9 @@ googleLogin.onclick = (event) => {
     provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         localStorage.setItem("loggedIn","yes")
-        //profile = result.user.providerData[0];
-        //email = profile.email;
+        profile = result.user.providerData[0];
+        email = profile.email
+        localStorage.setItem("user", email)
         window.location.href = "home.html"  
     }).catch(function(error) {
         errorLabel.className="";

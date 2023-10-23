@@ -144,6 +144,49 @@ body{
     font-weight:normal;
     color:white;
 }
+#profileWrapper{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:stretch;
+    padding:150px 0px 50px 0px;
+    overflow:auto;
+}
+.profileLabel{
+    font-weight:bold;
+    margin:10px 20px;
+    font-size:20px;
+}
+.infoLabel{
+    margin:10px 20px;
+    font-size:20px;
+}
+#guestWrapper{
+    height:80%;
+    display:none;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding:100px 0px;
+}
+#guestWrapper h4{
+    font-size:24px;
+    text-align:center;
+}
+#guestWrapper a{
+    text-decoration:none;
+    color:rgb(40, 168, 210);
+}
+#logout{
+    align-self:center;
+    font-size:18px;
+    font-weight:bold;
+    color:#2c2c2c;
+    background-color:#b03030;
+    border-radius:3px;
+    margin: 25px 0px 25px 0px;
+    padding:5px 10px;
+}
 .hidden{
     opacity:0;
 }

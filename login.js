@@ -12,6 +12,7 @@ loginButton.onclick = (event) =>{
 firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     localStorage.setItem("loggedIn","yes")
+    localStorage.setItem("user", email)
     window.location.href = "home.html" 
   })
   .catch((error) => {
@@ -26,9 +27,10 @@ googleLogin.onclick = (event) => {
     provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         localStorage.setItem("loggedIn","yes")
+        profile = result.user.providerData[0];
+        email = profile.email
+        localStorage.setItem("user", email)
         window.location.href = "home.html"
-        //profile = result.user.providerData[0];
-        //email = profile.email
     }).catch(function(error) {
       errorLabel.className="";
       errorLabel.innerHTML = "Invalid login credentials"; 
