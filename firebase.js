@@ -15,6 +15,12 @@ function check(){
     if((localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")==null) || (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")==null)|| (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")=="null"|| (localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")=="null"))){
         window.location.href = "index.html";
     }
+    email = localStorage.getItem("user")
+    database.ref(email+'/status').once('value').then((snapshot)=>{ 
+        if(snapshot.val().surveyed==false){
+            window.location.href= "setup.html"
+        }
+    })
 }
 function checkIndex(){
     if(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes"){
