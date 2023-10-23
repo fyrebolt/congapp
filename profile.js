@@ -20,6 +20,7 @@ createButton.onclick = (event) =>{
     localStorage.setItem("loggedIn", "null")
     sessionStorage.setItem("guest", "null")
     localStorage.setItem("user", "null")
+    window.location.href = "register.html"
 }
 
 emailLabel = document.getElementById("emailLabel")
