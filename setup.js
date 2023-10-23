@@ -17,7 +17,12 @@ submit.onclick = (event) => {
         data["zip"] = zipInput.value
         data["birthdate"] = birthInput.value
         database.ref(user+'/info').set(data).then(()=>{
-            console.log("data sent")
+            database.ref(user+'/status').set({surveyed:true}).then(()=>{
+            window.location.href = "profile.html"
         })
+        })
+    }
+    else{
+        console.log("Please enter valid information")
     }
 }
