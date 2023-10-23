@@ -12,17 +12,19 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database()
 
 function check(){
-    if((localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")==null) || (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")==null)|| (localStorage.getItem("loggedIn")=="null"&&sessionStorage.getItem("guest")=="null"|| (localStorage.getItem("loggedIn")==null&&sessionStorage.getItem("guest")=="null"))){
+    if(!(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes")){
         window.location.href = "index.html";
     }
-    email = localStorage.getItem("user")
-    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-    user = user.substring(0,user.indexOf("@"))
-    database.ref(user+'/status').once('value').then((snapshot)=>{ 
-        if(snapshot.val().surveyed==false && window.location.href!= "setup.html"){
-            window.location.href= "setup.html"
-        }
-    })
+    if(sessionStorage.getItem("guest")!="yes"){
+        email = localStorage.getItem("user")
+        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+        user = user.substring(0,user.indexOf("@"))
+        database.ref(user+'/status').once('value').then((snapshot)=>{ 
+            if(snapshot.val().surveyed==false && window.location.href!= "setup.html"){
+                window.location.href= "setup.html"
+            }
+        })
+    }
 }
 function checkIndex(){
     if(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes"){
