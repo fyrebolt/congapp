@@ -14,14 +14,24 @@
     <title>setup</title>
 </head>
 <body onload="check()">
-    <div id="loginHeader"></div>
-    <div id="indexWrapper">
-        <div id="indexButtons">
-            <div class="indexButton" id ="signUp">Sign Up</div>
-            <div class="indexButton" id ="logIn">Log in</div>
-            <div class="indexButton" id ="guest">Continue as Guest</div>
-        </div>
+    <div id="loginHeader">
+        <span class="hidden">></span>
+        <h3>Account Setup</h3>
+        <span class="hidden">></span>
     </div>
-    <div id="loginFooter"></div>        
+    <div id="setupWrapper">
+        <h4>Get Started</h4>
+        <h5>Enter your information below to get accurate representative info!</h5>
+        <p class="profileLabel">Home Address</p>
+        <input class="setupInput" id="addressInput" type="text" maxlength="50" placeholder="Enter your home address">
+        <p class="profileLabel">City</p>
+        <input class="setupInput" id="cityInput" type="text" maxlength="50" placeholder="Enter your city">
+        <p class="profileLabel">Zip Code (Optional)</p>
+        <input class="setupInput" id="zipInput" type="text" maxlength="5" placeholder="Enter your zip code">
+        <p class="profileLabel">Birth Date</p>
+        <input class="setupInput" id="birthInput" type="date">
+        <p id="continue">Continue</p>
+    </div>
+    <div id="loginFooter"></div>         
 </body>
 </html>
