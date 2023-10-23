@@ -79,10 +79,10 @@ editButton.onclick = (event) => {
                 birthInput.value = data.birthdate
             })
             })
+            editButton.innerHTML = "Edit"
         }
         else{
             console.log("Please enter valid information")
         }
-        editButton.innerHTML = "Edit"
     }
 }
