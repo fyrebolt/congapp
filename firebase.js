@@ -23,6 +23,9 @@ function check(){
             if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
                 window.location.href= "setup.html"
             }
+            if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
+                window.location.href= "profile.html"
+            }
         })
     }
 }
