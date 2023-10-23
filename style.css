@@ -149,7 +149,7 @@ body{
     flex-direction:column;
     justify-content:center;
     align-items:stretch;
-    padding:100px 0px 0px 0px;
+    padding:50px 0px 0px 0px;
     overflow:auto;
 }
 #profileHeader{
