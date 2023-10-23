@@ -8,7 +8,7 @@ logoutButton.onclick = () =>{
 emailLabel = document.getElementById("emailLabel")
 profileWrapper = document.getElementById("profileWrapper")
 if(sessionStorage.getItem("guest")!="yes"){
-    emailLabel.innerHTML = localStorage.getItem("email")
+    emailLabel.innerHTML = localStorage.getItem("user")
 }
 else{
     profileWrapper.style.display = "none";

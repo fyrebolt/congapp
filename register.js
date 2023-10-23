@@ -13,7 +13,9 @@ signupButton.onclick = (event) =>{
     .then((userCredential) => {
         localStorage.setItem("loggedIn","yes")
         localStorage.setItem("user", email)
-        database.ref(email+'/status').set({surveyed: false}).then(()=>{
+        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+        user = user.substring(0,user.indexOf("@"))
+        database.ref(user+'/status').set({surveyed: false}).then(()=>{
         window.location.href = "setup.html"})    
     })
     .catch((error) => {
@@ -33,7 +35,9 @@ googleLogin.onclick = (event) => {
         profile = result.user.providerData[0];
         email = profile.email
         localStorage.setItem("user", email)
-        database.ref(email+'/status').set({surveyed: false}).then(()=>{
+        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+        user = user.substring(0,user.indexOf("@"))
+        database.ref(user+'/status').set({surveyed: false}).then(()=>{
         window.location.href = "setup.html"})   
     }).catch(function(error) {
         errorLabel.className="";
