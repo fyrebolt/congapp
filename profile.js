@@ -51,16 +51,16 @@ editButton.onclick = (event) => {
     event.preventDefault()
     if(editButton.innerHTML == "Edit"){
         editButton.innerHTML = "Save"
-        addressInput.disabled = "false"
-        cityInput.disabled = "false"
-        zipInput.disabled = "false"
-        birthInput.disabled = "false"
+        addressInput.disabled = false
+        cityInput.disabled = false
+        zipInput.disabled = false
+        birthInput.disabled = false
     }
     else{
-        addressInput.disabled = "true"
-        cityInput.disabled = "true"
-        zipInput.disabled = "true"
-        birthInput.disabled = "true"
+        addressInput.disabled = true
+        cityInput.disabled = true
+        zipInput.disabled = true
+        birthInput.disabled = true
         if(addressInput.value.trim() && cityInput.value.trim() && ((zipInput.value.length==5 && !isNaN(zipInput.value)) || !zipInput.value.trim()) && birthInput.value!=0){
             data={}
             email = localStorage.getItem("user")
