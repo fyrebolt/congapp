@@ -3,7 +3,7 @@ cityInput = document.getElementById("cityInput")
 zipInput = document.getElementById("zipInput")
 birthInput = document.getElementById("birthInput")
 submit = document.getElementById("continue")
-continue.onlick = (event) => {
+continue.onclick = (event) => {
     event.preventDefault()
     console.log(addressInput.value)
     console.log(cityInput.value)
