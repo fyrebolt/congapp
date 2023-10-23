@@ -36,10 +36,10 @@ if(sessionStorage.getItem("guest")!="yes"){
     user = user.substring(0,user.indexOf("@"))
     database.ref(user+'/info').once('value').then((snapshot)=>{ 
         data = snapshot.val()
-        addressInput.value = data[data[0]]
-        cityInput.value = data[data[1]]
-        zipInput.value = data[data[2]]
-        birthInput.value = data[data[3]]
+        addressInput.value = data.address
+        cityInput.value = data.city
+        zipInput.value = data.zip
+        birthInput.value = data.birthdate
     })
 }
 else{
