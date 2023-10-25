@@ -165,9 +165,18 @@ body{
     margin:10px 20px;
     font-size:16px;
 }
+.whyVoteLabel{
+    font-weight:bold;
+    margin:10px 20px;
+    font-size:24px;
+}
 .electionDate{
-    margin:20px 40px;
+    margin:12px 40px;
     font-size:32px;
+}
+.dateLabel{
+    margin:10px 40px;
+    font-size:18px;
 }
 .infoLabel{
     margin:10px 20px;
