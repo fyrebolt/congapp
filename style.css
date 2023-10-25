@@ -150,6 +150,12 @@ body{
     justify-content:center;
 }
 .navTitle{
+    color:#b1afa7;
+    font-size:12px;
+    text-align:center;
+    margin:5px 0px;
+}
+.navTitleA{
     color:#f6f3eb;
     font-size:12px;
     text-align:center;
