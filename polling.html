@@ -10,19 +10,25 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="firebase.js" defer></script>
-    <script src="profile.js" defer></script>
-    <title>Profile</title>
+    <title>Polling</title>
 </head>
 <body onload="check()">
-    <header>
-        <p>Polling locations</p>
-        <div style="border: 2px solid #000000; overflow: hidden; margin: 15px auto; max-width: 440px;">
-            <iframe scrolling="no" src="https://www.acgov.org/rovapps/maps/avl/" style="border: 0px none; margin-left: -188px; height: 1050px; margin-top: -372px; width: 645px;">
+    <div id="loginHeader">
+        <span class="hidden">></span>
+        <h3>Polling locations</h3>
+        <span class="hidden">></span>
+    </div>
+    <div id="profileWrapper">
+        <p id="pollTitle">Voting locations in Alameda County</p>
+        <p id="pollDesc">Note: As we are not close to an election, voting locations for other counties cannot be displayed.</p>
+        <div id="mapWrapper">
+            <iframe id="map" scrolling="no" src="https://www.acgov.org/rovapps/maps/avl/" style="border: 0px none; margin-left: -188px; height: 1050px; margin-top: -372px; width: 645px;">
             </iframe>
         </div>
-    </header>
+    </div>
+    <div id="loginFooter">
+    </div>
 </body>
 </html>
-
 
 
