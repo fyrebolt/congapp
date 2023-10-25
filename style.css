@@ -241,9 +241,14 @@ body{
     margin: 10px 0px;
     padding:5px 10px;
 }
+.navIcon{
+    height:90%;
+}
 .hidden{
     opacity:0;
 }
+
+
 
 /* all the stuff below is for dropdown */
 .dropdown-container {
