@@ -241,8 +241,11 @@ body{
     margin: 10px 0px;
     padding:5px 10px;
 }
-.navIcon{
+.navItem{
     height:90%;
+}
+.navIcon{
+    height:100%
 }
 .hidden{
     opacity:0;
