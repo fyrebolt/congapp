@@ -151,12 +151,12 @@ body{
 }
 .navTitle{
     color:#f6f3eb;
-    font-size:14px;
+    font-size:12px;
     text-align:center;
     margin:5px 0px;
 }
 .navItem{
-    height:55%;
+    height:50%;
     margin:5px 0px 0px 0px;
 }
 .navIcon{
