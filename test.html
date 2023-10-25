@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="profile.js" defer></script>
+    <title>New Home</title>
+</head>
+<body onload="check()">
+    <div id="loginHeader">
+        <span class="hidden">></span>
+        <h3>Home</h3>
+        <span class="hidden">></span>
+    </div>
+    <div id="profileWrapper">
+        <div id="profileHeader">
+            <br><br>
+            <p>Voting Dates</p>
+        </div>
+        <br>
+        <div id="noBirthdate">
+            <p class="profileLabel">Next General Election</p>
+            <p class="electionDate" id="hastins_job">put the next general election here, if they havent given birthdate</p>
+        </div>
+        <div id="birthdate">
+            <p class="profileLabel">Your Election</p>
+            <p class="electionDate" id="hastins_job">put the next general election here they can vote in using birthdate</p>
+            <p class="profileLabel">Next General Election</p>
+            <p class="infoLabel" id="hastins_job">put the next general election here</p>
+        </div>
+        <p class="profileLabel">Next Presidential Election</p>
+        <p class="infoLabel" id="hastins_job">put the next election i can vote in here, if applicaple</p>
+        
+    </div>
+    <div id="loginFooter">
+        <a class="navItem" href="home.html"><img class="navIcon" src="images/voteI.png"></a>
+        <a class="navItem" href="representatives.html"><img src="images/repI.png" class="navIcon" ></a>
+        <a class="navItem" href="polling.html"><svg xmlns="http://www.w3.org/2000/svg" fill="#b4b2aa" class="navIcon bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+          </svg></a>
+        <a class="navItem" href="profile.html"><svg xmlns="http://www.w3.org/2000/svg" fill="#f6f3eb" class="navIcon bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg></a>
+    </div>    
+</body>
+</html>
+

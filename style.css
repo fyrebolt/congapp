@@ -165,6 +165,10 @@ body{
     margin:10px 20px;
     font-size:16px;
 }
+.electionDate{
+    margin:20px 40px;
+    font-size:32px;
+}
 .infoLabel{
     margin:10px 20px;
     font-size:18px;
