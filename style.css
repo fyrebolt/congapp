@@ -132,15 +132,34 @@ body{
     background-color:#3c3b6e;
     height:10%;
     display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:space-evenly;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
 }
 #loginFooter h3{
     margin:0px;
     font-size:20px;
     font-weight:normal;
     color:white;
+}
+#navIconBar{
+    display:flex;
+    height:80%;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+    margin:10px 0px 0px 0px;
+}
+#navTitleBar{
+    display:flex;
+    height:20%;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+    color:#f6f3eb;
+    font-size:14px;
+    text-align:center;
+    margin:5px 0px;
 }
 #profileWrapper{
     height:80%;
@@ -165,18 +184,9 @@ body{
     margin:10px 20px;
     font-size:16px;
 }
-.whyVoteLabel{
-    font-weight:bold;
-    margin:10px 20px;
-    font-size:24px;
-}
 .electionDate{
-    margin:12px 40px;
+    margin:20px 40px;
     font-size:32px;
-}
-.dateLabel{
-    margin:10px 40px;
-    font-size:18px;
 }
 .infoLabel{
     margin:10px 20px;
@@ -254,7 +264,7 @@ body{
     padding:5px 10px;
 }
 .navItem{
-    height:65%;
+    height:100%;
 }
 .navIcon{
     height:100%;
