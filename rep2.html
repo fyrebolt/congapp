@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="representative.js" defer></script>
+    <title>My Reps</title>
+</head>
+<body onload="check()">
+    <div id="loginHeader">
+        <span class="hidden"></span>
+        <h3>My Representatives</h3>
+        <span class="hidden"></span>
+    </div>
+    <div id="profileWrapper">
+        <div id="profileHeader">
+            <p>Find Your Representatives</p>
+        </div>
+        <input class="setupInput" id="address" type="text" maxlength="50" placeholder="Home address">
+        <br>
+        <input class="setupInput" id="city" type="text" maxlength="50" placeholder="City">
+        <br>
+        <input class="setupInput" id="zipCode" type="text" maxlength="5" placeholder="Zip code">
+        <button id = "searchInput">Search</button>
+        <div id = "outputData">
+            <div id = "federalLevelRep">
+                <ol id = "TopOfficials">
+                    <p id = "president"></p>
+                    <p id = "presidentContact"></p>
+                    <p id = "presidentImage"></p>
+                    <p id = "vicePresident"></p>
+                    <p id = "vicePresidentContact"></p>
+                    <p id = "vicePresidentImage"></p>
+                </ol>
+                <ol id="FedHouseRep">
+                    <p id="fedHouseRep"></p>
+                    <p id="fedHouseRepContact"></p>
+                    <p id="fedHouseRepImage"></p>
+                </ol>
+                <ol id="FedSenators">
+                    <p id="fedSenateOne"></p>
+                    <p id="fedSenateOneContact"></p>
+                    <p id="fedSenateOneImage"></p>
+                    <p id="fedSenateTwo"></p>
+                    <p id="fedSenateTwoContact"></p>
+                    <p id="fedSenateTwoImage"></p>
+                </ol>
+            </div>
+            <div id = "stateLevelRep">
+                <ol id = "TopOfficials">
+                    <p id = "governor"></p>
+                    <p id = "governorContact"></p>
+                    <p id = "governorImage"></p>
+                    <p id = "lieutenantGovernor"></p>
+                    <p id = "lieutenantGovernorContact"></p>
+                    <p id = "lieutenantGovernorImage"></p>
+                </ol>
+                <ol id = "StateHouseRep">
+                    <p id="stateHouseRep"></p>
+                    <p id="stateHouseRepContact"></p>
+                    <p id="stateHouseRepImage"></p>
+                </ol>
+                <ol id = "StateSenator">
+                    <p id="stateSenator"></p>
+                    <p id="stateSenatorContact"></p>
+                    <p id="stateSenatorImage"></p>
+                </ol>
+            </div>
+        </div>
+
+        </div>
+    <div id="loginFooter">
+        <div class="navCol">
+            <a class="navItem" href="home.html"><img class="navIcon" src="images/voteI.png"></a>
+            <p class="navTitle">Home</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="wiki.html"><img class="navIcon" src="images/checkI.png"></a>
+            <p class="navTitle">Checklist</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="representative.html"><img src="images/repI.png" class="navIcon" ></a>
+            <p class="navTitle">Your Reps</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="polling.html"><img src="images/profileI.png" class="navIcon" ></a>
+            <p class="navTitle">Polling</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="profile.html"><img src="images/profileA.png" class="navIcon" ></a>
+            <p class="navTitleA">Profile</p>
+        </div>
+    </div>    
+</body>
+</html>
+
