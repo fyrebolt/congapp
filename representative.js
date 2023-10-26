@@ -27,7 +27,7 @@ function loadClient() {
                     console.log(response);
                         var pages = response.query.pages;
                         img = pages[Object.keys(pages)[0]].original.source;
-                        document.getElementById(TAG).innerHTML = "<img height = 50px width =50px src=\"" + img + "\">" 
+                        document.getElementById(TAG).innerHTML = "<img  width =150px src=\"" + img + "\">" 
                     })
                     .catch(function(error){console.log(error);});
     }
