@@ -1,4 +1,20 @@
 function loadClient() {
+    if(!(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes")){
+        window.location.href = "index.html";
+    }
+    if(sessionStorage.getItem("guest")!="yes"){
+        email = localStorage.getItem("user")
+        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+        user = user.substring(0,user.indexOf("@"))
+        database.ref(user+'/status').once('value').then((snapshot)=>{ 
+            if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
+                window.location.href= "setup.html"
+            }
+            if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
+                window.location.href= "profile.html"
+            }
+        })
+    }
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },

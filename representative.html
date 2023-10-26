@@ -15,10 +15,12 @@
     <title>Representatives</title>
 </head>
 <body onload="loadClient()">
-    <header>
-        <p>Who Are My Representatives?</p>
-    </header>
-        <div id="dataInput">
+    <div id="loginHeader">
+        <span class="hidden">></span>
+        <h3>Your Representatives</h3>
+        <span class="hidden">></span>
+    </div>
+    <div id="dataInput">
             <ol>
                 <li id="Address">
                     <p>Address</p>
@@ -38,8 +40,8 @@
                 </li>
             </ol>
             <button id = "searchInput">Search</button>
-        </div>
-        <div id = "outputData">
+    </div>
+    <div id = "outputData">
             <div id = "federalLevelRep">
                 <ol id = "TopOfficials">
                     <p id = "president"></p>
@@ -83,6 +85,28 @@
                     <p id="stateSenatorImage"></p>
                 </ol>
             </div>
-        </div>
+    </div>
+    <div id="loginFooter">
+            <div class="navCol">
+                <a class="navItem" href="home.html"><img class="navIcon" src="images/voteI.png"></a>
+                <p class="navTitle">Home</p>
+            </div>
+            <div class="navCol">
+                <a class="navItem" href="wiki.html"><img class="navIcon" src="images/checkI.png"></a>
+                <p class="navTitle">Checklist</p>
+            </div>
+            <div class="navCol">
+                <a class="navItem" href="representative.html"><img src="images/repA.png" class="navIcon" ></a>
+                <p class="navTitleA">Your Reps</p>
+            </div>
+            <div class="navCol">
+                <a class="navItem" href="polling.html"><img src="images/mapI.png" class="navIcon" ></a>
+                <p class="navTitle">Polling</p>
+            </div>
+            <div class="navCol">
+                <a class="navItem" href="profile.html"><img src="images/profileI.png" class="navIcon" ></a>
+                <p class="navTitle">Profile</p>
+            </div>
+    </div> 
 </body>
 </html>
