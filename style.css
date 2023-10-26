@@ -191,19 +191,6 @@ body{
     margin:10px 20px;
     font-size:16px;
 }
-.whyVoteLabel{
-    font-weight:bold;
-    margin:10px 20px;
-    font-size:24px;
-}
-.electionDate{
-    margin:12px 40px;
-    font-size:32px;
-}
-.dateLabel{
-    margin:10px 40px;
-    font-size:18px;
-}
 .infoLabel{
     margin:10px 20px;
     font-size:18px;
@@ -302,12 +289,30 @@ body{
     margin:5px 20px;
     text-align:center;
 }
+#repMiddle{
+    display:flex;
+    flex-direction:column;
+    height:80%;
+    justify-content:start;
+}
 .hidden{
     opacity:0;
 }
 
 
-
+.whyVoteLabel{
+    font-weight:bold;
+    margin:10px 20px;
+    font-size:24px;
+}
+.electionDate{
+    margin:12px 40px;
+    font-size:32px;
+}
+.dateLabel{
+    margin:10px 40px;
+    font-size:18px;
+}
 /* all the stuff below is for dropdown */
 .dropdown-container {
     display: flex;
