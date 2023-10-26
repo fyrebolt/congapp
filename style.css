@@ -370,6 +370,7 @@ body{
     align-items:center;
     border:solid 2px;
     border-radius: 5px 5px 0px 0px;
+    margin:10px;
 }
 .rep p img{
     object-fit: contain;
