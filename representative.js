@@ -49,8 +49,7 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      //img exists here
-                      document.getElementById(TAG).innerHTML = "Name: " + repName +"<br>Description: "+newDesc;
+                      document.getElementById(TAG + "Description").innerHTML ="Description: "+newDesc;
                   })
                   .catch(function(error){
                     console.log(error);
@@ -82,13 +81,14 @@ function loadClient() {
                   description = descriptionLink.substring(30)
                   fetchImage(description, tagList[tag] + "Image")
                   fetchDescription(description,tagList[tag],repName)
-                  document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
                 }
                 else{
                   //place .gov info here
-                  document.getElementById(tagList[tag]).innerHTML = "Name: " + repName;
-                  document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
                 }
+                //basic stuff for every rep
+                document.getElementById(tagList[tag]).innerHTML = "Name: " + repName;
+                document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
+                
                 
             }
                 
@@ -128,11 +128,13 @@ function checkIfAddressCity(){
     return false
 }
 function resetAll(){
+    //reset all disabled
     const tags = ["president","vicePresident","fedHouseRep","fedSenateOne","fedSenateTwo","governor","lieutenantGovernor","stateHouseRep","stateSenator"]
     for(let i = 0; i < tags.length; i++){
         document.getElementById(tags[i]).textContent = ""
         document.getElementById(tags[i] + "Contact").textContent = ""
         document.getElementById(tags[i] + "Image").textContent = ""
+        document.getElementById(tags[i] + "Description").textContent = ""
     }
 }
 
@@ -151,6 +153,7 @@ searchInput.onclick = () => {
         }
         inputLine = inputLine.slice(0, -1)
         // calling all calls
+        //need bad input catch + visibility 
         execute("country",inputLine,"headOfGovernment",["president"])
         execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
         execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
