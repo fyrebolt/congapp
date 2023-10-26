@@ -301,9 +301,12 @@ body{
     font-size:24px;
     margin:10px 10px;
 }
-#repDesc{
+#repDescription{
     margin:10px 10px;
     font-size:18px;
+}
+.repDesc{
+    display:none;
 }
 .dataInput{
     margin:5px 20px;
