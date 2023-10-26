@@ -86,7 +86,7 @@ function loadClient() {
                   //place .gov info here
                 }
                 //basic stuff for every rep
-                document.getElementById(tagList[tag]).innerHTML = "Name: " + repName;
+                document.getElementById(tagList[tag]).innerHTML = repName;
                 document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
                 
                 

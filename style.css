@@ -308,6 +308,9 @@ body{
 .repDesc{
     display:none;
 }
+.repContact{
+    display:none;
+}
 .dataInput{
     margin:5px 20px;
     font-size:14px;
@@ -369,7 +372,7 @@ body{
 .rep{
     display:flex;
     flex-direction:column;
-    width:200px;
+    min-width:fit-content;
     align-items:center;
     border:solid 2px;
     border-radius: 5px 5px 0px 0px;
@@ -378,7 +381,10 @@ body{
 .rep p img{
     object-fit: contain;
     height: 200px;
-    width:80%;
+    width:100%;
+}
+.rep p{
+    margin:0px;
 }
 .hidden{
     opacity:0;
