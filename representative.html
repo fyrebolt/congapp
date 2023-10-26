@@ -21,72 +21,76 @@
         <span class="hidden">></span>
     </div>
     <div id="repMiddle">
-        <p>Who are my representatives?</p>
-        <div id="dataInput">
-            <ol>
-                <li id="Address">
-                    <p>Address</p>
-                    <input value = "" id="address" type = "text" placeholder = "123 Main Street"></input>
-                </li>
-                <li id="City">
-                    <p>City Name</p>
-                    <input value = "" id="city" type = "text" placeholder = "Los Angeles"></input>
-                </li>
-                <li id="State">
-                    <p>State Name</p>
-                    <input value = "" id="state" type = "text" placeholder = "California"></input>
-                </li>
-                <li id="Zip">
-                    <p>Zip Code</p>
-                    <input value = "" id="zipCode" type = "text" placeholder = "90001"></input>
-                </li>
-            </ol>
-            <button id = "searchInput">Search</button>
+        <p id="repTitle">Who are my representatives?</p>
+        <p id="repDesc">Enter your location information below</p>
+        <div id="dataInputWrapper">
+            <div id="dataInputLabels">
+                <p>Address</p>
+                <p>City Name</p>
+                <p>State Name</p>
+                <p>Zip Code</p>
+            </div>
+            <div id="dataInputs">
+                <input class="dataInput" id="address" type = "text" placeholder = "123 Main Street"></input>
+                <input class="dataInput" id="city" type = "text" placeholder = "Los Angeles"></input>
+                <input class="dataInput" id="state" type = "text" placeholder = "California"></input>
+                <input class="dataInput" id="zipCode" type = "text" placeholder = "90001"></input>
+            </div>
         </div>
-        <div id = "outputData">
-                <div id = "federalLevelRep">
-                    <ol id = "TopOfficials">
-                        <p id = "president"></p>
-                        <p id = "presidentContact"></p>
-                        <p id = "presidentImage"></p>
-                        <p id = "vicePresident"></p>
-                        <p id = "vicePresidentContact"></p>
-                        <p id = "vicePresidentImage"></p>
-                    </ol>
-                    <ol id="FedHouseRep">
-                        <p id="fedHouseRep"></p>
-                        <p id="fedHouseRepContact"></p>
-                        <p id="fedHouseRepImage"></p>
-                    </ol>
-                    <ol id="FedSenators">
-                        <p id="fedSenateOne"></p>
-                        <p id="fedSenateOneContact"></p>
-                        <p id="fedSenateOneImage"></p>
-                        <p id="fedSenateTwo"></p>
-                        <p id="fedSenateTwoContact"></p>
-                        <p id="fedSenateTwoImage"></p>
-                    </ol>
+        <button id = "searchInput">Search</button>
+        <div id="outputDataWrapper">
+            <p>Your federal representatives</p>
+            <div id="federalLevelRep">
+                <div class="rep">
+                    <p id = "presidentImage"></p>
+                    <p id = "president"></p>
+                    <p id = "presidentContact"></p>
                 </div>
-                <div id = "stateLevelRep">
-                    <ol id = "TopOfficials">
-                        <p id = "governor"></p>
-                        <p id = "governorContact"></p>
-                        <p id = "governorImage"></p>
-                        <p id = "lieutenantGovernor"></p>
-                        <p id = "lieutenantGovernorContact"></p>
-                        <p id = "lieutenantGovernorImage"></p>
-                    </ol>
-                    <ol id = "StateHouseRep">
-                        <p id="stateHouseRep"></p>
-                        <p id="stateHouseRepContact"></p>
-                        <p id="stateHouseRepImage"></p>
-                    </ol>
-                    <ol id = "StateSenator">
-                        <p id="stateSenator"></p>
-                        <p id="stateSenatorContact"></p>
-                        <p id="stateSenatorImage"></p>
-                    </ol>
+                <div class="rep">
+                    <p id = "vicePresidentImage"></p>
+                    <p id = "vicePresident"></p>
+                    <p id = "vicePresidentContact"></p>
                 </div>
+                <div class="rep">
+                    <p id="fedHouseRepImage"></p>
+                    <p id="fedHouseRep"></p>
+                    <p id="fedHouseRepContact"></p>
+                </div>
+                <div class="rep">
+                    <p id="fedSenateOneImage"></p>
+                    <p id="fedSenateOne"></p>
+                    <p id="fedSenateOneContact"></p>
+                </div>
+                <div class="rep">
+                    <p id="fedSenateTwoImage"></p>
+                    <p id="fedSenateTwo"></p>
+                    <p id="fedSenateTwoContact"></p>
+                </div>
+            </div>
+            <hr>
+            <p>Your state representatives</p>
+            <div id="stateLevelRep">
+                <div class="rep">
+                    <p id = "governorImage"></p>
+                    <p id = "governor"></p>
+                    <p id = "governorContact"></p>
+                </div>
+                <div class="rep">
+                    <p id = "lieutenantGovernorImage"></p>
+                    <p id = "lieutenantGovernor"></p>
+                    <p id = "lieutenantGovernorContact"></p>
+                </div>
+                <div class="rep">
+                    <p id="stateHouseRepImage"></p>
+                    <p id="stateHouseRep"></p>
+                    <p id="stateHouseRepContact"></p>
+                </div>
+                <div class="rep">
+                    <p id="stateSenatorImage"></p>
+                    <p id="stateSenator"></p>
+                    <p id="stateSenatorContact"></p>
+                </div>   
+            </div> 
         </div>
     </div>
     <div id="loginFooter">
