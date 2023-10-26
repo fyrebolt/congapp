@@ -295,6 +295,9 @@ body{
     height:80%;
     justify-content:start;
 }
+#dataInput{
+    
+}
 .hidden{
     opacity:0;
 }
