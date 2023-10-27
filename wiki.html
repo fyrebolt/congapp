@@ -53,33 +53,23 @@
         <p>Go to [link] to find your representatives! *remember to update with features as we go</p>
     </div>
 
-    <h1>Multiple Choice Quiz</h1>
+    <h1>Quiz</h1>
     <div id="quiz">
-        <div class="question">
-            <p>1. What is the capital of France?</p>
+        <div id="question-container">
+            <p id="question">Question 1: What type of government is the U.S. trying to follow?</p>
+        </div>
+        <div id="options-container">
             <label>
-                <input type="radio" name="q1" value="a"> a) London
+                <input type="radio" name="answer" value="a"> a) Democracy
             </label>
             <label>
-                <input type="radio" name="q1" value="b"> b) Madrid
+                <input type="radio" name="answer" value="b"> b) Aristocracy
             </label>
             <label>
-                <input type="radio" name="q1" value="c"> c) Paris
+                <input type="radio" name="answer" value="c"> c) Tyranny
             </label>
         </div>
-        <div class="question">
-            <p>2. What is 2 + 2?</p>
-            <label>
-                <input type="radio" name="q2" value="a"> a) 3
-            </label>
-            <label>
-                <input type="radio" name="q2" value="b"> b) 4
-            </label>
-            <label>
-                <input type="radio" name="q2" value="c"> c) 5
-            </label>
-        </div>
-        <button id="submit-button">Submit</button>
+        <button id="next-button">Next ></button>
     </div>
     <div id="results">
         <p>Your Score: <span id="score">0</span></p>

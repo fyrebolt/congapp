@@ -35,33 +35,63 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-const submitButton = document.getElementById("submit-button");
-const quiz = document.getElementById("quiz");
-const results = document.getElementById("results");
+const questions = [
+  {
+    question: "What type of government is the U.S. trying to follow?",
+    options: ["Democracy", "Aristocracy", "Tyranny"],
+    correctAnswer: "a"
+  },
+  {
+    question: "How are individual voices heard in the U.S. government?",
+    options: ["By shouting opinions at the president", "Voting for representatives that would put forth similar demands", "Turning up the volume"],
+    correctAnswer: "b"
+  },
+  // Add more questions in a similar format
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionContainer = document.getElementById("question-container");
+const optionsContainer = document.getElementById("options-container");
+const nextButton = document.getElementById("next-button");
 const scoreSpan = document.getElementById("score");
 
-submitButton.addEventListener("click", calculateScore);
+nextButton.addEventListener("click", nextQuestion);
 
-function calculateScore() {
-    const questions = document.querySelectorAll(".question");
-    let score = 0;
+function nextQuestion() {
+  const selectedAnswer = document.querySelector("input[name='answer']:checked");
 
-    questions.forEach((question, index) => {
-        const selectedAnswer = question.querySelector("input:checked");
+  if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+      score++;
+  }
 
-        if (selectedAnswer) {
-            if (selectedAnswer.value === "c") {
-                score++;
-            }
-        }
-    });
+  currentQuestion++;
 
-    showResults(score);
+  if (currentQuestion < questions.length) {
+      showQuestion(currentQuestion);
+  } else {
+      showResults(score);
+  }
+}
+
+function showQuestion(index) {
+  questionContainer.textContent = `Question ${index + 1}: ${questions[index].question}`;
+  optionsContainer.innerHTML = "";
+
+  questions[index].options.forEach((option, optionIndex) => {
+      const label = document.createElement("label");
+      label.innerHTML = `<input type="radio" name="answer" value="${String.fromCharCode(97 + optionIndex)}"> ${String.fromCharCode(97 + optionIndex)}) ${option}`;
+      optionsContainer.appendChild(label);
+  });
 }
 
 function showResults(score) {
-    quiz.style.display = "none";
-    results.style.display = "block";
-    scoreSpan.textContent = score;
+  document.getElementById("quiz").style.display = "none";
+  document.getElementById("results").style.display = "block";
+  scoreSpan.textContent = score;
 }
+
+showQuestion(currentQuestion);
+
 
