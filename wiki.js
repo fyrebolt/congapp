@@ -89,13 +89,14 @@ const allQuestions = [
   // Add more questions in a similar format
 ];
 
-const originalEntries = Object.entries(allQuestions);
+// const originalEntries = Object.entries(allQuestions);
 
 // Shuffle the array to randomize the order
-shuffleArray(originalEntries);
+shuffleArray(allQuestions);
 
 // Create a new dictionary with the first 3 shuffled items
-const questions = Object.fromEntries(originalEntries.slice(0, 3));
+// const questions = Object.fromEntries(originalEntries.slice(0, 3));
+const questions = allQuestions.slice(0, 3);
 console.log(questions);
 
 // Shuffle function to randomize the array
