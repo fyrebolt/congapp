@@ -54,7 +54,7 @@ const allQuestions = [
   {
     question: "Which government position represents your congressional district?",
     options: ["State governor", "City mayor", "Congressman/congresswoman"],
-    correctAnswer: "a"
+    correctAnswer: "c"
   },
   {
     question: "What happens on election day?",
