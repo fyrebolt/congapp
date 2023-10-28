@@ -35,7 +35,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-const questions = [
+const allQuestions = [
   {
     question: "What type of government is the U.S. trying to follow?",
     options: ["Democracy", "Aristocracy", "Tyranny"],
@@ -88,6 +88,24 @@ const questions = [
   // }
   // Add more questions in a similar format
 ];
+
+const originalEntries = Object.entries(allQuestions);
+
+// Shuffle the array to randomize the order
+shuffleArray(originalEntries);
+
+// Create a new dictionary with the first 3 shuffled items
+const questions = Object.fromEntries(originalEntries.slice(0, 3));
+
+// console.log(newDict);
+
+// Shuffle function to randomize the array
+// function shuffleArray(array) {
+//   for (let i = array.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array[j], array[i]];
+//   }
+// }
 
 let currentQuestion = 0;
 let score = 0;
