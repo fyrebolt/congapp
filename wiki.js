@@ -100,12 +100,12 @@ const questions = Object.fromEntries(originalEntries.slice(0, 3));
 // console.log(newDict);
 
 // Shuffle function to randomize the array
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-// }
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
 let currentQuestion = 0;
 let score = 0;
