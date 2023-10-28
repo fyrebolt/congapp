@@ -96,6 +96,7 @@ shuffleArray(originalEntries);
 
 // Create a new dictionary with the first 3 shuffled items
 const questions = Object.fromEntries(originalEntries.slice(0, 3));
+console.log(questions);
 
 // Shuffle function to randomize the array
 function shuffleArray(array) {
