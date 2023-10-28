@@ -46,6 +46,46 @@ const questions = [
     options: ["By shouting opinions at the president", "Voting for representatives that would put forth similar demands", "Turning up the volume"],
     correctAnswer: "b"
   },
+  {
+    question: "When is the next presidential election?",
+    options: ["November 5, 2023", "November 2, 2024", "November 5, 2024"],
+    correctAnswer: "c"
+  },
+  {
+    question: "Which government position represents your congressional district?",
+    options: ["State governor", "City mayor", "Congressman/congresswoman"],
+    correctAnswer: "a"
+  },
+  {
+    question: "What happens on election day?",
+    options: ["People cast their vote for who they believe will best represent the people and guide the nation towards prosperity", "Candidates as representatives are elected finally to become candidates of their respective political parties", "Candidates as representatives are elected finally to become candidates of their respective political parties"],
+    correctAnswer: "a"
+  },
+  {
+    question: "Why are electoral votes used instead of direct votes?",
+    options: ["There is no difference between the two other than wording.", "Electoral votes are a compromise between the federal government and state governments; this guarantees that states with significant populations cannot determine the outcome of the vote", "Direct votes may be counterfeit and not contribute to an accurate vote"],
+    correctAnswer: "b"
+  },
+  {
+    question: "How many electoral votes are required to win the election?",
+    options: ["270", "271", "269"],
+    correctAnswer: "a"
+  },
+  // {
+  //   question: "",
+  //   options: ["", "", ""],
+  //   correctAnswer: "a"
+  // },
+  // {
+  //   question: "",
+  //   options: ["", "", ""],
+  //   correctAnswer: "a"
+  // },
+  // {
+  //   question: "",
+  //   options: ["", "", ""],
+  //   correctAnswer: "a"
+  // }
   // Add more questions in a similar format
 ];
 
