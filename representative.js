@@ -88,7 +88,7 @@ function loadClient() {
                 else{
                   //place .gov info here
                     //sets photo to photo NA
-                    document.getElementById(tagList[tag]).innerHTML = "<img  width =150px src=images/nullPicture.png>" 
+                    document.getElementById(tagList[tag] +"Image").innerHTML = "<img  width =150px src=images/nullPicture.png>" 
                     //possibly change to api for description or image from name
                      
                 }
