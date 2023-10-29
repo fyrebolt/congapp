@@ -179,13 +179,15 @@ function getBirthday() {
 }
 
 function nextGeneralElection(){
-  const birthday = new Date('2000-01-07');
+  const birthday = new Date(getBirthday());
   console.log(birthday.toLocaleDateString());
-  console.log(birthday - nextGElections[0]);
+  var nextDate = new Date(nextGElections[0]);
+  console.log(nextDate - birthday);
   let i = 0;
-  while (nextGElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+  while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
     i++;
-    console.log()
+    nextDate = new Date(nextGElections[i]);
+    // console.log()
   }
   return nextGElections[i];
 }
