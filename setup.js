@@ -18,7 +18,7 @@ submit.onclick = (event) => {
         data["birthdate"] = birthInput.value
         database.ref(user+'/info').set(data).then(()=>{
             database.ref(user+'/status').set({surveyed:true}).then(()=>{
-            window.location.href = "profile.html"
+            window.location.href = "home.html"
         })
         })
     }
