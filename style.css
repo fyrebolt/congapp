@@ -497,3 +497,6 @@ label {
 #results p {
     font-weight: bold;
 }
+.disabled{
+    display:none;
+}
