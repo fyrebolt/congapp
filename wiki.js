@@ -207,6 +207,7 @@ function nextGeneralElection(){
         i++;
         nextDate = new Date(nextGElections[i]);
       }
+      console.log(nextGElections[i]);
       return nextGElections[i];
     })
   }
