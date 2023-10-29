@@ -43,7 +43,8 @@ else{
 }
 
 editButton = document.getElementById("editProfile")
-editButton.onclick = (event) => {
+//editButton.onclick = (event) => {
+window.onbeforeunload = (event) => {
     data={}
     data["option1"] = o1.checked;
     data["option2"] = o2.checked;
