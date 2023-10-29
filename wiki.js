@@ -182,9 +182,10 @@ function getBirthday() {
     database.ref(user+'/info').once('value').then((snapshot)=>{ 
       data = snapshot.val();
       birthdate = data.birthdate;
+      return birthdate;
     })
 
-    return birthdate;
+    // return birthdate;
   }
   else {
     return '1980-01-01';
