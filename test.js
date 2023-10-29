@@ -37,6 +37,7 @@ const nextGElections = [
 //   }
   
 function updateElectionDates(){
+    console.log(localStorage.getItem('user'));
     if (localStorage.getItem("user") != null){
         email = localStorage.getItem("user")
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
