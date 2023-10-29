@@ -1,10 +1,3 @@
-logoutButton = document.getElementById("logout1")
-logoutButton.onclick = () =>{
-    localStorage.setItem("loggedIn", "null")
-    sessionStorage.setItem("guest", "null")
-    localStorage.setItem("user", "null")
-    window.location.href="index.html"
-}
 
 logoutButton2 = document.getElementById("logout2")
 logoutButton2.onclick = () =>{
