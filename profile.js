@@ -50,8 +50,8 @@ else{
 editButton = document.getElementById("editProfile")
 editButton.onclick = (event) => {
     event.preventDefault()
-    if(editButton.innerHTML == "Edit"){
-        editButton.innerHTML = "Save"
+    if(editButton.src == "images/editIcon.png"){
+        editButton.src = "images/saveIcon.png"
         addressInput.disabled = false
         cityInput.disabled = false
         zipInput.disabled = false
@@ -80,7 +80,7 @@ editButton.onclick = (event) => {
                 birthInput.value = data.birthdate
             })
             })
-            editButton.innerHTML = "Edit"
+            editButton.src = "images/editIcon.png"
         }
         else{
             console.log("Please enter valid information")

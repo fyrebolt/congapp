@@ -202,6 +202,12 @@ body{
 #profileHeader p{
     margin:0px;
 }
+#profileHeader img{
+    width:30px;
+    border: solid 1px black;
+    border-radius:3px;
+    padding:5px;
+}
 .profileLabel{
     font-weight:bold;
     margin:10px 20px;
