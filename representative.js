@@ -30,6 +30,7 @@ function loadClient() {
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
     if(isUser){
+        resetAll()
         setAccountDataUser(user)
     }
   }
