@@ -166,6 +166,7 @@ function resetAll(){
 }
 
 gapi.load("client");
+
 searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
     resetAll()
@@ -237,4 +238,9 @@ for(let i = 0; i < boxList.length; i++){
         document.getElementById("repPopupContact").innerHTML = document.getElementById(tagIdName + "Contact").innerHTML
         
     }
+}
+let closeButtonClick = document.getElementById("repPopupCloseButton")
+closeButtonClick = function(){
+    document.getElementById("repMiddle").style.display = "flex"
+    document.getElementById("repPopup").style.display = "none"
 }
