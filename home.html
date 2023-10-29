@@ -10,20 +10,67 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="firebase.js" defer></script>
-    <script src="home.js" defer></script>
-    <title>Home (logged in)</title>
+    <script src="profile.js" defer></script>
+    <script src="test.js" defer></script>
+    <title>New Home</title>
 </head>
 <body onload="check()">
-    <header>
-        <p>Home (logged in)</p>
-        <div>
-            <p id="profileButton">go to profle</p>
-            <button id="representativesButton">Who are my Reprentatives?</button>
+        <span class="hidden"></span>
+    <div id="loginHeader">
+        <h3>Home</h3>
+        <span class="hidden"></span>
+    </div>
+    <div id="profileWrapper">
+        <!-- <div id="profileHeader">
+            <br><br>
+            <p>Voting Dates</p>
+        </div> -->
+        <br>
+        <div id="noBirthdate">
+            <p class="whyVoteLabel">Next General Election</p>
+            <!-- below IF NO BIRTHDDAY -->
+            <p class="electionDate" id="nextGeneralElection">Next General Election</p> 
         </div>
-        <p id = "dave">s</p>
-    </header>
+        <div id="birthdate">
+            <p class="whyVoteLabel">Your Next Election</p>
+            <p class="electionDate" id="userNextElection"></p>
+            <p class="profileLabel">Next General Election</p>
+            <p class="dateLabel" id="anotherNextGeneralElection"></p>
+        </div>
+        <p class="profileLabel">Next Presidential Election</p>
+        <p class="dateLabel" id="nextPresidentialElection">put the next presidential election regardless of repeats</p>
+        <br><br>
+        <p class="whyVoteLabel">Why should I vote?</p>
+        <p class="dateLabel" id="hastin_job">Want to test your knwuwuedge? <a href="quiz.html">Take the quiz</a> to see how much you know!</p>
+        <p class="dateLabel" id="hastins_job">
+            Voting in the United States is a cornerstone of the democratic process, granting eligible citizens the opportunity to engage in selecting their representatives and influencing the trajectory of government at all levels, spanning from local elections to the national stage. To exercise this right, individuals must meet specific eligibility criteria, such as being a US citizen and reaching the state-defined voting age, typically 18 years old. Registering to vote is a prerequisite for participation, a process that varies from state to state, with some offering online registration and others requiring in-person registration. Elections in the US come in various forms, including presidential, congressional, state, and local elections, along with ballot initiatives, and are held at different intervals, with presidential elections recurring every four years. Voters can choose between traditional in-person voting on Election Day, early voting, or mail-in voting, depending on the options available in their state. Some states mandate voter identification, whereas others do not.
+            
+            Voting is considered an essential civic duty, underpinning the very essence of democratic societies, and it carries immense significance for several reasons. First and foremost, it allows citizens to actively participate in shaping their government, offering a voice in decisions that affect their daily lives, whether on the local or national scale. Furthermore, voting enables individuals to select representatives who align with their values and beliefs, responsible for making critical decisions on their behalf. The influence of the vote extends to the realm of public policy, where citizens' choices can steer decisions regarding healthcare, education, the environment, and an array of other crucial matters. Beyond policy, voting fosters community and civic engagement, as it necessitates awareness of current events and active participation in public discourse. Additionally, voting serves as a check and balance mechanism, ensuring that elected officials are answerable for their actions and decisions. In essence, voting embodies a fundamental right that champions equality and inclusivity, granting every eligible citizen an equal say in the political arena, regardless of their background. This participatory role is a potent tool for advocating change and progress in society, consistently driving the evolution and reform of various facets of the nation.
+            </p>
+        
+    </div>
+    <div id="loginFooter">
+        <div class="navCol">
+            <a class="navItem" href="home.html"><img class="navIcon" src="images/voteA.png"></a>
+            <p class="navTitle">Home</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="wiki.html"><img class="navIcon" src="images/checkI.png"></a>
+            <p class="navTitle">Checklist</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="representative.html"><img src="images/repI.png" class="navIcon" ></a>
+            <p class="navTitle">Your Reps</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="polling.html"><img src="images/mapI.png" class="navIcon" ></a>
+            <p class="navTitle">Polling</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="profile.html"><img src="images/profileI.png" class="navIcon" ></a>
+            <p class="navTitleA">Profile</p>
+        </div>
+    </div>
 </body>
 </html>
-
-
 
