@@ -199,9 +199,11 @@ function nextPresidentialElection(){
   return nextPElections[i];
 }
 
+const nextGE = nextGeneralElection();
+
 function updateCountdown() {
     const currentDate = new Date();
-    const targetDate = new Date(nextGeneralElection()); //fixed election date
+    const targetDate = new Date(nextGE); //fixed election date
     document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
     const timeDifference = targetDate - currentDate;
 
