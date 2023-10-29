@@ -51,7 +51,7 @@ editButton = document.getElementById("editProfile")
 editImage = document.getElementById("editImage")
 editButton.onclick = (event) => {
     event.preventDefault()
-    if(editImage.src == "images/editIcon.png"){
+    if(editImage.src == "https://fyrebolt.github.io/congapp/images/editIcon.png"){
         editImage.src = "images/saveIcon.png"
         addressInput.disabled = false
         cityInput.disabled = false
