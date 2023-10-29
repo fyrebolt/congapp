@@ -10,7 +10,7 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="firebase.js" defer></script>
-    <script src="profile.js" defer></script>
+    <script src="checklist.js" defer></script>
     <title>Checklist</title>
 </head>
 <body onload="check()">
@@ -22,6 +22,7 @@
     <div id="profileWrapper">
         <div id="profileHeader">
             <p>Before the election, you should...</p>
+            <p id="editProfile">Edit</p>
         </div>
         <div class="profileLabel"><input type="checkbox" id="item1"> Register to Vote
             <p class="infoLabel">Make sure you're registered to vote well in advance of the election.</p>
@@ -50,6 +51,10 @@
         <div class="profileLabel"><input type="checkbox" id="item4"> Vote!
         </div>
 
+        <div id="guestWrapper">
+            <h2>Logged in as guest</h2>
+            <h4><a>Create an account</a> to save your soul!</h4>
+            <p id="logout2">Create an Account</p>
         </div>
         
     </div>
