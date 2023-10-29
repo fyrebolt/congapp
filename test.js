@@ -41,7 +41,9 @@ function updateElectionDates(){
         email = localStorage.getItem("user")
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"));
+        console.log("1");
         database.ref(user+'/info').once('value').then((snapshot)=>{ 
+            console.log("2");
             data = snapshot.val();
             birthdate = data.birthdate;
             const birthday = new Date(birthdate);
