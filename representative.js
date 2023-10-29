@@ -213,13 +213,12 @@ let stateHouseRepBoxClick = document.getElementById("stateHouseRepBox")
 let stateSenatorBoxClick = document.getElementById("stateSenatorBox")
 
 const boxList = [presidentBoxClick,vicePresidentBoxClick,fedHouseRepBoxClick,fedSenateOneBoxClick,fedSenateTwoBoxClick,governorBoxClick,lieutenantGovernorBoxClick,stateHouseRepBoxClick,stateSenatorBoxClick]
-const titleOfReps = ["President","Vice President", "Federal House Representatives", "Federal Senator","Federal Senator", "State Governor", "Lieutenant Governor","State House Representative","State Senator"]
-tagIdName = ""
-tagTitle = ""
+const titleOfReps = ["President","Vice President", "Federal House Representative", "Federal Senator","Federal Senator", "State Governor", "Lieutenant State Governor","State House Representative","State Senator"]
+
 for(let i = 0; i < boxList.length; i++){
-    const element = document.getElementById(boxList[i]);
+    const element = boxList[i];
     element.onclick = function(event) {
-        tagIdName = event.target.id
+        tagIdName = element.id.replace("Box", "")
         tagTitle = titleOfReps[i]
         document.getElementById("repPopupImage").innerHTML = document.getElementById(tagIdName + "Image").innerHTML
         document.getElementById("repPopupName").innerHTML = document.getElementById(tagIdName).innerHTML
