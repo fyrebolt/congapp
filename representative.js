@@ -213,7 +213,7 @@ let stateHouseRepBoxClick = document.getElementById("stateHouseRepBox")
 let stateSenatorBoxClick = document.getElementById("stateSenatorBox")
 
 const boxList = [presidentBoxClick,vicePresidentBoxClick,fedHouseRepBoxClick,fedSenateOneBoxClick,fedSenateTwoBoxClick,governorBoxClick,lieutenantGovernorBoxClick,stateHouseRepBoxClick,stateSenatorBoxClick]
-const titleOfReps = ["President","Vice President", "Federal House Representatives", "Federal Senator,"Federal Senator", "State Governor", "Lieutenant Governor","State House Representative","State Senator"]
+const titleOfReps = ["President","Vice President", "Federal House Representatives", "Federal Senator","Federal Senator", "State Governor", "Lieutenant Governor","State House Representative","State Senator"]
 tagIdName = ""
 tagTitle = ""
 for(let i = 0; i < boxList.length; i++){
