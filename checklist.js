@@ -19,7 +19,11 @@ o9 = document.getElementById("option9");
 
 profileWrapper = document.getElementById("checklistWrapper")
 guestWrapper = document.getElementById("guestWrapper")
+
 if(sessionStorage.getItem("guest")!="yes"){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"))
     database.ref(user+'/checklist').once('value').then((snapshot)=>{ 
         data = snapshot.val()
         o1.value = data.option1;
@@ -53,6 +57,9 @@ editButton.onclick = (event) => {
             
             
             database.ref(user+'/info').set(data).then(()=>{
+                email = localStorage.getItem("user")
+                user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+                user = user.substring(0,user.indexOf("@"))
                 database.ref(user+'/info').once('value').then((snapshot)=>{ 
                 data = snapshot.val()
                 o1.value = data.option1;
