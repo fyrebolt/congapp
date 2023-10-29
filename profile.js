@@ -87,25 +87,27 @@ editButton.onclick = (event) => {
     }
 }
 
-function updateCountdown() {
-    const currentDate = new Date();
-    const targetDate = new Date('2024-11-05'); //fixed election date
-    document.getElementById("timerTitle").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
-    const timeDifference = targetDate - currentDate;
+// this part is for timer, removing it for now
 
-    if (timeDifference <= 0) {
-        // If the target date has passed, display a message
-        document.getElementById("timer").textContent = "Countdown has ended";
-    } else {
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+// function updateCountdown() {
+//     const currentDate = new Date();
+//     const targetDate = new Date('2024-11-05'); //fixed election date
+//     document.getElementById("timerTitle").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
+//     const timeDifference = targetDate - currentDate;
 
-        document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
-    }
-}
+//     if (timeDifference <= 0) {
+//         // If the target date has passed, display a message
+//         document.getElementById("timer").textContent = "Countdown has ended";
+//     } else {
+//         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+//         const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+//         const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-updateCountdown(); // Initial update
-setInterval(updateCountdown, 1000); // Update every 1 second
+//         document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+//     }
+// }
+
+// updateCountdown(); // Initial update
+// setInterval(updateCountdown, 1000); // Update every 1 second
 
