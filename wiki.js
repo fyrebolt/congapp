@@ -212,6 +212,7 @@ function nextGeneralElection(){
       const currentDate = new Date();
       const targetDate = new Date(nextGElections[i]); //fixed election date
       document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
+      const timeDifference = targetDate - currentDate;
       const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
