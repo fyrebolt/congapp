@@ -192,6 +192,13 @@ body{
     margin: 20px;
     font-size:24px;
 }
+#checklistHeader{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin: 20px;
+    font-size:20px;
+}
 #profileHeader p{
     margin:0px;
 }
@@ -365,14 +372,14 @@ body{
     display:flex;
     flex-direction:row;
     width:90%;
-    overflow-x:scroll;
+    overflow-x:auto;
     justify-content:start;
 }
 #stateLevelRep{
     display:flex;
     flex-direction:row;
     width:90%;
-    overflow-x:scroll;
+    overflow-x:auto;
     justify-content:start;
 }
 .rep{
