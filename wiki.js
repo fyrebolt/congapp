@@ -202,7 +202,7 @@ function nextPresidentialElection(){
 function updateCountdown() {
     const currentDate = new Date();
     const targetDate = new Date(nextGeneralElection()); //fixed election date
-    document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleTimeString()}) in:`;
+    document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
     const timeDifference = targetDate - currentDate;
 
     if (timeDifference <= 0) {
