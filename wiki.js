@@ -180,16 +180,19 @@ function getBirthday() {
 
 function nextGeneralElection(){
   const birthday = new Date(getBirthday());
-  var i = 0;
+  console.log(birthday.toLocaleDateString);
+  console.log(birthday - nextGElections[0]);
+  let i = 0;
   while (nextGElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
     i++;
+    console.log()
   }
   return nextGElections[i];
 }
 
 function nextPresidentialElection(){
   const birthday = new Date(getBirthday());
-  var i = 0;
+  let i = 0;
   while (nextPElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
     i++;
   }
