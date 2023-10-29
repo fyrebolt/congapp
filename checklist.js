@@ -11,7 +11,6 @@ createButton.onclick = (event) =>{
 profileWrapper = document.getElementById("profileWrapper")
 guestWrapper = document.getElementById("guestWrapper")
 if(sessionStorage.getItem("guest")!="yes"){
-    emailLabel.innerHTML = localStorage.getItem("user")
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
     user = user.substring(0,user.indexOf("@"))
