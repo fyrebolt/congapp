@@ -95,12 +95,9 @@ function loadClient() {
                 //basic stuff for every rep
                 document.getElementById(tagList[tag]).innerHTML = repName;
                 document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
-                //makes visible if necessary
                 
-                document.getElementById(tagList[tag]).classList.remove("disabled")
-                document.getElementById(tagList[tag] + "Image").classList.remove("disabled")
-                document.getElementById(tagList[tag] +"Contact").classList.remove("disabled")
-                document.getElementById(tagList[tag] +"Description").classList.remove("disabled")
+                //makes visible if necessary
+                document.getElementById(tagList[tag] + "Box").classList.remove("disabled")
             }
                 
               },
@@ -140,17 +137,24 @@ function checkIfAddressCity(){
 }
 function resetAll(){
     //reset all disabled
-    document.getElementById("federalRepText").classList.add("disabled")
-    document.getElementById("stateRepsText").classList.add("disabled")
+
     const tags = ["president","vicePresident","fedHouseRep","fedSenateOne","fedSenateTwo","governor","lieutenantGovernor","stateHouseRep","stateSenator"]
     for(let i = 0; i < tags.length; i++){
-        //makes obj disabled
-        document.getElementById(tags[i]).classList.add("disabled")
         document.getElementById(tags[i]).textContent = ""
         document.getElementById(tags[i] + "Contact").textContent = ""
         document.getElementById(tags[i] + "Image").textContent = ""
         document.getElementById(tags[i] + "Description").textContent = ""
     }
+    //disables text headers
+    document.getElementById("federalRepText").classList.add("disabled")
+    document.getElementById("stateRepsText").classList.add("disabled")
+    //disables div tags
+    let repsTagArray = document.getElementsByClassName("rep")
+    for(let i = 0; i < repsTagArray.length; i++){
+        repsTagArray[i].classList.add("disabled")
+    }
+    
+    
 }
 
 gapi.load("client");
@@ -169,12 +173,17 @@ searchInput.onclick = () => {
         inputLine = inputLine.slice(0, -1)
         // calling all calls
         //need bad input catch
+        //makes federal Rep header visible
+        document.getElementById("federalRepText").classList.remove("disabled")
         execute("country",inputLine,"headOfGovernment",["president"])
         execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
+        //makes state rep header visible
+        document.getElementById("stateRepsText").classList.remove("disabled")
         execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
         execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
         if(checkIfAll(tags)){
             //all input boxes full
+            
             execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
             execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
         }
