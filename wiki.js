@@ -152,18 +152,54 @@ function showResults(score) {
 
 showQuestion(currentQuestion);
 
+const nextPElections = [
+  "2024-11-05",
+  "2028-11-07",
+  "2032-11-02",
+  "2036-11-04",
+  "2040-11-06",
+  "2044-11-08",
+]
+const nextGElections = [
+  "2024-11-05",
+  "2026-11-03",
+  "2028-11-07",
+  "2030-11-05",
+  "2032-11-02",
+  "2034-11-07",
+  "2036-11-04",
+  "2038-11-02",
+  "2040-11-06",
+  "2042-11-04",
+  "2044-11-08",
+]
+
 function getBirthday() {
   return '2000-01-07';
 }
 
 function nextGeneralElection(){
-  return '2024-11-05';
+  const birthday = new Date(getBirthday());
+  var i = 0;
+  while (nextGElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+    i++;
+  }
+  return nextGElections[i];
+}
+
+function nextPresidentialElection(){
+  const birthday = new Date(getBirthday());
+  var i = 0;
+  while (nextPElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+    i++;
+  }
+  return nextPElections[i];
 }
 
 function updateCountdown(id) {
     const currentDate = new Date();
-    const targetDate = new Date(nextGeneralElection); //fixed election date
-    document.getElementById("timerTitle").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
+    const targetDate = new Date(nextGeneralElection()); //fixed election date
+    document.getElementById(id + "Title").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
     const timeDifference = targetDate - currentDate;
 
     if (timeDifference <= 0) {
