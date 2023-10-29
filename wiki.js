@@ -211,53 +211,128 @@ function nextGeneralElection(){
       // return nextGElections[i];
       const currentDate = new Date();
       const targetDate = new Date(nextGElections[i]); //fixed election date
-      document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
+      document.getElementById("nextGT").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
       const timeDifference = targetDate - currentDate;
       const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+      document.getElementById("nextGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
     })
   }
   else {
     return nextGElections[0];
   }
+}
+
+function nextLegalGeneralElection(){
+  const currentDate = new Date();
+  let nextDate = new Date(nextGElections[0]);
+  let i = 0;
+  while (nextDate - currentDate <= 0){
+    i++;
+    nextDate = new Date(nextGElections[i]);
+  }
   
+  const targetDate = new Date(nextGElections[i]); //fixed election date
+  document.getElementById("nextLGT").innerHTML = `Next General Election You Qualify to Vote in (${targetDate.toLocaleDateString()}):`;
+  const timeDifference = targetDate - currentDate;
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  document.getElementById("nextLGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
 }
 
 function nextPresidentialElection(){
-  const birthday = new Date(getBirthday());
+  if (localStorage.getItem("user") != null){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"));
+    database.ref(user+'/info').once('value').then((snapshot)=>{ 
+      data = snapshot.val();
+      birthdate = data.birthdate;
+      const birthday = new Date(birthdate);
+      // console.log(birthday.toLocaleDateString());
+      let nextDate = new Date(nextPElections[0]);
+      // console.log(nextDate - birthday);
+      let i = 0;
+      while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+        i++;
+        nextDate = new Date(nextPElections[i]);
+      }
+      // console.log(nextGElections[i]);
+      // return nextGElections[i];
+      const currentDate = new Date();
+      const targetDate = new Date(nextPElections[i]); //fixed election date
+      document.getElementById("nextPT").innerHTML = `Next Presidentail Election (${targetDate.toLocaleDateString()}) in:`;
+      const timeDifference = targetDate - currentDate;
+      const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      document.getElementById("nextPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+    })
+  }
+  else {
+    return nextPElections[0];
+  }
+}
+
+function nextLegalGeneralElection(){
+  const currentDate = new Date();
   let nextDate = new Date(nextPElections[0]);
   let i = 0;
-  while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+  while (nextDate - currentDate <= 0){
     i++;
     nextDate = new Date(nextPElections[i]);
   }
-  return nextPElections[i];
+  
+  const targetDate = new Date(nextPElections[i]); //fixed election date
+  document.getElementById("nextLPT").innerHTML = `Next Presidential Election You Qualify to Vote in (${targetDate.toLocaleDateString()}):`;
+  const timeDifference = targetDate - currentDate;
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  document.getElementById("nextLPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
 }
 
-const nextGE = nextGeneralElection();
+// function nextPresidentialElection(){
+//   const birthday = new Date(getBirthday());
+//   let nextDate = new Date(nextPElections[0]);
+//   let i = 0;
+//   while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+//     i++;
+//     nextDate = new Date(nextPElections[i]);
+//   }
+//   return nextPElections[i];
+// }
 
-function updateCountdown() {
-    const currentDate = new Date();
-    const targetDate = new Date(nextGE); //fixed election date
-    document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
-    const timeDifference = targetDate - currentDate;
+// const nextGE = nextGeneralElection();
 
-    if (timeDifference <= 0) {
-        // If the target date has passed, display a message
-        document.getElementById("timer").textContent = "Countdown has ended";
-    } else {
-        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+// function updateCountdown() {
+//     const currentDate = new Date();
+//     const targetDate = new Date(nextGE); //fixed election date
+//     document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
+//     const timeDifference = targetDate - currentDate;
 
-        document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
-    }
-}
+//     if (timeDifference <= 0) {
+//         // If the target date has passed, display a message
+//         document.getElementById("timer").textContent = "Countdown has ended";
+//     } else {
+//         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+//         const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+//         const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+//         document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+//     }
+// }
 
 // updateCountdown(); // Initial update
 setInterval(nextGeneralElection, 1000); // Update every 1 second
