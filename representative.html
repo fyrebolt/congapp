@@ -24,22 +24,14 @@
         <p id="repTitle">Who are my representatives?</p>
         <p id="repDescription">Enter your location information below</p>
         <div id="dataInputWrapper">
-            <div id="dataInputLabels">
-                <p>Address</p>
-                <p>City Name</p>
-                <p>State Name</p>
-                <p>Zip Code</p>
-            </div>
-            <div id="dataInputs">
-                <input class="dataInput" id="address" type = "text" placeholder = "123 Main Street"></input>
-                <input class="dataInput" id="city" type = "text" placeholder = "Los Angeles"></input>
-                <input class="dataInput" id="state" type = "text" placeholder = "California"></input>
-                <input class="dataInput" id="zipCode" type = "text" placeholder = "90001"></input>
-            </div>
+            <div id="dataInputLabels"><p>Address</p><input class="dataInput" id="address" type = "text" placeholder = "123 Main Street"></input></div>
+            <div id="dataInputLabels"><p>City Name</p><input class="dataInput" id="city" type = "text" placeholder = "Los Angeles"></input></div>
+            <div id="dataInputLabels"><p>State Name</p><input class="dataInput" id="state" type = "text" placeholder = "California"></input></div>
+            <div id="dataInputLabels"><p>Zip Code</p><input class="dataInput" id="zipCode" type = "text" placeholder = "90001"></input></div>
         </div>
         <button id = "searchInput">Search</button>
         <div id="outputDataWrapper">
-            <p id="federalRepText">Your federal representatives</p>
+            <p>Your federal representatives</p>
             <div id="federalLevelRep">
                 <div class="rep">
                     <p id = "presidentImage"></p>
@@ -74,7 +66,7 @@
                 </div>
             </div>
             <hr>
-            <p id="stateRepsText">Your state representatives</p>
+            <p>Your state representatives</p>
             <div id="stateLevelRep">
                 <div class="rep">
                     <p id = "governorImage"></p>
