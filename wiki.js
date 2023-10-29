@@ -182,10 +182,8 @@ function getBirthday() {
     database.ref(user+'/info').once('value').then((snapshot)=>{ 
       data = snapshot.val();
       birthdate = data.birthdate;
-      return birthdate;
-    })
 
-    // return birthdate;
+    })
   }
   else {
     return '1980-01-01';
@@ -193,16 +191,29 @@ function getBirthday() {
 }
 
 function nextGeneralElection(){
-  const birthday = new Date(getBirthday());
-  // console.log(birthday.toLocaleDateString());
-  let nextDate = new Date(nextGElections[0]);
-  // console.log(nextDate - birthday);
-  let i = 0;
-  while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
-    i++;
-    nextDate = new Date(nextGElections[i]);
+  if (localStorage.getItem("user") != null){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"));
+    database.ref(user+'/info').once('value').then((snapshot)=>{ 
+      data = snapshot.val();
+      birthdate = data.birthdate;
+      const birthday = new Date(birthdate);
+      // console.log(birthday.toLocaleDateString());
+      let nextDate = new Date(nextGElections[0]);
+      // console.log(nextDate - birthday);
+      let i = 0;
+      while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+        i++;
+        nextDate = new Date(nextGElections[i]);
+      }
+      return nextGElections[i];
+    })
   }
-  return nextGElections[i];
+  else {
+    return nextGElections[0];
+  }
+  
 }
 
 function nextPresidentialElection(){
