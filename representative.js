@@ -203,74 +203,29 @@ searchInput.onclick = () => {
 //popup click
 //once click - > midpopup stuff
 let presidentBoxClick = document.getElementById("presidentBox")
-presidentBoxClick.onclick = () =>{
-    document.getElementById("repPopupImage").innerHTML = document.getElementById("presidentImage").innerHTML
-    document.getElementById("repPopupName").innerHTML = document.getElementById("president").innerHTML
-    document.getElementById("repPopupTitle").innerHTML = "President"
-    document.getElementById("repPopupDesc").innerHTML = document.getElementById("presidentDescription").innerHTML
-    document.getElementById("repPopupContact").innerHTML = document.getElementById("presidentContact").innerHTML
-}
 let vicePresidentBoxClick = document.getElementById("vicePresidentBox")
-vicePresidentBoxClick.onclick = () =>{
-    imageBox = document.getElementById("vicePresidentImage").innerHTML
-    nameBox = document.getElementById("vicePresident").innerHTML
-    titleBox = "Vice President"
-    descriptionBox = document.getElementById("vicePresidentDescription").innerHTML
-    contactBox = document.getElementById("vicePresidentContact").innerHTML
-}
 let fedHouseRepBoxClick = document.getElementById("fedHouseRepBox")
-fedHouseRepBoxClick.onclick = () =>{
-    imageBox = document.getElementById("fedHouseRepImage").innerHTML
-    nameBox = document.getElementById("fedHouseRep").innerHTML
-    titleBox = "House Representative"
-    descriptionBox = document.getElementById("fedHouseRepDescription").innerHTML
-    contactBox = document.getElementById("fedHouseRepContact").innerHTML
-}
 let fedSenateOneBoxClick = document.getElementById("fedSenateOneBox")
-fedSenateOneBoxClick.onclick = () =>{
-    imageBox = document.getElementById("fedSenateOneImage").innerHTML
-    nameBox = document.getElementById("fedSenateOne").innerHTML
-    titleBox = "Senator"
-    descriptionBox = document.getElementById("fedSenateOneDescription").innerHTML
-    contactBox = document.getElementById("fedSenateOneContact").innerHTML
-}
 let fedSenateTwoBoxClick = document.getElementById("fedSenateTwoBox")
-fedSenateTwoBoxClick.onclick = () =>{
-    imageBox = document.getElementById("fedSenateTwoImage").innerHTML
-    nameBox = document.getElementById("fedSenateTwo").innerHTML
-    titleBox = "Senator"
-    descriptionBox = document.getElementById("fedSenateTwoDescription").innerHTML
-    contactBox = document.getElementById("fedSenateTwoContact").innerHTML
-}
 let governorBoxClick = document.getElementById("governorBox")
-governorBoxClick.onclick = () =>{
-    imageBox = document.getElementById("governorImage").innerHTML
-    nameBox = document.getElementById("governor").innerHTML
-    titleBox = "State Governor"
-    descriptionBox = document.getElementById("governorDescription").innerHTML
-    contactBox = document.getElementById("governorContact").innerHTML
-}
 let lieutenantGovernorBoxClick = document.getElementById("lieutenantGovernorBox")
-lieutenantGovernorBoxClick.onclick = () =>{
-    imageBox = document.getElementById("lieutenantGovernorImage").innerHTML
-    nameBox = document.getElementById("lieutenantGovernor").innerHTML
-    titleBox = "Lieutenant State Governor"
-    descriptionBox = document.getElementById("lieutenantGovernorDescription").innerHTML
-    contactBox = document.getElementById("lieutenantGovernorContact").innerHTML
-}
 let stateHouseRepBoxClick = document.getElementById("stateHouseRepBox")
-stateHouseRepBoxClick.onclick = () =>{
-    imageBox = document.getElementById("stateHouseRepImage").innerHTML
-    nameBox = document.getElementById("stateHouseRep").innerHTML
-    titleBox = "State House Representative"
-    descriptionBox = document.getElementById("stateHouseRepDescription").innerHTML
-    contactBox = document.getElementById("stateHouseRepContact").innerHTML
-}
 let stateSenatorBoxClick = document.getElementById("stateSenatorBox")
-stateSenatorBoxClick.onclick = () =>{
-    imageBox = document.getElementById("stateSenatorImage").innerHTML
-    nameBox = document.getElementById("stateSenator").innerHTML
-    titleBox = "State Senator"
-    descriptionBox = document.getElementById("stateSenatorDescription").innerHTML
-    contactBox = document.getElementById("stateSenatorContact").innerHTML
+
+const boxList = [presidentBoxClick,vicePresidentBoxClick,fedHouseRepBoxClick,fedSenateOneBoxClick,fedSenateTwoBoxClick,governorBoxClick,lieutenantGovernorBoxClick,stateHouseRepBoxClick,stateSenatorBoxClick]
+const titleOfReps = ["President","Vice President", "Federal House Representatives", "Federal Senator,"Federal Senator", "State Governor", "Lieutenant Governor","State House Representative","State Senator"]
+tagIdName = ""
+tagTitle = ""
+for(let i = 0; i < boxList.length; i++){
+    const element = document.getElementById(boxList[i]);
+    element.onclick = function(event) {
+        tagIdName = event.target.id
+        tagTitle = titleOfReps[i]
+        document.getElementById("repPopupImage").innerHTML = document.getElementById(tagIdName + "Image").innerHTML
+        document.getElementById("repPopupName").innerHTML = document.getElementById(tagIdName).innerHTML
+        document.getElementById("repPopupTitle").innerHTML = tagTitle
+        document.getElementById("repPopupDesc").innerHTML = document.getElementById(tagIdName + "Description").innerHTML
+        document.getElementById("repPopupContact").innerHTML = document.getElementById(tagIdName + "Contact").innerHTML
+        
+    }
 }
