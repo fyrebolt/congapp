@@ -193,6 +193,7 @@ body{
     font-size:16px;
 }
 .infoLabel{
+    font-weight:normal;
     margin:10px 20px;
     font-size:18px;
 }
@@ -393,10 +394,12 @@ body{
     font-size:24px;
 }
 .electionDate{
+    font-weight:normal;
     margin:12px 40px;
     font-size:32px;
 }
 .dateLabel{
+    font-weight:normal;
     margin:10px 40px;
     font-size:18px;
 }
