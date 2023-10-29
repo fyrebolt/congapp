@@ -15,67 +15,48 @@
 
 // }*/
 
-function toggleDropdown(button) {
-    var content = button.nextElementSibling;
-    content.classList.toggle("active");
-}
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
 
 const allQuestions = [
   {
-    question: "What type of government is the U.S. trying to follow?",
-    options: ["Democracy", "Aristocracy", "Tyranny"],
+    question: "What type of government best describes the U.S.?",
+    options: ["Direct Democracy", "Representative Democracy", "Dictatorship", "Oligarchy"],
     correctAnswer: "a"
   },
   {
-    question: "How are individual voices heard in the U.S. government?",
-    options: ["By shouting opinions at the president", "Voting for representatives that would put forth similar demands", "Turning up the volume"],
-    correctAnswer: "b"
+    question: "What are the eligibility criteria for voting in the United States?",
+    options: ["US citizenship and state-defined age", "US citizenship and age 21", "Permanent residency and age 18", "Citizenship and age 18"],
+    correctAnswer: "d"
   },
   {
     question: "When is the next presidential election?",
-    options: ["November 5, 2023", "November 2, 2024", "November 5, 2024"],
+    options: ["November 5, 2023", "March 15, 2024", "November 5, 2024", "March 17, 2024"],
     correctAnswer: "c"
   },
   {
-    question: "Which government position represents your congressional district?",
-    options: ["State governor", "City mayor", "Congressman/congresswoman"],
+    question: "Which of the following is not mentioned as a reason to vote?",
+    options: ["Exercising a civic duty", "Influencing policy decisions", "Generating profit", "Engaging with the community"],
     correctAnswer: "c"
   },
   {
-    question: "What happens on election day?",
-    options: ["People cast their vote for who they believe will best represent the people and guide the nation towards prosperity", "Candidates as representatives are elected finally to become candidates of their respective political parties", "Candidates as representatives are elected finally to become candidates of their respective political parties"],
+    question: "How often are Presidential elections in the US?",
+    options: ["Every 2 years", "Every 4 years", "Every 6 years", "Every 8 years"],
     correctAnswer: "a"
   },
   {
     question: "Why are electoral votes used instead of direct votes?",
-    options: ["There is no difference between the two other than wording.", "Electoral votes are a compromise between the federal government and state governments; this guarantees that states with significant populations cannot determine the outcome of the vote", "Direct votes may be counterfeit and not contribute to an accurate vote"],
+    options: ["There is no difference between the two other than wording.", "Electoral votes are a compromise between the federal government and state governments; this guarantees that states with significant populations cannot determine the outcome of the vote", "Direct votes may be counterfeit and not contribute to an accurate vote", "All of the above"],
     correctAnswer: "b"
   },
   {
     question: "How many electoral votes are required to win the election?",
-    options: ["270", "271", "269"],
+    options: ["270", "271", "171", "170"],
     correctAnswer: "a"
   },
-  // {
-  //   question: "",
-  //   options: ["", "", ""],
-  //   correctAnswer: "a"
-  // },
+  {
+    question: "What does voting provide in terms of community engagement and public discourse?",
+    options: ["It hinders informed discussions", "It has no impact on community engagement", "It fosters awareness of current events and active participation in public discourse", "It encourages isolation from the community"],
+    correctAnswer: "c"
+  },
   // {
   //   question: "",
   //   options: ["", "", ""],
@@ -96,7 +77,7 @@ shuffleArray(allQuestions);
 
 // Create a new dictionary with the first 3 shuffled items
 // const questions = Object.fromEntries(originalEntries.slice(0, 3));
-const questions = allQuestions.slice(0, 3);
+const questions = allQuestions.slice(0, 6);
 console.log(questions);
 
 // Shuffle function to randomize the array
