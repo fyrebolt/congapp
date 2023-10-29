@@ -15,6 +15,8 @@ function loadClient() {
             }
         })
     }
+    //makes all things invisible intially
+    resetAll()
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
@@ -72,6 +74,7 @@ function loadClient() {
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
             for(let tag = 0; tag < tagList.length;tag++){
+                
                 repName = response.result.officials[tag].name;
                 repGovLink = response.result.officials[tag].urls[0]
                 descriptionLink = response.result.officials[tag].urls[1];
@@ -92,7 +95,8 @@ function loadClient() {
                 //basic stuff for every rep
                 document.getElementById(tagList[tag]).innerHTML = repName;
                 document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
-                
+                //makes visible if necessary
+                document.getElementyById(tagList[tag]).classList.remove("disabled")
                 
             }
                 
@@ -133,8 +137,12 @@ function checkIfAddressCity(){
 }
 function resetAll(){
     //reset all disabled
+    document.getElementById("federalRepText").classList.add("disabled")
+    document.getElementById("stateRepsText").classList.add("disabled")
     const tags = ["president","vicePresident","fedHouseRep","fedSenateOne","fedSenateTwo","governor","lieutenantGovernor","stateHouseRep","stateSenator"]
     for(let i = 0; i < tags.length; i++){
+        //makes obj disabled
+        document.getElementById(tags[i]).classList.add("disabled")
         document.getElementById(tags[i]).textContent = ""
         document.getElementById(tags[i] + "Contact").textContent = ""
         document.getElementById(tags[i] + "Image").textContent = ""
@@ -157,7 +165,7 @@ searchInput.onclick = () => {
         }
         inputLine = inputLine.slice(0, -1)
         // calling all calls
-        //need bad input catch + visibility 
+        //need bad input catch
         execute("country",inputLine,"headOfGovernment",["president"])
         execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
         execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
