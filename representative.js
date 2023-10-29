@@ -135,6 +135,14 @@ function checkIfAddressCity(){
     }
     return false
 }
+function checkIfStateFederal(){
+    if(document.getElementById("address").value && document.getElementById("zipCode").value){
+        return true                                                                      
+    }
+    if(document.getElementById("address").value && document.getElementById("city").value){
+        return true
+    }
+}
 function resetAll(){
     //reset all disabled
 
@@ -162,7 +170,7 @@ searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
     resetAll()
     const tags = ["address", "city", "state", "zipCode"]
-    if(checkEmpty(tags)){
+    if(checkEmpty(tags) || checkIfStateFederal()){
         let inputLine = ""
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
