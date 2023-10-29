@@ -189,7 +189,6 @@ function getBirthday() {
   else {
     return '1980-01-01';
   }
-  
 }
 
 function nextGeneralElection(){
