@@ -386,6 +386,39 @@ body{
 .rep p{
     margin:0px 0px;
 }
+#repPopup{
+    display:none;
+    flex-direction:column;
+    height:80%;
+}
+#repPopupTop{
+    display:flex;
+    flex-direction:row;
+    height:60%;
+}
+#repPopupTopRight{
+    display:flex;
+    flex-direction:row;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+}
+#repPopupTopRight{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    justify-content:end;
+    align-items:center;
+    width:50%;
+}
+#repPopupBottom{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:40%;
+}
 .hidden{
     opacity:0;
 }
