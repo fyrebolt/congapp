@@ -37,8 +37,8 @@ const nextGElections = [
 //   }
   
 function updateElectionDates(){
-    console.log(localStorage.getItem('user'));
-    if (localStorage.getItem("user") != null){
+    // console.log(localStorage.getItem('user'));
+    if (!(typeof localStorage.getItem("user") === null) && !(sessionStorage.getItem("guest") == "yes")){
         email = localStorage.getItem("user")
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"));
@@ -46,30 +46,53 @@ function updateElectionDates(){
         database.ref(user+'/info').once('value').then((snapshot)=>{ 
             console.log("2");
             data = snapshot.val();
-            birthdate = data.birthdate;
-            const birthday = new Date(birthdate);
-            // console.log(birthday.toLocaleDateString());
-            let nextDate = new Date(nextGElections[0]);
-            // console.log(nextDate - birthday);
-            let i = 0;
-            while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
-                i++;
-                nextDate = new Date(nextGElections[i]);
-            }
+            if (typeof data === null){
+                const currentDate = new Date();
+                let nextDate = new Date(nextGElections[0]);
+                let i = 0;
+                while (nextDate - currentDate <= 0){
+                    i++;
+                    nextDate = new Date(nextGElections[i]);
+                }
+                
+                const targetDate = new Date(nextGElections[i]); //fixed election date
+                const timeDifference = targetDate - currentDate;
+                const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+                const day = targetDate.getDate();
+                const month = targetDate.toLocaleString('default', { month: 'long' }); // Full month name
+                const year = targetDate.getFullYear();
+                const customFormattedDate = `${month} ${day}, ${year}`;
             
-            const currentDate = new Date();
-            const targetDate = new Date(nextGElections[i]); //fixed election date
-            const timeDifference = targetDate - currentDate;
-            const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    
-            const day = targetDate.getDate();
-            const month = targetDate.toLocaleString('default', { month: 'long' }); // Full month name
-            const year = targetDate.getFullYear();
-            const customFormattedDate = `${month} ${day}, ${year}`;
+                document.getElementById("nextGeneralElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+                document.getElementById("birthdate").style.display = "none";
+            }
+            else {
+                birthdate = data.birthdate;
+                const birthday = new Date(birthdate);
+                // console.log(birthday.toLocaleDateString());
+                let nextDate = new Date(nextGElections[0]);
+                // console.log(nextDate - birthday);
+                let i = 0;
+                while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+                    i++;
+                    nextDate = new Date(nextGElections[i]);
+                }
+                
+                const currentDate = new Date();
+                const targetDate = new Date(nextGElections[i]); //fixed election date
+                const timeDifference = targetDate - currentDate;
+                const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         
-            document.getElementById("userNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
-            document.getElementById("noBirthdate").style.display = "none";
-            console.log("calling this part");
+                const day = targetDate.getDate();
+                const month = targetDate.toLocaleString('default', { month: 'long' }); // Full month name
+                const year = targetDate.getFullYear();
+                const customFormattedDate = `${month} ${day}, ${year}`;
+            
+                document.getElementById("userNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+                document.getElementById("noBirthdate").style.display = "none";
+                console.log("calling this part");
+            }
         })
 
         const currentDate = new Date();
