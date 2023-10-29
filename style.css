@@ -372,14 +372,14 @@ body{
     display:flex;
     flex-direction:row;
     width:90%;
-    overflow-x:scroll;
+    overflow-x:auto;
     justify-content:start;
 }
 #stateLevelRep{
     display:flex;
     flex-direction:row;
     width:90%;
-    overflow-x:scroll;
+    overflow-x:auto;
     justify-content:start;
 }
 .rep{
