@@ -212,12 +212,6 @@ body{
     width:35px;
     padding:5px;
 }
-#profileHeader img:hover{
-    background-color:#f8f7f3;
-}
-#checklistHeader img:hover{
-    background-color:#f8f7f3;
-}
 .profileLabel{
     font-weight:bold;
     margin:10px 20px;
