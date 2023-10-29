@@ -444,24 +444,23 @@ body{
 #repPopupTop{
     display:flex;
     flex-direction:row;
-    height:60%;
 }
 #repPopupTopLeft{
     display:flex;
     flex-direction:row;
-    height:100%;
     justify-content:center;
     align-items:center;
-    width:50%;
+    min-width:fit-content;
+    border:double 5px;
+    margin:50px 35px;
 }
 #repPopupImage{
-    width:100%;
+    height:250px;
 }
 #repPopupImage img{
     object-fit: contain;
-    height: 200px;
+    height: 250px;
     width:100%;
-    border:double 5px black;
 }
 #repPopupTopRight{
     display:flex;
