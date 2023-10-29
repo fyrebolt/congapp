@@ -16,7 +16,10 @@ signupButton.onclick = (event) =>{
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/status').set({surveyed: false}).then(()=>{
-        window.location.href = "setup.html"})    
+            database.ref(user+'/checklist').set({option1:false, option2:false, option3:false, option4:false, option5:false, option6:false, option7:false, option8:false, option9:false}).then(()=>{
+                window.location.href = "setup.html"
+            })
+        })    
     })
     .catch((error) => {
         errorLabel.className="";
@@ -38,7 +41,10 @@ googleLogin.onclick = (event) => {
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/status').set({surveyed: false}).then(()=>{
-        window.location.href = "setup.html"})   
+            database.ref(user+'/checklist').set({option1:false, option2:false, option3:false, option4:false, option5:false, option6:false, option7:false, option8:false, option9:false}).then(()=>{
+                window.location.href = "setup.html"
+            }) 
+        }) 
     }).catch(function(error) {
         errorLabel.className="";
         errorMessage = error.message
