@@ -207,8 +207,17 @@ function nextGeneralElection(){
         i++;
         nextDate = new Date(nextGElections[i]);
       }
-      console.log(nextGElections[i]);
-      return nextGElections[i];
+      // console.log(nextGElections[i]);
+      // return nextGElections[i];
+      const currentDate = new Date();
+      const targetDate = new Date(nextGElections[i]); //fixed election date
+      document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
+      const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
     })
   }
   else {
@@ -249,5 +258,5 @@ function updateCountdown() {
     }
 }
 
-updateCountdown(); // Initial update
-setInterval(updateCountdown, 1000); // Update every 1 second
+// updateCountdown(); // Initial update
+setInterval(nextGeneralElection, 1000); // Update every 1 second
