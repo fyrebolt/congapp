@@ -413,6 +413,7 @@ body{
     flex-direction:column;
     height:80%;
     background-image: url("images/bluebg.png");
+    background-size:cover;
 }
 #repPopupTop{
     display:flex;
