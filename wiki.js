@@ -196,24 +196,24 @@ function nextPresidentialElection(){
   return nextPElections[i];
 }
 
-function updateCountdown(id) {
+function updateCountdown() {
     const currentDate = new Date();
     const targetDate = new Date(nextGeneralElection()); //fixed election date
-    document.getElementById(id + "Title").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
+    document.getElementById("timerTitle").textContext = `Next Election (${targetDate.toLocaleTimeString}) in:`;
     const timeDifference = targetDate - currentDate;
 
     if (timeDifference <= 0) {
         // If the target date has passed, display a message
-        document.getElementById(id).textContent = "Countdown has ended";
+        document.getElementById("timer").textContent = "Countdown has ended";
     } else {
         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-        document.getElementById(id).textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+        document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
     }
 }
 
-updateCountdown("timer"); // Initial update
+updateCountdown(); // Initial update
 setInterval(updateCountdown, 1000); // Update every 1 second
