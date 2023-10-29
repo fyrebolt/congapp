@@ -175,31 +175,46 @@ const nextGElections = [
 ]
 
 function getBirthday() {
-  return '2000-01-07';
+  if (localStorage.getItem("user") != null){
+    email = localStorage.getItem("user")
+    user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+    user = user.substring(0,user.indexOf("@"));
+    database.ref(user+'/info').once('value').then((snapshot)=>{ 
+      data = snapshot.val();
+      birthdate = data.birthdate;
+    })
+
+    return birthdate;
+  }
+  else {
+    return '1980-01-01';
+  }
+  
 }
 
 function nextGeneralElection(){
   const birthday = new Date(getBirthday());
-  console.log(birthday.toLocaleDateString());
+  // console.log(birthday.toLocaleDateString());
   let nextDate = new Date(nextGElections[0]);
-  console.log(nextDate - birthday);
+  // console.log(nextDate - birthday);
   let i = 0;
   while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
     i++;
     nextDate = new Date(nextGElections[i]);
-    // console.log()
   }
   return nextGElections[i];
 }
 
-// function nextPresidentialElection(){
-//   const birthday = new Date(getBirthday());
-//   let i = 0;
-//   while (nextPElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
-//     i++;
-//   }
-//   return nextPElections[i];
-// }
+function nextPresidentialElection(){
+  const birthday = new Date(getBirthday());
+  let nextDate = new Date(nextPElections[0]);
+  let i = 0;
+  while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+    i++;
+    nextDate = new Date(nextPElections[i]);
+  }
+  return nextPElections[i];
+}
 
 const nextGE = nextGeneralElection();
 
