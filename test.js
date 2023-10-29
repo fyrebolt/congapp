@@ -64,7 +64,7 @@ function updateElectionDates(){
             const year = targetDate.getFullYear();
             const customFormattedDate = `${month} ${day}, ${year}`;
         
-            document.getElementById("yourNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+            document.getElementById("userNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
             document.getElementById("noBirthdate").style.display = "none";
             console.log("calling this part");
         })
