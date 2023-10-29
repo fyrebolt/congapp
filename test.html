@@ -11,6 +11,7 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="firebase.js" defer></script>
     <script src="profile.js" defer></script>
+    <script src="test.js" defer></script>
     <title>New Home</title>
 </head>
 <body onload="check()">
@@ -27,16 +28,17 @@
         <br>
         <div id="noBirthdate">
             <p class="whyVoteLabel">Next General Election</p>
-            <p class="electionDate" id="hastins_job">put the next general election here, if they havent given birthdate</p>
+            <!-- below IF NO BIRTHDDAY -->
+            <p class="electionDate" id="nextGeneralElection">Next General Election</p> 
         </div>
         <div id="birthdate">
-            <p class="whyVoteLabel">Your Election</p>
-            <p class="electionDate" id="hastins_job">put the next general election here they can vote in using birthdate</p>
+            <p class="whyVoteLabel">Your Next Election</p>
+            <p class="electionDate" id="userNextElection"></p>
             <p class="profileLabel">Next General Election</p>
-            <p class="dateLabel" id="hastins_job">put the next general election here</p>
+            <p class="dateLabel" id="anotherNextGeneralElection"></p>
         </div>
         <p class="profileLabel">Next Presidential Election</p>
-        <p class="dateLabel" id="hastins_job">put the next presidential election regardless of repeats</p>
+        <p class="dateLabel" id="nextPresidentialElection">put the next presidential election regardless of repeats</p>
         <br><br>
         <p class="whyVoteLabel">Why should I vote?</p>
         <p class="dateLabel" id="hastin_job">Want to test your knwuwuedge? <a href="quiz.html">Take the quiz</a> to see how much you know!</p>
