@@ -96,8 +96,11 @@ function loadClient() {
                 document.getElementById(tagList[tag]).innerHTML = repName;
                 document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
                 //makes visible if necessary
-                document.getElementyById(tagList[tag]).classList.remove("disabled")
                 
+                document.getElementById(tagList[tag]).classList.remove("disabled")
+                document.getElementById(tagList[tag] + "Image").classList.remove("disabled")
+                document.getElementById(tagList[tag] +"Contact").classList.remove("disabled")
+                document.getElementById(tagList[tag] +"Description").classList.remove("disabled")
             }
                 
               },
