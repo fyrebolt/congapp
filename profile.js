@@ -48,10 +48,11 @@ else{
     guestWrapper.style.display = "flex";
 }
 editButton = document.getElementById("editProfile")
+editImage = document.getElementById("editImage")
 editButton.onclick = (event) => {
     event.preventDefault()
-    if(editButton.src == "images/editIcon.png"){
-        editButton.src = "images/saveIcon.png"
+    if(editImage.src == "images/editIcon.png"){
+        editImage.src = "images/saveIcon.png"
         addressInput.disabled = false
         cityInput.disabled = false
         zipInput.disabled = false
@@ -80,7 +81,7 @@ editButton.onclick = (event) => {
                 birthInput.value = data.birthdate
             })
             })
-            editButton.src = "images/editIcon.png"
+            editImage.src = "images/editIcon.png"
         }
         else{
             console.log("Please enter valid information")
