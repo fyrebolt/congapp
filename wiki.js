@@ -190,7 +190,7 @@ function getBirthday() {
   }
 }
 
-function nextGeneralElection(){
+function nextLegalGeneralElection(){
   if (localStorage.getItem("user") != null){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
@@ -211,14 +211,14 @@ function nextGeneralElection(){
       // return nextGElections[i];
       const currentDate = new Date();
       const targetDate = new Date(nextGElections[i]); //fixed election date
-      document.getElementById("nextGT").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
+      document.getElementById("nextLGT").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
       const timeDifference = targetDate - currentDate;
       const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      document.getElementById("nextGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+      document.getElementById("nextLGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
     })
   }
   else {
@@ -242,7 +242,7 @@ function nextGeneralElection(){
   }
 }
 
-function nextLegalGeneralElection(){
+function nextGeneralElection(){
   const currentDate = new Date();
   let nextDate = new Date(nextGElections[0]);
   let i = 0;
@@ -252,17 +252,17 @@ function nextLegalGeneralElection(){
   }
   
   const targetDate = new Date(nextGElections[i]); //fixed election date
-  document.getElementById("nextLGT").innerHTML = `Next General Election (${targetDate.toLocaleDateString()}) in:`;
+  document.getElementById("nextGT").innerHTML = `Next General Election (${targetDate.toLocaleDateString()}) in:`;
   const timeDifference = targetDate - currentDate;
   const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
   const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-  document.getElementById("nextLGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+  document.getElementById("nextGTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
 }
 
-function nextPresidentialElection(){
+function nextLegalPresidentialElection(){
   if (localStorage.getItem("user") != null){
     email = localStorage.getItem("user")
     user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
@@ -283,14 +283,14 @@ function nextPresidentialElection(){
       // return nextGElections[i];
       const currentDate = new Date();
       const targetDate = new Date(nextPElections[i]); //fixed election date
-      document.getElementById("nextPT").innerHTML = `Next Presidentail Election (${targetDate.toLocaleDateString()}) in:`;
+      document.getElementById("nextLPT").innerHTML = `Next Presidential Election (${targetDate.toLocaleDateString()}) in:`;
       const timeDifference = targetDate - currentDate;
       const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      document.getElementById("nextPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+      document.getElementById("nextLPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
     })
   }
   else {
@@ -303,18 +303,18 @@ function nextPresidentialElection(){
     }
     
     const targetDate = new Date(nextPElections[i]); //fixed election date
-    document.getElementById("nextPT").innerHTML = `Next Presidential Election (${targetDate.toLocaleDateString()}) in:`;
+    document.getElementById("nextLPT").innerHTML = `Next Presidential Election (${targetDate.toLocaleDateString()}) in:`;
     const timeDifference = targetDate - currentDate;
     const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    document.getElementById("nextPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+    document.getElementById("nextLPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
   }
 }
 
-function nextLegalPresidentialElection(){
+function nextPresidentialElection(){
   const currentDate = new Date();
   let nextDate = new Date(nextPElections[0]);
   let i = 0;
@@ -324,14 +324,14 @@ function nextLegalPresidentialElection(){
   }
   
   const targetDate = new Date(nextPElections[i]); //fixed election date
-  document.getElementById("nextLPT").innerHTML = `Next Presidential Election You Qualify to Vote in (${targetDate.toLocaleDateString()}):`;
+  document.getElementById("nextPT").innerHTML = `Next Presidential Election (${targetDate.toLocaleDateString()}):`;
   const timeDifference = targetDate - currentDate;
   const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
   const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-  document.getElementById("nextLPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
+  document.getElementById("nextPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
 }
 
 // function nextPresidentialElection(){
