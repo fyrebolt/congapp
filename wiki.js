@@ -207,8 +207,7 @@ function nextLegalGeneralElection(){
         i++;
         nextDate = new Date(nextGElections[i]);
       }
-      // console.log(nextGElections[i]);
-      // return nextGElections[i];
+
       const currentDate = new Date();
       const targetDate = new Date(nextGElections[i]); //fixed election date
       document.getElementById("nextLGT").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
@@ -334,39 +333,6 @@ function nextPresidentialElection(){
   document.getElementById("nextPTimer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
 }
 
-// function nextPresidentialElection(){
-//   const birthday = new Date(getBirthday());
-//   let nextDate = new Date(nextPElections[0]);
-//   let i = 0;
-//   while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
-//     i++;
-//     nextDate = new Date(nextPElections[i]);
-//   }
-//   return nextPElections[i];
-// }
-
-// const nextGE = nextGeneralElection();
-
-// function updateCountdown() {
-//     const currentDate = new Date();
-//     const targetDate = new Date(nextGE); //fixed election date
-//     document.getElementById("timerTitle").innerHTML = `Next Election (${targetDate.toLocaleDateString()}) in:`;
-//     const timeDifference = targetDate - currentDate;
-
-//     if (timeDifference <= 0) {
-//         // If the target date has passed, display a message
-//         document.getElementById("timer").textContent = "Countdown has ended";
-//     } else {
-//         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-//         const hoursDifference = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//         const minutesDifference = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-//         const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-//         document.getElementById("timer").textContent = `${daysDifference}d ${hoursDifference}h ${minutesDifference}m ${secondsDifference}s`;
-//     }
-// }
-
-// updateCountdown(); // Initial update
 setInterval(nextGeneralElection, 1000); // Update every 1 second
 setInterval(nextLegalGeneralElection, 1000);
 setInterval(nextPresidentialElection, 1000);
