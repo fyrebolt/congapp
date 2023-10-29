@@ -29,6 +29,7 @@ cityInput = document.getElementById("cityInput")
 zipInput = document.getElementById("zipInput")
 birthInput = document.getElementById("birthInput")
 profileWrapper = document.getElementById("profileWrapper")
+guestWrapper = document.getElementById("guestWrapper")
 if(sessionStorage.getItem("guest")!="yes"){
     emailLabel.innerHTML = localStorage.getItem("user")
     email = localStorage.getItem("user")
