@@ -321,24 +321,19 @@ body{
 }
 #dataInputWrapper{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:center;
+    align-items:center;
 }
 #dataInputLabels{
     display:flex;
-    flex-direction:column;
-    align-items:start;
-    justify-content:center;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    width:90%;
 }
 #dataInputLabels p{
     margin: 10px;
-}
-#dataInputs{
-    display:flex;
-    flex-direction:column;
-    align-items:stretch;
-    justify-content:center;
-    width:50%;
 }
 #searchInput{
     font-size:20px;
