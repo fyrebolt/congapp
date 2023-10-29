@@ -239,8 +239,7 @@ for(let i = 0; i < boxList.length; i++){
         
     }
 }
-let closeButtonClick = document.getElementById("repPopupCloseButton")
-closeButtonClick = function(){
+function closePopup(){
     document.getElementById("repMiddle").style.display = "flex"
     document.getElementById("repPopup").style.display = "none"
 }
