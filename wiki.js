@@ -179,8 +179,8 @@ function getBirthday() {
 }
 
 function nextGeneralElection(){
-  const birthday = new Date(getBirthday());
-  console.log(birthday.toLocaleDateString);
+  const birthday = new Date('2000-01-07');
+  console.log(birthday.toLocaleDateString());
   console.log(birthday - nextGElections[0]);
   let i = 0;
   while (nextGElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
