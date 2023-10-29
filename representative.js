@@ -6,6 +6,9 @@ function loadClient() {
     if(sessionStorage.getItem("guest")!="yes"){
         //person has an account
         isUser = true
+        document.getElementById("repDescription").style.display = "none"
+        document.getElementById("dataInputWrapper").style.display = "none"
+        document.getElementById("searchInput").style.display = "none"
         email = localStorage.getItem("user")
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
@@ -20,8 +23,9 @@ function loadClient() {
     }
     if(sessionStorage.getItem("guest")=="yes"){
         //person is a guest
-        document.getElementById("dataInputWrapper").classList.remove("disabled")
-        document.getElementById("searchInput").classList.remove("disabled")
+        document.getElementById("repDescription").style.display = "flex"
+        document.getElementById("dataInputWrapper").style.display = "flex"
+        document.getElementById("searchInput").style.display = "flex"
     }
     resetAll()
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
