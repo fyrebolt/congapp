@@ -185,6 +185,11 @@ body{
     align-items:stretch;
     overflow:auto;
 }
+.checkLabel{
+    font-weight:normal;
+    margin:10px 25px;
+    font-size:18px;
+}
 #profileHeader{
     display:flex;
     flex-direction:row;
@@ -211,6 +216,23 @@ body{
 #checklistHeader img{
     width:35px;
     padding:5px;
+}
+.checklistItem{
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+    margin:10px 20px;
+    font-size:16px;
+}
+.checklistRow{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:start;
+    font-weight:bold;
+}
+.checklistRow p{
+    margin:0px 5px;
 }
 .profileLabel{
     font-weight:bold;
