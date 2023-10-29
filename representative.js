@@ -200,22 +200,15 @@ searchInput.onclick = () => {
     }
 }
 
-//pop up boxes
-let imageBox = document.getElementById("repPopupImage").innerHTML
-let nameBox = document.getElementById("repPopupName").innerHTMLrep
-let titleBox = document.getElementById("repPopupTitle").innerHTML
-let descriptionBox = document.getElementById("repPopupDesc").innerHTML
-let contactBox = document.getElementById("repPopupContact").innerHTML
-
 //popup click
 //once click - > midpopup stuff
 let presidentBoxClick = document.getElementById("presidentBox")
 presidentBoxClick.onclick = () =>{
-    imageBox = document.getElementById("presidentImage").innerHTML
-    nameBox = document.getElementById("president").innerHTML
-    titleBox = "President"
-    descriptionBox = document.getElementById("presidentDescription").innerHTML
-    contactBox = document.getElementById("presidentContact").innerHTML
+    document.getElementById("repPopupImage").innerHTML = document.getElementById("presidentImage").innerHTML
+    document.getElementById("repPopupName").innerHTML = document.getElementById("president").innerHTML
+    document.getElementById("repPopupTitle").innerHTML = "President"
+    document.getElementById("repPopupDesc").innerHTML = document.getElementById("presidentDescription").innerHTML
+    document.getElementById("repPopupContact").innerHTML = document.getElementById("presidentContact").innerHTML
 }
 let vicePresidentBoxClick = document.getElementById("vicePresidentBox")
 vicePresidentBoxClick.onclick = () =>{
