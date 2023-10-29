@@ -8,7 +8,7 @@ createButton.onclick = (event) =>{
 }
 
 
-profileWrapper = document.getElementById("profileWrapper")
+profileWrapper = document.getElementById("checklistWrapper")
 guestWrapper = document.getElementById("guestWrapper")
 if(sessionStorage.getItem("guest")!="yes"){
     email = localStorage.getItem("user")
