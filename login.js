@@ -4,6 +4,18 @@ const passwordField = document.getElementById("passwordField")
 const googleLogin = document.getElementById('googleLoginBox')
 const errorLabel = document.getElementById('errorLabel')
 
+
+// Execute a function when the user presses a key on the keyboard
+passwordField.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    loginButton.click();
+  }
+});
+
 loginButton.onclick = (event) =>{
     event.preventDefault()
     errorLabel.innerHTML = "."; 
