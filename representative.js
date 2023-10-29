@@ -84,6 +84,10 @@ function loadClient() {
                 }
                 else{
                   //place .gov info here
+                    //sets photo to photo NA
+                    document.getElementById(tagList[tag]).innerHTML = "<img  width =150px src=images/nullPicture.png>" 
+                    //possibly change to api for description or image from name
+                     
                 }
                 //basic stuff for every rep
                 document.getElementById(tagList[tag]).innerHTML = repName;
