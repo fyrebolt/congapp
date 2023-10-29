@@ -367,7 +367,7 @@ body{
     justify-content:start;
 }
 .rep{
-    display:none;
+    display:flex;
     flex-direction:column;
     min-width:fit-content;
     align-items:center;
