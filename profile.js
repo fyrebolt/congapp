@@ -48,11 +48,10 @@ else{
     guestWrapper.style.display = "flex";
 }
 editButton = document.getElementById("editProfile")
-editImage = document.getElementById("editImage")
 editButton.onclick = (event) => {
     event.preventDefault()
-    if(editImage.src == "https://fyrebolt.github.io/congapp/images/editIcon.png"){
-        editImage.src = "images/saveIcon.png"
+    if(editButton.src == "https://fyrebolt.github.io/congapp/images/editIcon.png"){
+        editButton.src = "images/saveIcon.png"
         addressInput.disabled = false
         cityInput.disabled = false
         zipInput.disabled = false
@@ -81,7 +80,7 @@ editButton.onclick = (event) => {
                 birthInput.value = data.birthdate
             })
             })
-            editImage.src = "images/editIcon.png"
+            editButton.src = "images/editIcon.png"
         }
         else{
             console.log("Please enter valid information")

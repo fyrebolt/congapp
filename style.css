@@ -205,16 +205,18 @@ body{
     margin:0px;
 }
 #profileHeader img{
-    width:30px;
-    border: solid 1px black;
-    border-radius:3px;
+    width:35px;
     padding:5px;
 }
 #checklistHeader img{
-    width:30px;
-    border: solid 1px black;
-    border-radius:3px;
+    width:35px;
     padding:5px;
+}
+#profileHeader img:hover{
+    background-color:#f8f7f3;
+}
+#checklistHeader img:hover{
+    background-color:#f8f7f3;
 }
 .profileLabel{
     font-weight:bold;
