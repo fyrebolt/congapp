@@ -66,6 +66,7 @@ function updateElectionDates(){
         
             document.getElementById("yourNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
             document.getElementById("noBirthdate").style.display = "none";
+            console.log("calling this part");
         })
 
         const currentDate = new Date();
