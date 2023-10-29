@@ -181,7 +181,7 @@ function getBirthday() {
 function nextGeneralElection(){
   const birthday = new Date(getBirthday());
   console.log(birthday.toLocaleDateString());
-  var nextDate = new Date(nextGElections[0]);
+  let nextDate = new Date(nextGElections[0]);
   console.log(nextDate - birthday);
   let i = 0;
   while (nextDate - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
@@ -192,14 +192,14 @@ function nextGeneralElection(){
   return nextGElections[i];
 }
 
-function nextPresidentialElection(){
-  const birthday = new Date(getBirthday());
-  let i = 0;
-  while (nextPElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
-    i++;
-  }
-  return nextPElections[i];
-}
+// function nextPresidentialElection(){
+//   const birthday = new Date(getBirthday());
+//   let i = 0;
+//   while (nextPElections[i] - birthday < (18 * 365 + 2) * 1000 * 60 * 60 * 24){
+//     i++;
+//   }
+//   return nextPElections[i];
+// }
 
 const nextGE = nextGeneralElection();
 
