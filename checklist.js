@@ -56,11 +56,11 @@ editButton.onclick = (event) => {
             data["option9"] = o9.value;
             
             
-            database.ref(user+'/info').set(data).then(()=>{
+            database.ref(user+'/checklist').set(data).then(()=>{
                 email = localStorage.getItem("user")
                 user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
                 user = user.substring(0,user.indexOf("@"))
-                database.ref(user+'/info').once('value').then((snapshot)=>{ 
+                database.ref(user+'/checklist').once('value').then((snapshot)=>{ 
                 data = snapshot.val()
                 o1.value = data.option1;
                 o2.value = data.option2;
