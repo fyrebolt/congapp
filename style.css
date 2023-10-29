@@ -177,6 +177,14 @@ body{
     align-items:stretch;
     overflow:auto;
 }
+#checklistWrapper{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:stretch;
+    overflow:auto;
+}
 #profileHeader{
     display:flex;
     flex-direction:row;
@@ -297,7 +305,7 @@ body{
     flex-direction:column;
     height:80%;
     justify-content:start;
-    overflow:scroll;
+    overflow:auto;
 }
 #repTitle{
     font-weight:bold;
