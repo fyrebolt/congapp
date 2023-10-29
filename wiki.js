@@ -282,7 +282,7 @@ function nextPresidentialElection(){
   }
 }
 
-function nextLegalGeneralElection(){
+function nextLegalPresidentialElection(){
   const currentDate = new Date();
   let nextDate = new Date(nextPElections[0]);
   let i = 0;
@@ -336,3 +336,6 @@ function nextLegalGeneralElection(){
 
 // updateCountdown(); // Initial update
 setInterval(nextGeneralElection, 1000); // Update every 1 second
+setInterval(nextLegalGeneralElection, 1000);
+setInterval(nextPresidentialElection, 1000);
+setInterval(nextLegalPresidentialElection, 1000);
