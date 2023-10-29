@@ -367,11 +367,11 @@ body{
     justify-content:start;
 }
 .rep{
-    display:flex;
+    display:none;
     flex-direction:column;
     min-width:fit-content;
     align-items:center;
-    border:solid 2px;
+    border:double 5px;
     border-radius: 5px 5px 0px 0px;
     margin:10px;
 }
@@ -384,8 +384,7 @@ body{
     font-style:italic;
 }
 .rep p{
-    margin:0px;
-    font-weight:bold;
+    margin:0px 5px;
 }
 .hidden{
     opacity:0;
