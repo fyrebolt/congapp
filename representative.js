@@ -170,7 +170,7 @@ searchInput = document.getElementById("searchInput")
 searchInput.onclick = () => {
     resetAll()
     const tags = ["address", "city", "state", "zipCode"]
-    if(checkEmpty(tags) || checkIfStateFederal()){
+    if(checkEmpty(tags)){
         let inputLine = ""
         for(let i = 0; i < tags.length; i++){
             if(document.getElementById(tags[i]).value){
@@ -189,7 +189,7 @@ searchInput.onclick = () => {
         document.getElementById("stateRepsText").classList.remove("disabled")
         execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
         execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
-        if(checkIfAll(tags)){
+        if(checkIfAll(tags) || checkIfStateFederal()){
             //all input boxes full
             
             execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
