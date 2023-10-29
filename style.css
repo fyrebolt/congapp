@@ -380,8 +380,12 @@ body{
     height: 200px;
     width:100%;
 }
+.repLabel{
+    font-style:italic;
+}
 .rep p{
     margin:0px;
+    font-weight:bold;
 }
 .hidden{
     opacity:0;
