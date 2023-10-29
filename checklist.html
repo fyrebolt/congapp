@@ -1,15 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="firebase.js" defer></script>
+    <script src="profile.js" defer></script>
+    <title>Checklist</title>
 </head>
-<body>
-    <h1>Checklist</h1>
-    <ul>
-        <li><input type="checkbox" id="item1" checked> <label for="item1">Item 1 (checked)</label></li>
-        <li><input type="checkbox" id="item2"> <label for="item2">Item 2</label></li>
-        <li><input type="checkbox" id="item3" checked> <label for="item3">Item 3 (checked)</label></li>
-        <li><input type="checkbox" id="item4"> <label for="item4">Item 4</label></li>
-    </ul>
+<body onload="check()">
+    <div id="loginHeader">
+        <span class="hidden"></span>
+        <h3>Checklist</h3>
+        <span class="hidden"></span>
+    </div>
+    <div id="profileWrapper">
+        <div id="profileHeader">
+            <p>Before the election, you should...</p>
+        </div>
+        <div class="profileLabel"><li><input type="checkbox" id="item1"> <label for="item2">
+            Email
+            <p class="infoLabel">f@gmail.com</p>
+            </label></li>
+        </div>
+        <div class="profileLabel"><li><input type="checkbox" id="item3"> <label for="item2">
+            Email
+            <p class="infoLabel">f@gmail.com</p>
+            </label></li>
+        </div>
+        <div class="profileLabel"><li><input type="checkbox" id="item4"> <label for="item2">
+            Email
+            <p class="infoLabel">f@gmail.com</p>
+            </label></li>
+        </div>
+        
+    </div>
+    <div id="guestWrapper">
+        <h2>Logged in as guest</h2>
+        <h4><a>Create an account</a> to save your voting information!</h4>
+        <p id="logout2">Log Out</p>
+    </div>
+    <div id="loginFooter">
+        <div class="navCol">
+            <a class="navItem" href="home.html"><img class="navIcon" src="images/voteI.png"></a>
+            <p class="navTitle">Home</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="wiki.html"><img class="navIcon" src="images/checkI.png"></a>
+            <p class="navTitle">Checklist</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="representative.html"><img src="images/repI.png" class="navIcon" ></a>
+            <p class="navTitle">Your Reps</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="polling.html"><img src="images/mapI.png" class="navIcon" ></a>
+            <p class="navTitle">Polling</p>
+        </div>
+        <div class="navCol">
+            <a class="navItem" href="profile.html"><img src="images/profileA.png" class="navIcon" ></a>
+            <p class="navTitleA">Profile</p>
+        </div>
+    </div>    
 </body>
 </html>
+

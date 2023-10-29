@@ -15,7 +15,7 @@ function loadClient() {
             }
         })
     }
-    //makes all things invisible intially
+    //makes all things invisible 
     resetAll()
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
