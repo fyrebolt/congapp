@@ -400,6 +400,28 @@ body{
     justify-content:start;
     align-items:center;
 }
+#federalRepText{
+    align-self:start;
+    margin:5px 20px;
+    font-size:20px;
+}
+#stateRepsText{
+    align-self:start;
+    margin:5px 20px;
+    font-size:20px;
+}
+#stateRepsMore{
+    align-self:start;
+    margin:5px 20px;
+    font-size:16px;
+    color:rgb(96, 93, 107);
+}
+#federalRepMore{
+    align-self:start;
+    margin:5px 20px;
+    font-size:16px;
+    color:rgb(96, 93, 107);
+}
 #federalLevelRep{
     display:flex;
     flex-direction:row;
@@ -422,6 +444,7 @@ body{
     border:double 5px;
     border-radius: 5px 5px 0px 0px;
     margin:10px;
+    box-shadow:0px 3px 5px;
 }
 .rep p img{
     object-fit: contain;
@@ -453,6 +476,10 @@ body{
     min-width:fit-content;
     border:double 5px;
     margin:50px 35px;
+}
+#hLine{
+    width:90%;
+    border: solid gray 1px;
 }
 #repPopupImage{
     height:250px;

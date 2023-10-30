@@ -53,10 +53,13 @@ function loadClient() {
             }
             //users have data for all possible combos
             document.getElementById("federalRepText").classList.remove("disabled")
+            document.getElementById("federalRepMore").classList.remove("disabled")
+            document.getElementById("hLine").classList.remove("disabled")
             execute("country",inputLine,"headOfGovernment",["president"])
             execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
             //makes state rep header visible
             document.getElementById("stateRepsText").classList.remove("disabled")
+            document.getElementById("stateRepsMore").classList.remove("disabled")
             execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
             execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
             execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
@@ -198,7 +201,10 @@ function resetAll(){
     }
     //disables text headers
     document.getElementById("federalRepText").classList.add("disabled")
+    document.getElementById("federalRepMore").classList.add("disabled")
+    document.getElementById("hLine").classList.add("disabled")
     document.getElementById("stateRepsText").classList.add("disabled")
+    document.getElementById("stateRepsMore").classList.add("disabled")
     //disables div tags
     let repsTagArray = document.getElementsByClassName("rep")
     for(let i = 0; i < repsTagArray.length; i++){
@@ -227,10 +233,13 @@ searchInput.onclick = () => {
         //need bad input catch
         //makes federal Rep header visible
         document.getElementById("federalRepText").classList.remove("disabled")
+        document.getElementById("federalRepMore").classList.remove("disabled")
+        document.getElementById("hLine").classList.remove("disabled")
         execute("country",inputLine,"headOfGovernment",["president"])
         execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
         //makes state rep header visible
         document.getElementById("stateRepsText").classList.remove("disabled")
+        document.getElementById("stateRepsMore").classList.remove("disabled")
         execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
         execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
         if(checkIfAll(tags) || checkIfStateFederal()){
