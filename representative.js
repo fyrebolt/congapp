@@ -1,8 +1,14 @@
-
+function loadAPI(){
+    gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
+    return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+}
 function loadClient() {
     if(!(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes")){
         window.location.href = "index.html";
     }
+    loadAPI()
     if(sessionStorage.getItem("guest")!="yes"){
         //person has an account
         isUser = true
@@ -29,13 +35,9 @@ function loadClient() {
         isUser = false
     }
     resetAll()
-    gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     if(isUser){
         setAccountDataUser(user)
     }
-    return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
   }
 
 async function setAccountDataUser(user){
