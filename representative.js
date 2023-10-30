@@ -1,5 +1,4 @@
 function loadAPI(){
-    console.log(1)
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
@@ -9,35 +8,39 @@ function loadClient() {
     if(!(localStorage.getItem("loggedIn")=="yes" || sessionStorage.getItem("guest")=="yes")){
         window.location.href = "index.html";
     }
-    loadAPI()
-    if(sessionStorage.getItem("guest")!="yes"){
-        //person has an account
-        isUser = true
-        document.getElementById("repDescription").style.display = "none"
-        document.getElementById("dataInputWrapper").style.display = "none"
-        document.getElementById("searchInput").style.display = "none"
-        email = localStorage.getItem("user")
-        user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
-        user = user.substring(0,user.indexOf("@"))
-        database.ref(user+'/status').once('value').then((snapshot)=>{ 
-            if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
-                window.location.href= "setup.html"
-            }
-            if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
-                window.location.href= "profile.html"
-            }
-        })
-    }
-    if(sessionStorage.getItem("guest")=="yes"){
-        //person is a guest
-        document.getElementById("repDescription").style.display = "flex"
-        document.getElementById("dataInputWrapper").style.display = "flex"
-        document.getElementById("searchInput").style.display = "flex"
-        isUser = false
-    }
-    resetAll()
-    if(isUser){
-        console.log(2)
+    loadAPI().then(function() {
+        if(sessionStorage.getItem("guest")!="yes"){
+            //person has an account
+            isUser = true
+            document.getElementById("repDescription").style.display = "none"
+            document.getElementById("dataInputWrapper").style.display = "none"
+            document.getElementById("searchInput").style.display = "none"
+            email = localStorage.getItem("user")
+            user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
+            user = user.substring(0,user.indexOf("@"))
+            database.ref(user+'/status').once('value').then((snapshot)=>{ 
+                if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
+                    window.location.href= "setup.html"
+                }
+                if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
+                    window.location.href= "profile.html"
+                }
+            })
+        }
+        if(sessionStorage.getItem("guest")=="yes"){
+            //person is a guest
+            document.getElementById("repDescription").style.display = "flex"
+            document.getElementById("dataInputWrapper").style.display = "flex"
+            document.getElementById("searchInput").style.display = "flex"
+            isUser = false
+        }
+        resetAll()
+        if(isUser){
+            getInfoFromUser(user)
+        }
+    });
+  }
+    function getInfoFromUser(user){
         inputLine = ""
         database.ref(user+'/info').once('value').then((snapshot)=>{ 
             data = snapshot.val()
@@ -62,8 +65,6 @@ function loadClient() {
             execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
         })
     }
-  }
-
   async function fetchImage(description, TAG){
       fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
                     .then(function(response){return response.json();})
