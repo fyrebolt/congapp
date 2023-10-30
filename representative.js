@@ -1,4 +1,5 @@
 function loadAPI(){
+    console.log(1)
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
@@ -36,35 +37,33 @@ function loadClient() {
     }
     resetAll()
     if(isUser){
-        setAccountDataUser(user)
+        console.log(2)
+        inputLine = ""
+        database.ref(user+'/info').once('value').then((snapshot)=>{ 
+            data = snapshot.val()
+            address = data.address
+            city = data.city
+            zip = data.zip
+            inputLine += address + ", " + city
+            if(zip != ""){
+                inputLine += ", " + zip
+            }
+            //users have data for all possible combos
+            document.getElementById("federalRepText").classList.remove("disabled")
+            execute("country",inputLine,"headOfGovernment",["president"])
+            execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
+            //makes state rep header visible
+            document.getElementById("stateRepsText").classList.remove("disabled")
+            execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
+            execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
+            execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
+            execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
+            execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
+            execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+        })
     }
   }
 
-async function setAccountDataUser(user){
-    inputLine = ""
-    database.ref(user+'/info').once('value').then((snapshot)=>{ 
-        data = snapshot.val()
-        address = data.address
-        city = data.city
-        zip = data.zip
-        inputLine += address + ", " + city
-        if(zip != ""){
-            inputLine += ", " + zip
-        }
-        //users have data for all possible combos
-        document.getElementById("federalRepText").classList.remove("disabled")
-        execute("country",inputLine,"headOfGovernment",["president"])
-        execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
-        //makes state rep header visible
-        document.getElementById("stateRepsText").classList.remove("disabled")
-        execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
-        execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
-        execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
-        execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
-        execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
-        execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
-    })   
-}
   async function fetchImage(description, TAG){
       fetch("https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=pageimages&format=json&piprop=original&titles=" + description)
                     .then(function(response){return response.json();})
