@@ -26,12 +26,10 @@ function loadClient() {
         document.getElementById("repDescription").style.display = "flex"
         document.getElementById("dataInputWrapper").style.display = "flex"
         document.getElementById("searchInput").style.display = "flex"
+        isUser = false
     }
     resetAll()
     gapi.client.setApiKey("AIzaSyD-OzrPVgxU-zjXEgWW3LA2xFhTXJJr2uc");
-    if(isUser){
-        setAccountDataUser(user)
-    }
     return gapi.client.load("https://civicinfo.googleapis.com/$discovery/rest?version=v2")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
