@@ -65,6 +65,7 @@ function updateElectionDates(){
                 const customFormattedDate = `${month} ${day}, ${year}`;
             
                 document.getElementById("nextGeneralElection").innerHTML = `${customFormattedDate}`;
+                document.getElementById("generalSub1").innerHTML = `in ${daysDifference} days`;
                 document.getElementById("birthdate").style.display = "none";
             }
             else {
@@ -90,6 +91,7 @@ function updateElectionDates(){
                 const customFormattedDate = `${month} ${day}, ${year}`;
             
                 document.getElementById("userNextElection").innerHTML = `${customFormattedDate}`;
+                document.getElementById("yourSub").innerHTML = `in ${daysDifference} days`;
                 document.getElementById("noBirthdate").style.display = "none";
                 console.log("calling this part");
             }
@@ -112,7 +114,8 @@ function updateElectionDates(){
         const year = targetDate.getFullYear();
         const customFormattedDate = `${month} ${day}, ${year}`;
 
-        document.getElementById("anotherNextGeneralElection").innerHTML = `${customFormattedDate}`;
+        document.getElementById("anotherNextGeneralElection").innerHTML = `${customFormattedDate}`
+        document.getElementById("generalSub2").innerHTML = `in ${daysDifference} days`;
     }
     else {
         const currentDate = new Date();
@@ -133,6 +136,7 @@ function updateElectionDates(){
         const customFormattedDate = `${month} ${day}, ${year}`;
     
         document.getElementById("nextGeneralElection").innerHTML = `${customFormattedDate}`;
+        document.getElementById("generalSub1").innerHTML = `in ${daysDifference} days`;
         document.getElementById("birthdate").style.display = "none";
     }
 
@@ -154,6 +158,8 @@ function updateElectionDates(){
     const customFormattedDate = `${month} ${day}, ${year}`;
 
     document.getElementById("nextPresidentialElection").innerHTML = `${customFormattedDate}`;
+    document.getElementById("presSub").innerHTML = `in ${daysDifference} days`;
+   
 }
   
 updateElectionDates();

@@ -464,6 +464,7 @@ body{
     height:80%;
     background-image: url("images/bluebg.png");
     background-size:cover;
+    background-attachment:local;
     overflow:auto;
 }
 #repPopupTop{
@@ -582,6 +583,11 @@ body{
 .electionBoxHeader{
     margin:20px 0px 10px 0px;
     font-size:20px;
+}
+.electionSubHeader{
+    margin:5px 0px;
+    font-size:18px;
+    color:gray;
 }
 .electionBoxHeaderB{
     margin:20px 0px 10px 0px;
