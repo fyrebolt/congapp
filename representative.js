@@ -299,7 +299,7 @@ for(let i = 0; i < boxList.length; i++){
             document.getElementById('repPopup').style.backgroundImage = "url('images/redbg.png')";   
         }
         else{
-            document.getElementById('repPopup').style.backgroundImage = "url('images/images/graybg.png')";
+            document.getElementById('repPopup').style.backgroundImage = "url('images/graybg.png')";
         }
         
     }
