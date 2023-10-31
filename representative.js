@@ -122,6 +122,7 @@ function loadClient() {
             for(let tag = 0; tag < tagList.length;tag++){
                 
                 repName = response.result.officials[tag].name;
+                repParty = response.result.officials[tag].party;
                 repGovLink = response.result.officials[tag].urls[0]
                 descriptionLink = response.result.officials[tag].urls[1];
                 if(descriptionLink != undefined){
@@ -141,6 +142,7 @@ function loadClient() {
                 //basic stuff for every rep
                 document.getElementById(tagList[tag]).innerHTML = repName;
                 document.getElementById(tagList[tag]+"Contact").innerHTML ="Contact Link: <a href=" + repGovLink + " target=_blank>" + repGovLink + "</a>"
+                document.getElementById(tagList[tag]+"Party").innerHTML = repParty;
                 
                 //makes visible if necessary
                 document.getElementById(tagList[tag] + "Box").classList.remove("disabled")
@@ -198,6 +200,7 @@ function resetAll(){
         document.getElementById(tags[i] + "Contact").textContent = ""
         document.getElementById(tags[i] + "Image").textContent = ""
         document.getElementById(tags[i] + "Description").textContent = ""
+        document.getElementById(tags[i] + "Party").textContent = ""
     }
     //disables text headers
     document.getElementById("federalRepText").classList.add("disabled")
@@ -288,6 +291,16 @@ for(let i = 0; i < boxList.length; i++){
         document.getElementById("repPopupTitle").innerHTML = tagTitle
         document.getElementById("repPopupDesc").innerHTML = document.getElementById(tagIdName + "Description").innerHTML
         document.getElementById("repPopupContact").innerHTML = document.getElementById(tagIdName + "Contact").innerHTML
+        repParty = document.getElementById(tagIdName + "Party").innerHTML
+        if(repParty == "Democratic Party"){
+            document.getElementById('repPopup').style.backgroundImage = "url('images/bluebg.png')";
+        }
+        else if(repParty == "Republican Party"){
+            document.getElementById('repPopup').style.backgroundImage = "url('images/redbg.png')";   
+        }
+        else{
+            document.getElementById('repPopup').style.backgroundImage = "url('images/images/graybg.png')";
+        }
         
     }
 }
