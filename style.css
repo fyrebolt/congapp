@@ -581,16 +581,16 @@ body{
     width:100%;
 }
 .electionBoxHeader{
-    margin:20px 0px 10px 0px;
+    margin:20px 0px 0px 0px;
     font-size:20px;
 }
 .electionBoxSubHeader{
-    margin:5px 0px;
+    margin:0px;
     font-size:18px;
     color:gray;
 }
 .electionBoxHeaderB{
-    margin:20px 0px 10px 0px;
+    margin:20px 0px 0px 0px;
     font-size:26px;
 }
 .electionBoxLine{
