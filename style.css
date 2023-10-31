@@ -393,6 +393,7 @@ body{
     margin:10px 10px;
     width:60%;
     align-self:center;
+    justify-content:center;
 }
 #outputDataWrapper{
     display:flex;
