@@ -468,6 +468,7 @@ body{
     background-size:cover;
     background-attachment:local;
     overflow:auto;
+    background-color: #f6f3eb;
 }
 #repPopupTop{
     display:flex;
