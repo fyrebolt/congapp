@@ -543,23 +543,150 @@ body{
 .hidden{
     opacity:0;
 }
-
-
-.whyVoteLabel{
-    font-weight:bold;
-    margin:10px 20px;
-    font-size:24px;
+#homeWrapper{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:stretch;
+    overflow:auto;
+    background: url('https://www.tripsavvy.com/thmb/YDUcaboLp0PTUnaiJgfGMeGrfSA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/capitol-panoramic-56a236e95f9b58b7d0c7f838-7a8a87c96de14a159dc801890a28d81e.jpg');
+    background-size:cover;
+    background-position:center;
+}
+#bgImage{
+   height:100%;
+    
+}
+#noBirthdate{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+#all{
+    backdrop-filter:blur(5px);
+}
+#birthdate{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+#homeBottom{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+.electionBoxHeader{
+    margin:20px 0px 10px 0px;
+    font-size:20px;
+}
+.electionBoxHeaderB{
+    margin:20px 0px 10px 0px;
+    font-size:26px;
+}
+.electionBoxLine{
+    width:95%;
+    border: solid 1px gray;
+    margin:5px 0px;
 }
 .electionDate{
-    font-weight:normal;
-    margin:12px 40px;
-    font-size:32px;
+    font-weight:bold;
+    margin:10px 0px 20px 0px;
+    font-size:24px;
 }
-.dateLabel{
-    font-weight:normal;
-    margin:10px 40px;
+.electionDateB{
+    font-weight:bold;
+    margin:10px 0px 20px 0px;
+    font-size:28px;
+}
+.generalElectionBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    border:double 10px rgb(74, 92, 157);
+    margin:20px;
+    border-radius:20px 20px 20px 20px;
+    align-self:center;
+    background-color:#ffffffc6;
+    box-shadow:0px 3px 10px;
+}
+.generalElectionBoxB{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    border:double 10px rgb(157, 74, 74);
+    margin:20px;
+    border-radius:20px 20px 20px 20px;
+    align-self:center;
+    background-color:#ffffffc6;
+    box-shadow:0px 3px 10px;
+}
+.yourElectionBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    border:double 10px rgb(157, 74, 74);
+    margin:20px;
+    border-radius:20px 20px 20px 20px;
+    align-self:center;
+    background-color:#ffffffc6;
+    box-shadow:0px 3px 10px;
+}
+.presidentElectionBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    border:double 10px rgb(74, 92, 157);
+    margin:20px;
+    border-radius:20px 20px 20px 20px;
+    align-self:center;
+    background-color:#ffffffc6;
+    box-shadow:0px 3px 10px;
+}
+.whyVoteBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    border:solid 3px rgb(157, 74, 74);
+    margin:20px;
+    border-radius:20px 20px 20px 20px;
+    align-self:center;
+    background-color:#ffffffc6;
+    box-shadow:0px 3px 10px;
+}
+#whyList{
+    margin: 10px;
+}
+#whyList li{
+    margin:7px 0px;
+}
+#whyVoteHeader{
+    margin:10px;
+    font-size:22px;
+    font-weight:bold;
+}
+#whyVoteLine{
+    width:90%;
+    border:solid gray 1px;
+    margin:0px;
+}
+#whyVoteQuizPrompt{
+    margin: 0px 20px 20px 20px;
     font-size:18px;
 }
+.whyVoteBox a{
+    text-decoration:underline;
+    color:rgb(184, 156, 0);
+}
+
 /* all the stuff below is for dropdown */
 .dropdown-container {
     display: flex;
