@@ -74,8 +74,14 @@ function loadClient() {
                     .then(function(response) {
                     console.log(response);
                         var pages = response.query.pages;
-                        img = pages[Object.keys(pages)[0]].original.source;
-                        document.getElementById(TAG).innerHTML = "<img  width =150px src=\"" + img + "\">" 
+                        var page = pages[Object.keys(pages)[0]];
+                        if (page.original) {
+                            var img = page.original.source;
+                            document.getElementById(TAG).innerHTML = "<img  width =150px src=\"" + img + "\">" 
+                        } else {
+                            document.getElementById(TAG).innerHTML = "<img  width =150px src=images/nullPicture.png>" 
+                        }
+                        
                     })
                     .catch(function(error){console.log(error);});
     }
