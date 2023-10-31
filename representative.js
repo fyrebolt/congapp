@@ -97,7 +97,7 @@ function loadClient() {
                         newDesc += descArray[i] + ". "
                         }
                       }
-                      document.getElementById(TAG + "Description").innerHTML ="Description: "+newDesc;
+                      document.getElementById(TAG + "Description").innerHTML =newDesc;
                   })
                   .catch(function(error){
                     console.log(error);
