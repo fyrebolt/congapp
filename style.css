@@ -464,6 +464,7 @@ body{
     height:80%;
     background-image: url("images/bluebg.png");
     background-size:cover;
+    overflow:auto;
 }
 #repPopupTop{
     display:flex;
@@ -472,7 +473,7 @@ body{
 }
 #repPopupTopLeft{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     min-width:fit-content;
@@ -483,14 +484,14 @@ body{
     text-align:center;
     margin:5px 0px 5px 35px;
     font-weight:bold;
-    font-size:22px;
+    font-size:20px;
     align-self:start;
 }
 #repPopupTitle{
     text-align:center;
     margin:5px 0px 5px 35px;
     font-style:italic;
-    font-size:22px;
+    font-size:20px;
     align-self:start;
 }
 #hLine{
@@ -498,7 +499,7 @@ body{
     border: solid gray 1px;
 }
 #popupLine{
-    width:100%;
+    width:90%;
     border: solid #3c3b6e 3px;
     margin:10px 35px;
 }
@@ -506,6 +507,7 @@ body{
     margin:10px 10px;
     color:#6361b1;
     font-weight:bold;
+    font-size:24px;
 }
 #repPopupDesc{
     margin:10px 10px;
@@ -529,7 +531,7 @@ body{
     display:flex;
     flex-direction:column;
     height:250px;
-    justify-content:start;
+    justify-content:center;
     align-items:center;
     width:100%;
 }
