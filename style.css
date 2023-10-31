@@ -477,7 +477,7 @@ body{
     justify-content:center;
     align-items:center;
     min-width:fit-content;
-    margin:50px 0px 5px 35px;
+    margin:50px 0px 5px 0px;
 }
 #repPopupName{
     text-align:center;
