@@ -477,22 +477,19 @@ body{
     justify-content:center;
     align-items:center;
     min-width:fit-content;
-    border:double 5px;
     margin:50px 0px 50px 35px;
 }
 #repPopupName{
     text-align:center;
-    margin:5px 0px 5px 35px;
+    margin:5px 0px 0px 35px;
     font-weight:bold;
     font-size:20px;
-    align-self:start;
 }
 #repPopupTitle{
     text-align:center;
-    margin:5px 0px 5px 35px;
+    margin:0px;
     font-style:italic;
     font-size:20px;
-    align-self:start;
 }
 #hLine{
     width:90%;
@@ -508,9 +505,10 @@ body{
     color:#6361b1;
     font-weight:bold;
     font-size:24px;
+    text-align:center;
 }
 #repPopupDesc{
-    margin:10px 10px;
+    margin:10px 15px;
 }
 #repPopupContact{
     margin:10px 10px;
@@ -521,6 +519,7 @@ body{
 }
 #repPopupImage{
     height:250px;
+    border:double 5px;
 }
 #repPopupImage img{
     object-fit: contain;
