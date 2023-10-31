@@ -594,12 +594,12 @@ body{
 }
 .electionDate{
     font-weight:bold;
-    margin:10px 0px 20px 0px;
+    margin:10px 10px 20px 10px;
     font-size:24px;
 }
 .electionDateB{
     font-weight:bold;
-    margin:10px 0px 20px 0px;
+    margin:10px 10px 20px 10px;
     font-size:28px;
 }
 .generalElectionBox{

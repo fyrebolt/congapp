@@ -64,7 +64,7 @@ function updateElectionDates(){
                 const year = targetDate.getFullYear();
                 const customFormattedDate = `${month} ${day}, ${year}`;
             
-                document.getElementById("nextGeneralElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+                document.getElementById("nextGeneralElection").innerHTML = `${customFormattedDate}`;
                 document.getElementById("birthdate").style.display = "none";
             }
             else {
@@ -89,7 +89,7 @@ function updateElectionDates(){
                 const year = targetDate.getFullYear();
                 const customFormattedDate = `${month} ${day}, ${year}`;
             
-                document.getElementById("userNextElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+                document.getElementById("userNextElection").innerHTML = `${customFormattedDate}`;
                 document.getElementById("noBirthdate").style.display = "none";
                 console.log("calling this part");
             }
@@ -112,7 +112,7 @@ function updateElectionDates(){
         const year = targetDate.getFullYear();
         const customFormattedDate = `${month} ${day}, ${year}`;
 
-        document.getElementById("anotherNextGeneralElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+        document.getElementById("anotherNextGeneralElection").innerHTML = `${customFormattedDate}`;
     }
     else {
         const currentDate = new Date();
@@ -132,7 +132,7 @@ function updateElectionDates(){
         const year = targetDate.getFullYear();
         const customFormattedDate = `${month} ${day}, ${year}`;
     
-        document.getElementById("nextGeneralElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+        document.getElementById("nextGeneralElection").innerHTML = `${customFormattedDate}`;
         document.getElementById("birthdate").style.display = "none";
     }
 
@@ -153,7 +153,7 @@ function updateElectionDates(){
     const year = targetDate.getFullYear();
     const customFormattedDate = `${month} ${day}, ${year}`;
 
-    document.getElementById("nextPresidentialElection").innerHTML = `<b>${customFormattedDate}</b> (in ${daysDifference} days)`;
+    document.getElementById("nextPresidentialElection").innerHTML = `${customFormattedDate}`;
 }
   
 updateElectionDates();
