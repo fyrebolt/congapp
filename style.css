@@ -629,7 +629,7 @@ body{
     width:90%;
     border:double 10px rgb(157, 74, 74);
     margin:20px;
-    border-radius:20px 20px 20px 20px;
+    border-radius:20px 20px 0px 0px;
     align-self:center;
     background-color:#ffffffc6;
     box-shadow:0px 3px 10px;
@@ -641,7 +641,7 @@ body{
     width:90%;
     border:double 10px rgb(157, 74, 74);
     margin:20px;
-    border-radius:20px 20px 20px 20px;
+    border-radius:20px 20px 0px 0px;
     align-self:center;
     background-color:#ffffffc6;
     box-shadow:0px 3px 10px;
@@ -653,7 +653,7 @@ body{
     width:90%;
     border:double 10px rgb(74, 92, 157);
     margin:20px;
-    border-radius:20px 20px 20px 20px;
+    border-radius:0px 0px 20px 20px;
     align-self:center;
     background-color:#ffffffc6;
     box-shadow:0px 3px 10px;
