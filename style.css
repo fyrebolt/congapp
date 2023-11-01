@@ -14,8 +14,14 @@ body{
     height:80%;
     display:flex;
     flex-direction:column;
-    justify-content:end;
-    align-items:stretch;
+    justify-content:space-between;
+    align-items:center;
+}
+.indexButton{
+    width:90%;
+}
+#indexLogo{
+    width:100px;
 }
 #indexButtons{
     margin:10px 20px;
