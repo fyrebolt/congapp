@@ -19,10 +19,10 @@ function loadClient() {
             user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
             user = user.substring(0,user.indexOf("@"))
             database.ref(user+'/status').once('value').then((snapshot)=>{ 
-                if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
+                if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/everybodyvotes/setup.html"){
                     window.location.href= "setup.html"
                 }
-                if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
+                if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/everybodyvotes/setup.html"){
                     window.location.href= "profile.html"
                 }
             })
@@ -75,7 +75,7 @@ function loadClient() {
                     resetAll()
                     if (window.confirm('Error: Address Invalid\nPlease Click ok to edit Address Information on Profile'))
                     {
-                        window.open('https://fyrebolt.github.io/congapp/profile.html');
+                        window.open('https://fyrebolt.github.io/everybodyvotes/profile.html');
                     };
                 }
             });

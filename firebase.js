@@ -20,10 +20,10 @@ function check(){
         user = email.replaceAll(".","").replaceAll("#","").replaceAll("$",'').replaceAll("[","").replaceAll("]","")
         user = user.substring(0,user.indexOf("@"))
         database.ref(user+'/status').once('value').then((snapshot)=>{ 
-            if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/congapp/setup.html"){
+            if(snapshot.val().surveyed==false && window.location.href != "https://fyrebolt.github.io/everybodyvotes/setup.html"){
                 window.location.href= "setup.html"
             }
-            if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/congapp/setup.html"){
+            if(snapshot.val().surveyed==true && window.location.href == "https://fyrebolt.github.io/everybodyvotes/setup.html"){
                 window.location.href= "profile.html"
             }
         })

@@ -50,7 +50,7 @@ else{
 editButton = document.getElementById("editProfile")
 editButton.onclick = (event) => {
     event.preventDefault()
-    if(editButton.src == "https://fyrebolt.github.io/congapp/images/editIcon.png"){
+    if(editButton.src == "https://fyrebolt.github.io/everybodyvotes/images/editIcon.png"){
         editButton.src = "images/saveIcon.png"
         addressInput.disabled = false
         cityInput.disabled = false
