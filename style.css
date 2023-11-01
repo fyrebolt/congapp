@@ -215,6 +215,10 @@ body{
     font-size:18px;
     margin: 5px 0px;
 }
+#explanation{
+    font-size:18px;
+    margin:20px;
+}
 #options-container{
     margin:5px 0px;
 }
@@ -661,6 +665,7 @@ label {
 }
 #all{
     backdrop-filter:blur(5px);
+    height:100%;
 }
 #birthdate{
     display:flex;

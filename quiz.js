@@ -76,13 +76,26 @@ let score = 0;
 const questionContainer = document.getElementById("question-container");
 const optionsContainer = document.getElementById("options-container");
 const nextButton = document.getElementById("next-button");
+const checkButton = document.getElementById("check-button");
 const scoreSpan = document.getElementById("score");
-
+const explanation = document.getElementById("explanation")
 nextButton.addEventListener("click", nextQuestion);
+checkButton.addEventListener("click", checkQuestion);
 
+function checkQuestion() {
+  if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+    explanation.innerHTML = "Correct!"
+    explanation.style.color = "green"
+  }
+  else{
+    explanation.innerHTML = `Incorrect. The correct answer was <strong>${questions[currentQuestion].correctAnswer}</strong>`;
+    explanation.style.color = "red"
+  }
+  nextButton.style.display = "flex"
+}
 function nextQuestion() {
   const selectedAnswer = document.querySelector("input[name='answer']:checked");
-
+  nextButton.style.display = "none"
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
       score++;
   }
