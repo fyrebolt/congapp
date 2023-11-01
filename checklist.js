@@ -1,4 +1,4 @@
-createButton = document.querySelector("a")
+createButton = document.getElementById("createButton")
 createButton.onclick = (event) =>{
     event.preventDefault()
     localStorage.setItem("loggedIn", "null")
