@@ -216,6 +216,24 @@ body{
 #options-container{
     margin:5px 0px;
 }
+#quizRow{
+    margin:5px 0px;
+    flex-direction:row;
+    display:flex;
+    justify-content:space-between;
+}
+#check-button{
+    font-size:18px;
+    padding:5px;
+    border-radius:3px;
+    background-color:rgb(132, 185, 189);
+}
+#next-button{
+    font-size:18px;
+    padding:5px;
+    border-radius:3px;
+    background-color:rgb(236, 220, 75);
+}
 #quiz{
     margin:5px 20px 20px 20px;
     display:flex;
