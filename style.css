@@ -210,7 +210,7 @@ body{
     margin:5px 20px;
     font-weight:normal;
     font-size:20px;
-    color:rgb(99, 99, 99)
+    color:rgb(71, 71, 71)
 }
 #question-container{
     font-size:18px;
@@ -243,6 +243,12 @@ body{
     flex-direction:column;
     justify-content:start;
     align-items:start;
+}
+#quizLine{
+    width:90%;
+    border:solid gray 1px;
+    margin:0px;
+    align-self:center; 
 }
 label {
     display: flex;
@@ -368,7 +374,7 @@ label {
     display:flex;
     height:80%;
     flex-direction:column;
-    justify-content:space-evenly;
+    justify-content:start;
     align-items:stretch;
 }
 #setupWrapper h4{
@@ -396,7 +402,7 @@ label {
     font-size:18px;
     font-weight:bold;
     color:#2c2c2c;
-    background-color:#4ab030;
+    background-color:#6fb75c;
     border-radius:3px;
     margin: 10px 0px;
     padding:5px 10px;
