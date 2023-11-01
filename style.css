@@ -178,6 +178,9 @@ body{
     justify-content:start;
     align-items:stretch;
     overflow:auto;
+    background: url('https://www.tripsavvy.com/thmb/YDUcaboLp0PTUnaiJgfGMeGrfSA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/capitol-panoramic-56a236e95f9b58b7d0c7f838-7a8a87c96de14a159dc801890a28d81e.jpg');
+    background-size:cover;
+    background-position:center;
 }
 #profileBox{
     display:flex;
@@ -185,7 +188,7 @@ body{
     margin:20px;
     border-radius:10px;
     border:solid 3px  rgb(157, 74, 74);
-    background-color: #f3e8cc;
+    background-color: #ffffffc6;
     box-shadow:0px 3px 10px;
 }
 #quizBox{
@@ -195,7 +198,7 @@ body{
     margin:20px;
     border-radius:10px;
     border:solid 3px  rgb(157, 74, 74);
-    background-color: #f3e8cc;
+    background-color: #ffffffc6;
     box-shadow:0px 3px 10px;
 }
 #quizHeader{
@@ -256,6 +259,9 @@ label {
     justify-content:start;
     align-items:stretch;
     overflow:auto;
+    background: url('https://www.tripsavvy.com/thmb/YDUcaboLp0PTUnaiJgfGMeGrfSA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/capitol-panoramic-56a236e95f9b58b7d0c7f838-7a8a87c96de14a159dc801890a28d81e.jpg');
+    background-size:cover;
+    background-position:center;
 }
 .checkLabel{
     font-weight:normal;
