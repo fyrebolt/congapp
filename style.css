@@ -186,6 +186,7 @@ body{
     border-radius:10px;
     border:solid 3px  rgb(157, 74, 74);
     background-color: #f3e8cc;
+    box-shadow:0px 3px 10px;
 }
 #checklistWrapper{
     height:80%;
