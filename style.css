@@ -682,6 +682,15 @@ body{
     font-size:22px;
     font-weight:bold;
 }
+#whyVoteSub{
+    margin: 5px;
+    font-size:18px;
+    font-weight:bold;
+}
+#whyVoteDesc{
+    margin: 5px 20px;
+    font-size:16px;
+}
 #whyVoteLine{
     width:90%;
     border:solid gray 1px;
