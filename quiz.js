@@ -2,42 +2,50 @@ const allQuestions = [
   {
     question: "What type of government best describes the U.S.?",
     options: ["Direct Democracy", "Representative Democracy", "Dictatorship", "Oligarchy"],
-    correctAnswer: "a"
+    correctAnswer: "b",
+    answerExplanation:"A Representative Democracy has Representatives for the People, while a Direct Democracy does not"
   },
   {
     question: "What are the eligibility criteria for voting in the United States?",
     options: ["US citizenship and state-defined age", "US citizenship and age 21", "Permanent residency and age 18", "Citizenship and age 18"],
-    correctAnswer: "d"
+    correctAnswer: "d",
+    answerExplanation:"Federal Law Requires the Voter be 18 Years of Age and a Citizen of the United States"
   },
   {
     question: "When is the next presidential election?",
     options: ["November 5, 2023", "March 15, 2024", "November 5, 2024", "March 17, 2024"],
-    correctAnswer: "c"
+    correctAnswer: "c",
+    answerExplanation:"The Next Presidental Election is November 5, 2024"
   },
   {
     question: "Which of the following is not mentioned as a reason to vote?",
     options: ["Exercising a civic duty", "Influencing policy decisions", "Generating profit", "Engaging with the community"],
-    correctAnswer: "c"
+    correctAnswer: "c",
+    answerExplanation:"Voting Should not be used to Generate Profit, only as one's Involvment with our Democracy"
   },
   {
     question: "How often are Presidential elections in the US?",
     options: ["Every 2 years", "Every 4 years", "Every 6 years", "Every 8 years"],
-    correctAnswer: "a"
+    correctAnswer: "b",
+    answerExplanation:"A US Presidental election is held every 4 years, unless there is an emergency"
   },
   {
     question: "Why are electoral votes used instead of direct votes?",
     options: ["There is no difference between the two other than wording.", "Electoral votes are a compromise between the federal government and state governments; this guarantees that states with significant populations cannot determine the outcome of the vote", "Direct votes may be counterfeit and not contribute to an accurate vote", "All of the above"],
-    correctAnswer: "b"
+    correctAnswer: "b",
+    answerExplanation:"Electoral votes Guarantees that Smaller States are Equally Represented Along with Larger States"
   },
   {
     question: "How many electoral votes are required to win the election?",
     options: ["270", "271", "171", "170"],
-    correctAnswer: "a"
+    correctAnswer: "a",
+    answerExplanation:"270 Electoral Votes are Required by a Candidate to Win"
   },
   {
     question: "What does voting provide in terms of community engagement and public discourse?",
     options: ["It hinders informed discussions", "It has no impact on community engagement", "It fosters awareness of current events and active participation in public discourse", "It encourages isolation from the community"],
-    correctAnswer: "c"
+    correctAnswer: "c",
+    answerExplanation:"Voting Encourages one to Become Informed on Current Topics to Properly Represent Themselves with their Vote"
   },
   // {
   //   question: "",
@@ -82,26 +90,44 @@ const explanation = document.getElementById("explanation")
 nextButton.addEventListener("click", nextQuestion);
 checkButton.addEventListener("click", checkQuestion);
 
+function disableButtons(){
+  const radioButtons = document.getElementsByName("answer")
+  for(let i = 0; i < radioButtons.length; i ++){
+    radioButtons[i].disabled=true;
+  }
+}
+
+function enableButtons(){
+  const radioButtons = document.getElementsByName("answer")
+  for(let i = 0; i < radioButtons.length; i ++){
+    radioButtons[i].disabled=false;
+  }
+}
+
 function checkQuestion() {
+  // on press check - > disabled
+  // on next - > undisabled
   const selectedAnswer = document.querySelector("input[name='answer']:checked");
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+    disableButtons()
     explanation.classList.remove("hidden")
     explanation.innerHTML = "Correct!"
     explanation.style.color = "green"
     nextButton.classList.remove("hidden")
   }
   else if (selectedAnswer){
+    disableButtons()
     explanation.classList.remove("hidden")
-    explanation.innerHTML = `Incorrect. The correct answer was <strong>${questions[currentQuestion].correctAnswer}</strong>`;
+    explanation.innerHTML = `Incorrect. The correct answer was <strong>${questions[currentQuestion].correctAnswer}</strong><br>` + questions[currentQuestion].answerExplanation;
     explanation.style.color = "red"
     nextButton.classList.remove("hidden")
   }
-  
 }
 function nextQuestion() {
   const selectedAnswer = document.querySelector("input[name='answer']:checked");
   explanation.classList.add("hidden")
   nextButton.classList.add("hidden")
+  enableButtons()
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
       score++;
   }
