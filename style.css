@@ -702,6 +702,9 @@ label {
     backdrop-filter:blur(5px);
     height:100%;
 }
+#hall{
+    backdrop-filter:blur(5px);
+}
 #birthdate{
     display:flex;
     flex-direction:column;
