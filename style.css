@@ -213,6 +213,9 @@ body{
     font-size:18px;
     margin: 10px 0px;
 }
+#options-container{
+    margin:5px 0px;
+}
 #quiz{
     margin:5px 20px 20px 20px;
     display:flex;
@@ -221,8 +224,9 @@ body{
     align-items:start;
 }
 label {
-    display: block;
-    margin: 5px 0;
+    display: flex;
+    margin: 10px 0;
+    flex-direction:row;
 }
 #results {
     display: none;

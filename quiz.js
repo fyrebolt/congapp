@@ -97,7 +97,7 @@ function nextQuestion() {
 }
 
 function showQuestion(index) {
-  questionContainer.textContent = `Question ${index + 1}: ${questions[index].question}`;
+  questionContainer.textContent = `<strong>Question ${index + 1}:</strong> ${questions[index].question}`;
   optionsContainer.innerHTML = "";
 
   questions[index].options.forEach((option, optionIndex) => {
