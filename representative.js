@@ -51,21 +51,34 @@ function loadClient() {
             if(zip != ""){
                 inputLine += ", " + zip
             }
-            //users have data for all possible combos
-            document.getElementById("federalRepText").classList.remove("disabled")
-            document.getElementById("federalRepMore").classList.remove("disabled")
-            document.getElementById("hLine").classList.remove("disabled")
-            execute("country",inputLine,"headOfGovernment",["president"])
-            execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
-            //makes state rep header visible
-            document.getElementById("stateRepsText").classList.remove("disabled")
-            document.getElementById("stateRepsMore").classList.remove("disabled")
-            execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
-            execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
-            execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
-            execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
-            execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
-            execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+            check(inputLine).then(results => {
+                if(results == true){
+                    
+                
+                    //users have data for all possible combos
+                    document.getElementById("federalRepText").classList.remove("disabled")
+                    document.getElementById("federalRepMore").classList.remove("disabled")
+                    document.getElementById("hLine").classList.remove("disabled")
+                    execute("country",inputLine,"headOfGovernment",["president"])
+                    execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
+                    //makes state rep header visible
+                    document.getElementById("stateRepsText").classList.remove("disabled")
+                    document.getElementById("stateRepsMore").classList.remove("disabled")
+                    execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
+                    execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
+                    execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
+                    execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
+                    execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
+                    execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+                }
+                else{
+                    resetAll()
+                    if (window.confirm('Error: Address Invalid\nPlease Click ok to edit Address Information on Profile'))
+                    {
+                        window.open('https://fyrebolt.github.io/congapp/profile.html');
+                    };
+                }
+            });
         })
     }
   async function fetchImage(description, TAG){
