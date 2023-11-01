@@ -1,6 +1,6 @@
 {
-  "name": "voting app",
-  "start_url": "/congapp/index.html",
+  "name": "Everybody Votes",
+  "start_url": "/everybodyvotes/index.html",
   "scope": "/congapp/",
   "display": "standalone", 
   "icons": [
