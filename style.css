@@ -180,13 +180,12 @@ body{
     overflow:auto;
 }
 #profileBox{
-    height:100%;
     display:flex;
     flex-direction:column;
     margin:20px;
     border-radius:10px;
-    border:solid 3px #f3e8cc;
-
+    border:solid 3px  rgb(157, 74, 74);
+    background-color: #f3e8cc;
 }
 #checklistWrapper{
     height:80%;
@@ -322,7 +321,7 @@ body{
 }
 #birthInput{
     padding:10px 5px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 20px 5px 20px;
 }
 #continue{
     align-self:center;
