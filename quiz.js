@@ -88,20 +88,20 @@ function checkQuestion() {
     explanation.classList.remove("hidden")
     explanation.innerHTML = "Correct!"
     explanation.style.color = "green"
-    nextButton.style.display = "flex"
+    nextButton.classList.remove("hidden")
   }
   else if (selectedAnswer){
     explanation.classList.remove("hidden")
     explanation.innerHTML = `Incorrect. The correct answer was <strong>${questions[currentQuestion].correctAnswer}</strong>`;
     explanation.style.color = "red"
-    nextButton.style.display = "flex"
+    nextButton.classList.remove("hidden")
   }
   
 }
 function nextQuestion() {
   const selectedAnswer = document.querySelector("input[name='answer']:checked");
   explanation.classList.add("hidden")
-  nextButton.style.display = "none"
+  nextButton.classList.add("hidden")
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
       score++;
   }
