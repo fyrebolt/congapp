@@ -682,12 +682,12 @@ body{
     font-size:22px;
     font-weight:bold;
 }
-#whyVoteSub{
+.whyVoteSub{
     margin: 5px;
     font-size:18px;
     font-weight:bold;
 }
-#whyVoteDesc{
+.whyVoteDesc{
     margin: 5px 20px;
     font-size:16px;
 }
