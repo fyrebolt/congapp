@@ -231,6 +231,31 @@ function resetAll(){
     
     
 }
+async function check(inputLine) {
+    // returns promise
+    //false = bad input
+    //true = okay input
+    return gapi.client.civicinfo.representatives.representativeInfoByAddress({
+      "address": inputLine,
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "headOfGovernment"
+      ]
+    })
+        .then(function(response) {
+                repName = response.result.offices[0].name;
+                if(repName != "President of the United States"){
+                    //might not be need. don't know if API is international
+                    return false
+                }
+                else{
+                    return true
+                }
+              },
+              function(err) { return false });
+  }
 
 gapi.load("client");
 
@@ -242,6 +267,7 @@ searchInput.onclick = () => {
         //at least one not empty
         if(notOnlyAddress(tags)){
             //input contains not only address
+            
             let inputLine = ""
             for(let i = 0; i < tags.length; i++){
                 if(document.getElementById(tags[i]).value){
@@ -250,31 +276,38 @@ searchInput.onclick = () => {
                 }
             }
             inputLine = inputLine.slice(0, -1)
-            // calling all calls
-            //need bad input catch
-            //makes federal Rep header visible
-            document.getElementById("federalRepText").classList.remove("disabled")
-            document.getElementById("federalRepMore").classList.remove("disabled")
-            document.getElementById("hLine").classList.remove("disabled")
-            execute("country",inputLine,"headOfGovernment",["president"])
-            execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
-            //makes state rep header visible
-            document.getElementById("stateRepsText").classList.remove("disabled")
-            document.getElementById("stateRepsMore").classList.remove("disabled")
-            execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
-            execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
-            if(checkIfAll(tags) || checkIfStateFederal()){
-                //all input boxes full
-                
-                execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
-                execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
-            }
-            if(checkIfAddressCityZip()){
-                execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
-            }
-            if(checkIfAddressCity()){
-                execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
-            }
+            check(inputLine).then(results => {
+                if(results == true){
+                    //good input
+                    //makes federal Rep header visible
+                    document.getElementById("federalRepText").classList.remove("disabled")
+                    document.getElementById("federalRepMore").classList.remove("disabled")
+                    document.getElementById("hLine").classList.remove("disabled")
+                    execute("country",inputLine,"headOfGovernment",["president"])
+                    execute("country",inputLine,"deputyHeadOfGovernment",["vicePresident"])
+                    //makes state rep header visible
+                    document.getElementById("stateRepsText").classList.remove("disabled")
+                    document.getElementById("stateRepsMore").classList.remove("disabled")
+                    execute("administrativeArea1",inputLine,"headOfGovernment",["governor"])
+                    execute("administrativeArea1",inputLine,"deputyHeadOfGovernment",["lieutenantGovernor"])
+                    if(checkIfAll(tags) || checkIfStateFederal()){
+                        //all input boxes full
+                        
+                        execute("administrativeArea1",inputLine,"legislatorUpperBody",["stateSenator"])
+                        execute("administrativeArea1",inputLine,"legislatorLowerBody",["stateHouseRep"])
+                    }
+                    if(checkIfAddressCityZip()){
+                        execute("country",inputLine,"legislatorUpperBody",["fedSenateOne","fedSenateTwo"])
+                    }
+                    if(checkIfAddressCity()){
+                        execute("country",inputLine,"legislatorLowerBody",["fedHouseRep"])
+                    }
+                }
+                else{
+                    resetAll()
+                    window.alert("Error: Address Invalid")
+                }
+            });
         }  
         else{
             window.alert("For Accurate Data Please use Input Beyond just Address")
