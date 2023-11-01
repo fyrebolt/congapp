@@ -83,11 +83,14 @@ nextButton.addEventListener("click", nextQuestion);
 checkButton.addEventListener("click", checkQuestion);
 
 function checkQuestion() {
+  const selectedAnswer = document.querySelector("input[name='answer']:checked");
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+    explanation.classList.remove("hidden")
     explanation.innerHTML = "Correct!"
     explanation.style.color = "green"
   }
   else{
+    explanation.classList.remove("hidden")
     explanation.innerHTML = `Incorrect. The correct answer was <strong>${questions[currentQuestion].correctAnswer}</strong>`;
     explanation.style.color = "red"
   }
@@ -95,6 +98,7 @@ function checkQuestion() {
 }
 function nextQuestion() {
   const selectedAnswer = document.querySelector("input[name='answer']:checked");
+  explanation.classList.add("hidden")
   nextButton.style.display = "none"
   if (selectedAnswer && selectedAnswer.value === questions[currentQuestion].correctAnswer) {
       score++;
