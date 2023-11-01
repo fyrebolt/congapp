@@ -219,6 +219,12 @@ body{
     font-size:20px;
     margin:10px 0px;
 }
+#youScore{
+    font-size:22px;
+    font-weight:bold;
+    margin: 20px 30px;
+    color: rgb(204, 173, 0);
+}
 #options-container{
     margin:5px 0px;
 }
