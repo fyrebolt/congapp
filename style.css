@@ -201,6 +201,12 @@ body{
     margin:10px 25px;
     font-size:18px;
 }
+.checkLabel a{
+    font-weight:normal;
+    text-decoration:underline;
+    font-size:18px;
+    color:rgb(204, 173, 0);
+}
 #profileHeader{
     display:flex;
     flex-direction:row;
