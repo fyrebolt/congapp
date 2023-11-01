@@ -75,7 +75,7 @@ function loadClient() {
                     resetAll()
                     if (window.confirm('Error: Address Invalid\nPlease Click ok to edit Address Information on Profile'))
                     {
-                        window.open('https://fyrebolt.github.io/everybodyvotes/profile.html');
+                        window.location.href = "profile.html";
                     };
                 }
             });
